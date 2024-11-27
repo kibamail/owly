@@ -1,0 +1,10 @@
+:root,
+.owly-light-theme {
+  --background-primary: var(--gray-0);
+  --background-hover: var(--gray-20);
+  --background-pressed: var(--gray-30);
+
+  --background-selected: var(--blue-100);
+  --background-disabled: var(--gray-20);
+  --background-inverse: var(--gray-800);
+}

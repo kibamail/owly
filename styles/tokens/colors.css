@@ -1,0 +1,85 @@
+@import "@kibamail/colors/colors.css";
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*         Background colors           */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root {
+  --background-primary: var(--gray-0);
+  --background-hover: var(--gray-20);
+  --background-pressed: var(--gray-30);
+
+  --background-selected: var(--blue-100);
+  --background-disabled: var(--gray-20);
+  --background-inverse: var(--gray-800);
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*              Borders                */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root {
+  --border-primary: var(--gray-100);
+  --border-secondary: var(--gray-60);
+  --border-tertiary: var(--gray-40);
+  --border-disabled: var(--gray-40);
+
+  --border-focus: var(--blue-500);
+  --border-brand: var(--brown-500);
+  --border-inverse: var(--gray-0);
+
+  --border-info: var(--blue-500);
+  --border-notice: var(--orange-500);
+  --border-negative: var(--red-500);
+  --border-positive: var(--green-500);
+  --border-highlight: var(--purple-500);
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*              Overlays               */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root {
+  --overlay-primary: var(--gray-900);
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*              Content                */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root {
+  --content-primary: var(--gray-900);
+  --content-secondary: var(--gray-600);
+  --content-tertiary: var(--gray-200);
+
+  --content-primary-inverse: var(--gray-0);
+  --content-secondary-inverse: var(--gray-10);
+  --content-tertiary-inverse: var(--gray-50);
+
+  --content-brand: var(--brown-500);
+
+  --content-link: var(--blue-500);
+  --content-link-hover: var(--blue-600);
+  --content-link-pressed: var(--blue-700);
+
+  --content-notice: var(--orange-500);
+  --content-notice-bold: var(--orange-700);
+
+  --content-negative: var(--red-500);
+  --content-negative-bold: var(--red-700);
+
+  --content-positive: var(--green-500);
+  --content-positive-bold: var(--green-700);
+
+  --content-highlight: var(--purple-500);
+  --content-highlight-bold: var(--purple-700);
+
+  --content-disabled: var(--gray-60);
+
+  --content-info: var(--blue-500);
+  --content-info-bold: var(--blue-600);
+}

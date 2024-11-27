@@ -1,0 +1,56 @@
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*             Font sizes              */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root {
+  --font-display-xlarge: calc(64px * var(--scaling));
+  --font-display-large: calc(56px * var(--scaling));
+  --font-display-medium: calc(48px * var(--scaling));
+  --font-display-small: calc(40px * var(--scaling));
+  --font-display-xsmall: calc(32px * var(--scaling));
+
+  --font-body-xlarge: calc(20px * var(--scaling));
+  --font-body-large: calc(16px * var(--scaling));
+  --font-body-medium: calc(14px * var(--scaling));
+  --font-body-small: calc(12px * var(--scaling));
+  --font-body-xsmall: calc(10px * var(--scaling));
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*             Font weights            */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root {
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*             Line heights            */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root {
+  --line-height-xlarge: 72;
+  --line-height-large: 64;
+  --line-height-medium: 56;
+  --line-height-small: 48;
+  --line-height-xsmall: 40;
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*           Letter spacing            */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root {
+  --letter-spacing-xlarge: 0.03125em;
+  --letter-spacing-large: 0.0125em;
+  --letter-spacing-medium: 0em;
+  --letter-spacing-small: -0.0125em;
+  --letter-spacing-xsmall: -0.03125em;
+}

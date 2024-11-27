@@ -1,0 +1,94 @@
+{
+  "name": "@kibamail/owly",
+  "version": "1.0.0",
+  "description": "The Open-source messaging platform for transactional and marketing email.",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "files": [
+    "dist",
+    "index.css",
+    "tokens.css",
+    "components.css"
+  ],
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "pnpm build:clean && pnpm build:css && pnpm build:components && pnpm build:storybook",
+    "build:storybook": "storybook build",
+    "build:components": "tsx scripts/build-components.ts && pnpm build:components:types",
+    "build:components:types": "tsc --outdir dist/types && tsx scripts/copy-component-types.ts",
+    "build:css:index": "postcss styles/index.css -o index.css",
+    "build:css:tokens": "postcss styles/tokens/index.css -o tokens.css",
+    "build:css:components": "postcss components/index.css -o components.css",
+    "build:css": "pnpm build:css:index && pnpm build:css:components && pnpm build:css:tokens",
+    "build:clean": "rimraf dist"
+  },
+  "keywords": [
+    "owly",
+    "design-system",
+    "react",
+    "typescript"
+  ],
+  "contributors": [
+    "Frantz Kati <frantz@kibamail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@kibamail/colors": "^1.0.0",
+    "classnames": "^2.5.1"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+    "react-dom": "16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://owly.kibamail.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kibamail/owly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kibamail/owly/issues"
+  },
+  "devDependencies": {
+    "@radix-ui/themes": "^3.1.6",
+    "@storybook/addon-essentials": "^8.4.2",
+    "@storybook/addon-interactions": "^8.4.2",
+    "@storybook/addon-onboarding": "^8.4.2",
+    "@storybook/blocks": "^8.4.2",
+    "@storybook/react": "^8.4.2",
+    "@storybook/react-vite": "^8.4.2",
+    "@storybook/test": "^8.4.2",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.24.0",
+    "glob": "^11.0.0",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^7.0.2",
+    "postcss-nesting": "^13.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rimraf": "^6.0.1",
+    "storybook": "^8.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5"
+  }
+}
