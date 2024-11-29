@@ -13,6 +13,25 @@
   --background-selected: var(--blue-100);
   --background-disabled: var(--gray-20);
   --background-inverse: var(--gray-800);
+
+  --background-info: var(--blue-500);
+  /* TODO: move this color to color package. */
+  --background-info-subtle: var(--blue-0, #F7FAFF);
+
+  --background-positive: var(--green-500);
+  /* TODO: move this color to color package. */
+  --background-positive-subtle: var(--green-0, #F9FCF9);
+
+  --background-negative: var(--red-500);
+  /* TODO: move this color to color package. */
+  --background-negative-subtle: var(--red-0, #FCDADA);
+
+  --background-notice: var(--orange-500);
+  /* TODO: move this color to color package. */
+  --background-notice-subtle: var(--orange-0, #FFFAF5);
+
+  /* TODO: move this color to color package. */
+  --background-hover: var(--gray-20, #F6F3F1)
 }
 
 /* * * * * * * * * * * * * * * * * * * */

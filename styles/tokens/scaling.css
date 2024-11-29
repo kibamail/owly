@@ -4,4 +4,6 @@
   --scaling-medium: 1;
   --scaling-small: 0.95;
   --scaling-xsmall: 0.9;
+
+  --scaling: var(--scaling-medium);
 }

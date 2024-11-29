@@ -1,30 +1,118 @@
-.storybook-button {
-  display: inline-block;
-  cursor: pointer;
-  border: 0;
-  border-radius: 3em;
-  font-weight: 700;
-  line-height: 1;
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.kb-badge {
+    --badge-icon-default-width: 14px;
+    --badge-icon-default-height: 14px;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-style: normal;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-medium);
+    border-style: solid;
+    border-width: 1px;
+    gap: var(--spacing-xs);
+    font-family: var(--default-font-family);
 }
-.storybook-button--primary {
-  background-color: #1ea7fd;
-  color: white;
+.kb-badge svg {
+    width: var(--badge-icon-default-width);
+    height: var(--badge-icon-default-height);
+    flex-shrink: 0;
 }
-.storybook-button--secondary {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-  background-color: transparent;
-  color: #333;
+.kb-badge:where(.kb-variant-info) {
+    background: var(--background-info-subtle);
+    border-color: var(--border-info);
+    color: var(--content-info);
 }
-.storybook-button--small {
-  padding: 10px 16px;
-  font-size: 12px;
+.kb-badge:where(.kb-variant-success) {
+    background: var(--background-positive-subtle);
+    border-color: var(--border-positive);
+    color: var(--content-positive);
 }
-.storybook-button--medium {
-  padding: 11px 20px;
-  font-size: 14px;
+.kb-badge:where(.kb-variant-error) {
+    background: var(--background-negative-subtle);
+    border-color: var(--border-negative);
+    color: var(--content-negative);
 }
-.storybook-button--large {
-  padding: 12px 24px;
-  font-size: 16px;
+.kb-badge:where(.kb-variant-warning) {
+    background: var(--background-notice-subtle);
+    border-color: var(--border-notice);
+    color: var(--content-notice);
+}
+.kb-badge:where(.kb-variant-neutral) {
+    background: var(--background-hover);
+    border-color: var(--border-secondary);
+    color: var(--content-tertiary);
+}
+.kb-badge:where(.kb-r-size-sm) {
+    height: var(--spacing-3xl);
+    padding: 0 var(--spacing-xs);
+    font-size: var(--font-body-small);
+}
+.kb-badge:where(.kb-r-size-md) {
+    padding: var(--spacing-sm);
+    font-size: var(--font-body-medium);
+    border-radius: var(--radius-md);
+}
+@media (min-width: 640px) {
+    .kb-badge:where(.sm\:kb-r-size-sm) {
+        height: var(--spacing-3xl);
+        padding: 0 var(--spacing-xs);
+        font-size: var(--font-body-small);
+    }
+    .kb-badge:where(.sm\:kb-r-size-md) {
+        padding: var(--spacing-sm);
+        font-size: var(--font-body-medium);
+        border-radius: var(--radius-md);
+    }
+}
+@media (min-width: 768px) {
+    .kb-badge:where(.md\:kb-r-size-sm) {
+        height: var(--spacing-3xl);
+        padding: 0 var(--spacing-xs);
+        font-size: var(--font-body-small);
+    }
+    .kb-badge:where(.md\:kb-r-size-md) {
+        padding: var(--spacing-sm);
+        font-size: var(--font-body-medium);
+        border-radius: var(--radius-md);
+    }
+}
+@media (min-width: 1024px) {
+    .kb-badge:where(.lg\:kb-r-size-sm) {
+        height: var(--spacing-3xl);
+        padding: 0 var(--spacing-xs);
+        font-size: var(--font-body-small);
+    }
+    .kb-badge:where(.lg\:kb-r-size-md) {
+        padding: var(--spacing-sm);
+        font-size: var(--font-body-medium);
+        border-radius: var(--radius-md);
+    }
+}
+@media (min-width: 1280px) {
+    .kb-badge:where(.xl\:kb-r-size-sm) {
+        height: var(--spacing-3xl);
+        padding: 0 var(--spacing-xs);
+        font-size: var(--font-body-small);
+    }
+    .kb-badge:where(.xl\:kb-r-size-md) {
+        padding: var(--spacing-sm);
+        font-size: var(--font-body-medium);
+        border-radius: var(--radius-md);
+    }
+}
+@media (min-width: 1536px) {
+    .kb-badge:where(.\32xl\:kb-r-size-sm) {
+        height: var(--spacing-3xl);
+        padding: 0 var(--spacing-xs);
+        font-size: var(--font-body-small);
+    }
+    .kb-badge:where(.\32xl\:kb-r-size-md) {
+        padding: var(--spacing-sm);
+        font-size: var(--font-body-medium);
+        border-radius: var(--radius-md);
+    }
 }

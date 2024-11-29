@@ -22,7 +22,9 @@
     "build:css:tokens": "postcss styles/tokens/index.css -o tokens.css",
     "build:css:components": "postcss components/index.css -o components.css",
     "build:css": "pnpm build:css:index && pnpm build:css:components && pnpm build:css:tokens",
-    "build:clean": "rimraf dist"
+    "build:clean": "rimraf dist",
+    "test": "vitest --run --coverage",
+    "test:watch": "vitest"
   },
   "keywords": [
     "owly",
@@ -36,6 +38,7 @@
   "license": "MIT",
   "dependencies": {
     "@kibamail/colors": "^1.0.0",
+    "@radix-ui/react-slot": "^1.1.0",
     "classnames": "^2.5.1"
   },
   "peerDependencies": {
@@ -72,14 +75,23 @@
     "@storybook/react": "^8.4.2",
     "@storybook/react-vite": "^8.4.2",
     "@storybook/test": "^8.4.2",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@vitest/coverage-v8": "2.1.5",
     "autoprefixer": "^10.4.20",
     "esbuild": "^0.24.0",
     "glob": "^11.0.0",
+    "iconoir-react": "^7.10.1",
+    "jsdom": "^25.0.1",
     "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-custom-media": "^11.0.5",
+    "postcss-discard-empty": "^7.0.0",
     "postcss-import": "^16.1.0",
     "postcss-nested": "^7.0.2",
     "postcss-nesting": "^13.0.1",
