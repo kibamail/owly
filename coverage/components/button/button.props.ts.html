@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/badge/badge.props.ts</title>
+    <title>Code coverage report for components/button/button.props.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/badge</a> badge.props.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/button</a> button.props.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -86,9 +86,19 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -112,11 +122,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { ComponentProps } from "react";
 import type { ResponsiveProp, SlottableComponentProp } from "../../utils/props";
 &nbsp;
-export const variants = ["success", "error", "info", "warning", "neutral"] as const;
+export const variants = [
+  "primary",
+  "secondary",
+  "destructive",
+  "tertiary",
+] as const;
 &nbsp;
-export const sizes = ["sm", "md"] as const;
+export const sizes = ["lg", "md", "sm", "xs"] as const;
 &nbsp;
-export const badgePropsDefinition = {
+export const buttonPropsDefinition = {
   size: {
     default: "sm",
   },
@@ -126,9 +141,9 @@ export const badgePropsDefinition = {
   };
 };
 &nbsp;
-export interface BadgeProps
+export interface ButtonProps
   extends SlottableComponentProp,
-  ComponentProps&lt;"span"&gt; {
+    ComponentProps&lt;"button"&gt; {
   variant?: (typeof variants)[number];
   size?: ResponsiveProp&lt;(typeof sizes)[number]&gt;;
 }

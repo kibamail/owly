@@ -27,12 +27,16 @@ export function isResponsiveObjectPropDefinition<T>(prop: ResponsiveProp<T>) {
   );
 }
 
-export function getVariableClassNamesForProp<T>(propName: string, value?: T, defaultValue?: T) {
+export function getVariableClassNamesForProp<T>(
+  propName: string,
+  value?: T,
+  defaultValue?: T,
+) {
   let className: string | undefined;
 
   className = `kb-${propName}-${value || defaultValue}`;
 
-  return { className }
+  return { className };
 }
 
 export function getResponsiveClassNamesForProp<T>(
@@ -69,15 +73,4 @@ export function getResponsiveClassNamesForProp<T>(
   }
 
   return { className };
-}
-
-export function getComponentStylesAndClassNamesProps<
-  P extends {
-    className?: string;
-    style?: React.CSSProperties;
-    [key: string]: any;
-  },
->(props: P) {
-  let className: string;
-  return {};
 }
