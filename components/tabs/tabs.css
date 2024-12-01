@@ -1,0 +1,72 @@
+.kb-tabs-list {
+    border-radius: var(--Radius-M, 8px);
+    border: 1px solid var(--Color-Border-Tertiary, #ece9e7);
+    background: var(--Color-Background-Hover, #f6f3f1);
+    box-shadow:
+        0px 2px 0px 0px var(--Color-Black-10, rgba(0, 0, 0, 0.1)) inset,
+        0px -2px 0px 0px var(--Color-White-100, #fff) inset;
+    height: 36px;
+    display: flex;
+    padding-bottom: 1px;
+    align-items: flex-start;
+    flex: 1 0 0;
+    align-self: stretch;
+    font-family: var(--default-font-family);
+}
+
+.kb-tabs-list {
+    button {
+        svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        transition: color 250ms ease-in-out;
+
+        &:where([data-state="active"]) {
+            color: var(--content-secondary);
+        }
+
+        z-index: 2;
+
+        display: flex;
+        padding: var(--Space-S, 6px) var(--Space-M, 8px);
+        justify-content: center;
+        align-items: center;
+        gap: var(--Space-M, 8px);
+        flex: 1 0 0;
+        align-self: stretch;
+
+        font-family: var(--Text-Font-Family-Body, Manrope);
+        font-size: var(--Text-Body-Medium-Medium-Size, 14px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: var(--Text-Body-Medium-Medium-Line-Height, 20px);
+        letter-spacing: var(--Text-Body-Medium-Medium-Letter-Spacing, 0px);
+        border-width: 0px;
+        background: transparent;
+
+        &:where([data-state="inactive"]) {
+            color: var(--Color-Content-Tertiary-Inverse, #c4c0bc);
+        }
+    }
+}
+
+.kb-tabs-indicator {
+    transition: transform 250ms ease-in-out;
+    width: calc(var(--tabs-indicator-active-position-size) * 1px);
+    height: 100%;
+    border-radius: var(--Radius-M, 8px);
+    border-top: var(--Width-M, 1px) solid var(--Color-Border-Tertiary, #ece9e7);
+    border-right: var(--Width-M, 1px) solid
+        var(--Color-Border-Tertiary, #ece9e7);
+    border-bottom: var(--Width-L, 2px) solid
+        var(--Color-Border-Tertiary, #ece9e7);
+    border-left: var(--Width-M, 1px) solid var(--Color-Border-Tertiary, #ece9e7);
+    background: var(--Color-Background-Primary, #fff);
+    box-shadow:
+        0px 2px 0px 0px var(--Color-White-5, rgba(255, 255, 255, 0.05)) inset,
+        0px 1px 0px 0px var(--Color-Black-10, rgba(0, 0, 0, 0.1));
+    /* z-index: -1; */
+}
