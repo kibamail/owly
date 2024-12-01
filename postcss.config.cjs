@@ -6,6 +6,7 @@ module.exports = {
       path: [path.relative(process.cwd(), "../")],
     }),
     require("postcss-nesting"),
+    require("postcss-apply"),
     require("postcss-combine-duplicated-selectors"),
     require("postcss-discard-empty"),
     require("./postcss/whitespace.cjs"),

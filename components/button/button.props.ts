@@ -8,21 +8,14 @@ export const variants = [
   "tertiary",
 ] as const;
 
-export const sizes = ["lg", "md", "sm", "xs"] as const;
+export const widths = ["fit", "full"] as const;
 
-export const buttonPropsDefinition = {
-  size: {
-    default: "sm",
-  },
-} satisfies {
-  size: {
-    default: ResponsiveProp<(typeof sizes)[number]>;
-  };
-};
+export const sizes = ["lg", "md", "sm", "xs"] as const;
 
 export interface ButtonProps
   extends SlottableComponentProp,
     ComponentProps<"button"> {
   variant?: (typeof variants)[number];
   size?: ResponsiveProp<(typeof sizes)[number]>;
+  width?: ResponsiveProp<(typeof widths)[number]>;
 }

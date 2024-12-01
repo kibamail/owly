@@ -1,70 +1,90 @@
-.kb-tabs-list {
-    border-radius: var(--Radius-M, 8px);
-    border: 1px solid var(--Color-Border-Tertiary, #ece9e7);
-    background: var(--Color-Background-Hover, #f6f3f1);
-    box-shadow:
-        0px 2px 0px 0px var(--Color-Black-10, rgba(0, 0, 0, 0.1)) inset,
-        0px -2px 0px 0px var(--Color-White-100, #fff) inset;
-    height: 36px;
-    display: flex;
-    padding-bottom: 1px;
-    align-items: flex-start;
-    flex: 1 0 0;
-    align-self: stretch;
-    font-family: var(--default-font-family);
+@breakpoints {
+    .kb-tabs-root {
+        &:where(.kb-r-width-fit) {
+            width: fit-content;
+
+            .kb-tabs-list {
+                width: fit-content;
+            }
+        }
+
+        &:where(.kb-r-width-full) {
+            width: 100%;
+        }
+    }
 }
 
 .kb-tabs-list {
-    button {
-        svg {
-            width: 14px;
-            height: 14px;
-            flex-shrink: 0;
-        }
+    --tabs-list-height: 36px;
 
-        transition: color 250ms ease-in-out;
+    border-radius: var(--radius-md);
+    border: var(--width-px) solid var(--border-tertiary);
+    background: var(--background-hover);
+    /* TODO: Make this box shadow a semantic variable */
+    box-shadow:
+        0px 2px 0px 0px var(--black-10) inset,
+        0px -2px 0px 0px var(--white-100) inset;
 
-        &:where([data-state="active"]) {
-            color: var(--content-secondary);
-        }
+    height: var(--tabs-list-height);
 
-        z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    flex: 1 0 0;
+    font-family: var(--default-font-family);
+}
 
-        display: flex;
-        padding: var(--Space-S, 6px) var(--Space-M, 8px);
-        justify-content: center;
-        align-items: center;
-        gap: var(--Space-M, 8px);
-        flex: 1 0 0;
-        align-self: stretch;
+.kb-tabs-trigger {
+    --tab-trigger-icon-default-width: 14px;
+    --tab-trigger-icon-default-height: 14px;
 
-        font-family: var(--Text-Font-Family-Body, Manrope);
-        font-size: var(--Text-Body-Medium-Medium-Size, 14px);
-        font-style: normal;
-        font-weight: 500;
-        line-height: var(--Text-Body-Medium-Medium-Line-Height, 20px);
-        letter-spacing: var(--Text-Body-Medium-Medium-Letter-Spacing, 0px);
-        border-width: 0px;
-        background: transparent;
-
-        &:where([data-state="inactive"]) {
-            color: var(--Color-Content-Tertiary-Inverse, #c4c0bc);
-        }
+    svg {
+        width: var(--tab-trigger-icon-default-width);
+        height: var(--tab-trigger-icon-default-height);
+        flex-shrink: 0;
     }
+
+    transition: color 250ms ease-in-out;
+
+    &:where([data-state="active"]) {
+        color: var(--content-secondary);
+    }
+
+    z-index: 2;
+
+    display: flex;
+    padding: var(--spacing-sm) var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex: 1 0 0;
+    align-self: stretch;
+
+    font-family: var(--default-font-family);
+
+    border-width: 0px;
+    background: transparent;
+
+    &:where([data-state="inactive"]) {
+        color: var(--content-tertiary-inverse);
+    }
+
+    @apply --kb-text-body-md;
 }
 
 .kb-tabs-indicator {
     transition: transform 250ms ease-in-out;
     width: calc(var(--tabs-indicator-active-position-size) * 1px);
+
     height: 100%;
-    border-radius: var(--Radius-M, 8px);
-    border-top: var(--Width-M, 1px) solid var(--Color-Border-Tertiary, #ece9e7);
-    border-right: var(--Width-M, 1px) solid
-        var(--Color-Border-Tertiary, #ece9e7);
-    border-bottom: var(--Width-L, 2px) solid
-        var(--Color-Border-Tertiary, #ece9e7);
-    border-left: var(--Width-M, 1px) solid var(--Color-Border-Tertiary, #ece9e7);
-    background: var(--Color-Background-Primary, #fff);
+
+    border-radius: var(--radius-md);
+    border-top: var(--width-px) solid var(--border-tertiary);
+    border-right: var(--width-px) solid var(--border-tertiary);
+    border-bottom: var(--width-2xs) solid var(--border-tertiary);
+    border-left: var(--width-px) solid var(--border-tertiary);
+    background: var(--background-primary);
+    /* TODO: Make this box shadow a semantic variable */
     box-shadow:
         0px 2px 0px 0px var(--Color-White-5, rgba(255, 255, 255, 0.05)) inset,
         0px 1px 0px 0px var(--Color-Black-10, rgba(0, 0, 0, 0.1));

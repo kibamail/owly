@@ -53,6 +53,8 @@
         outline-offset: var(--width-px);
         position: relative;
     }
+
+    @apply --kb-text-body-md;
 }
 
 .kb-button {
@@ -183,6 +185,18 @@
 
         &:where(.kb-r-size-lg) {
             --button-padding: var(--spacing-md) var(--spacing-lg);
+        }
+    }
+}
+
+@breakpoints {
+    .kb-button {
+        &:where(.kb-r-width-fit) {
+            width: fit-content;
+        }
+
+        &:where(.kb-r-width-full) {
+            width: 100%;
         }
     }
 }

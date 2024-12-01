@@ -1,87 +1,94 @@
 import React from "react";
-import * as BaseTabs from "./tabs-primitive";
-import { Archive, CheckCircle, MinusCircle, SendDiagonal } from "iconoir-react";
+import * as TabsPrimitive from "./tabs-primitive";
 
-export const Tabs = () => {
+import { type TabsRootProps } from "./tabs.props";
+
+import cn from "classnames";
+import { getResponsiveClassNamesForProp } from "../../utils/props";
+
+const TabsRoot = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Root>,
+  TabsRootProps
+>(({ className, width, ...props }, ref) => {
+  const { className: widthClassName } = getResponsiveClassNamesForProp<
+    TabsRootProps["width"]
+  >("width", width, "fit");
+
   return (
-    <BaseTabs.Root defaultValue="sent">
-      <BaseTabs.List className="kb-tabs-list">
-        <BaseTabs.Trigger value="sent" className="kb-reset">
-          <SendDiagonal />
-          Sent
-        </BaseTabs.Trigger>
-        <BaseTabs.Trigger value="pending" className="kb-reset">
-          <MinusCircle />
-          Pending
-        </BaseTabs.Trigger>
-        <BaseTabs.Trigger value="draft" className="kb-reset">
-          <Archive />
-          Drafts is a really, really long tab name
-        </BaseTabs.Trigger>
-        <BaseTabs.Indicator className="kb-tabs-indicator" />
-      </BaseTabs.List>
-      <BaseTabs.Content value="sent">
-        <p>These are your newsletters in sent</p>
-      </BaseTabs.Content>
-      <BaseTabs.Content value="pending">
-        <p>These are your newsletters in pending</p>
-      </BaseTabs.Content>
-      <BaseTabs.Content value="draft">
-        <p>These are your newsletters in draft</p>
-
-        <BaseTabs.Root defaultValue="sent">
-          <BaseTabs.List className="kb-tabs-list">
-            <BaseTabs.Trigger value="sent" className="kb-reset">
-              <SendDiagonal />
-              Sent
-            </BaseTabs.Trigger>
-            <BaseTabs.Trigger value="pending" className="kb-reset">
-              <MinusCircle />
-              Pending
-            </BaseTabs.Trigger>
-            <BaseTabs.Trigger value="draft" className="kb-reset">
-              <Archive />
-              Drafts
-            </BaseTabs.Trigger>
-            <BaseTabs.Indicator className="kb-tabs-indicator" />
-          </BaseTabs.List>
-          <BaseTabs.Content value="sent">
-            <p>These are your newsletters in sent</p>
-          </BaseTabs.Content>
-          <BaseTabs.Content value="pending">
-            <p>These are your newsletters in pending</p>
-            <BaseTabs.Root defaultValue="sent">
-              <BaseTabs.List className="kb-tabs-list">
-                <BaseTabs.Trigger value="sent" className="kb-reset">
-                  <SendDiagonal />
-                  Sent
-                </BaseTabs.Trigger>
-                <BaseTabs.Trigger value="pending" className="kb-reset">
-                  <MinusCircle />
-                  Pending
-                </BaseTabs.Trigger>
-                <BaseTabs.Trigger value="draft" className="kb-reset">
-                  <Archive />
-                  Drafts
-                </BaseTabs.Trigger>
-                <BaseTabs.Indicator className="kb-tabs-indicator" />
-              </BaseTabs.List>
-              <BaseTabs.Content value="sent">
-                <p>These are your newsletters in sent</p>
-              </BaseTabs.Content>
-              <BaseTabs.Content value="pending">
-                <p>These are your newsletters in pending</p>
-              </BaseTabs.Content>
-              <BaseTabs.Content value="draft">
-                <p>These are your newsletters in draft</p>
-              </BaseTabs.Content>
-            </BaseTabs.Root>
-          </BaseTabs.Content>
-          <BaseTabs.Content value="draft">
-            <p>These are your newsletters in draft</p>
-          </BaseTabs.Content>
-        </BaseTabs.Root>
-      </BaseTabs.Content>
-    </BaseTabs.Root>
+    <TabsPrimitive.Root
+      ref={ref}
+      className={cn("kb-tabs-root", widthClassName, className)}
+      {...props}
+    />
   );
+});
+
+TabsRoot.displayName = TabsPrimitive.Root.displayName;
+
+const TabsList = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.List>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.List
+    ref={ref}
+    className={cn("kb-tabs-list", className)}
+    {...props}
+  />
+));
+TabsList.displayName = TabsPrimitive.List.displayName;
+
+const TabsTrigger = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Trigger
+    ref={ref}
+    className={cn("kb-reset kb-tabs-trigger", className)}
+    {...props}
+  />
+));
+
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
+
+const TabsContent = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Content
+    ref={ref}
+    className={cn("kb-tabs-content", className)}
+    {...props}
+  />
+));
+TabsContent.displayName = TabsPrimitive.Content.displayName;
+
+const TabsIndicator = React.forwardRef<
+  React.ElementRef<(typeof TabsPrimitive)["Indicator"]>,
+  React.ComponentPropsWithoutRef<(typeof TabsPrimitive)["Indicator"]>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Indicator
+    ref={ref}
+    className={cn("kb-tabs-indicator", className)}
+    {...props}
+  />
+));
+
+const Root = TabsRoot;
+const List = TabsList;
+const Trigger = TabsTrigger;
+const Content = TabsContent;
+const Indicator = TabsIndicator;
+
+export {
+  //
+  TabsRoot,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+  //
+  Root,
+  List,
+  Trigger,
+  Content,
+  Indicator,
 };

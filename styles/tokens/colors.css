@@ -42,7 +42,7 @@
 :root {
     --border-primary: var(--gray-100);
     --border-secondary: var(--gray-60);
-    --border-tertiary: var(--gray-40);
+    --border-tertiary: var(--gray-30);
     --border-disabled: var(--gray-40);
 
     --border-focus: var(--blue-500);

@@ -396,4 +396,10 @@ export {
   Content,
   Indicator,
 };
-export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps };
+export type {
+  TabsProps,
+  TabsListProps,
+  TabsTriggerProps,
+  TabsContentProps,
+  TabsIndicatorProps,
+};

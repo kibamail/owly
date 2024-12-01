@@ -1,31 +1,81 @@
 import React from "react";
-import {
-  SendDiagonal,
-  CheckCircle,
-  XmarkCircle,
-  BadgeCheck,
-  PathArrow,
-} from "iconoir-react";
 import type { Meta, StoryFn } from "@storybook/react";
 
-import { Tabs } from "./tabs";
+import * as Tabs from "./tabs";
+import { Archive, MinusCircle, SendDiagonal } from "iconoir-react";
 
 const meta = {
   title: "Components/Tabs",
-  component: Tabs,
 } satisfies Meta<typeof Tabs>;
 
 export default meta;
 
 type TabsStoryFn = StoryFn<typeof Tabs>;
 
-export const Variants: TabsStoryFn = () => {
+export const Width: TabsStoryFn = () => {
   return (
     <>
       <div className="box">
-        <h5>Primary</h5>
+        <h5>Fit</h5>
         <div>
-          <Tabs />
+          <Tabs.Root defaultValue="pending">
+            <Tabs.List>
+              <Tabs.Trigger value="sent">
+                <SendDiagonal />
+                Sent
+              </Tabs.Trigger>
+              <Tabs.Trigger value="pending">
+                <MinusCircle />
+                Sent
+              </Tabs.Trigger>
+              <Tabs.Trigger value="archived">
+                <Archive />
+                Archived
+              </Tabs.Trigger>
+
+              <Tabs.Indicator />
+            </Tabs.List>
+
+            <Tabs.Content value="pending">
+              These newsletters are pending
+            </Tabs.Content>
+            <Tabs.Content value="sent">
+              These newsletters were already sent
+            </Tabs.Content>
+            <Tabs.Content value="archived">Archived newsletters</Tabs.Content>
+          </Tabs.Root>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Full width</h5>
+        <div>
+          <Tabs.Root defaultValue="pending" width="full">
+            <Tabs.List>
+              <Tabs.Trigger value="sent">
+                <SendDiagonal />
+                Sent
+              </Tabs.Trigger>
+              <Tabs.Trigger value="pending">
+                <MinusCircle />
+                Pending
+              </Tabs.Trigger>
+              <Tabs.Trigger value="archived">
+                <Archive />
+                Archived
+              </Tabs.Trigger>
+
+              <Tabs.Indicator />
+            </Tabs.List>
+
+            <Tabs.Content value="pending">
+              These newsletters are pending
+            </Tabs.Content>
+            <Tabs.Content value="sent">
+              These newsletters were already sent
+            </Tabs.Content>
+            <Tabs.Content value="archived">Archived newsletters</Tabs.Content>
+          </Tabs.Root>
         </div>
       </div>
     </>

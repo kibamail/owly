@@ -4,7 +4,6 @@ import {
   CheckCircle,
   XmarkCircle,
   BadgeCheck,
-  PathArrow,
 } from "iconoir-react";
 import type { Meta, StoryFn } from "@storybook/react";
 
@@ -98,6 +97,38 @@ export const Variants: ButtonStoryFn = () => {
           <Button variant="tertiary" disabled>
             <BadgeCheck />
             Clean up emails
+          </Button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export const Widths: ButtonStoryFn = () => {
+  return (
+    <>
+      <div className="box">
+        <h5>Fit content</h5>
+        <div>
+          <Button variant="primary" width="fit">
+            <SendDiagonal />
+            Publish broadcast
+          </Button>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Full width</h5>
+        <div>
+          <Button
+            variant="destructive"
+            width={{
+              base: "fit",
+              lg: "full",
+            }}
+          >
+            <SendDiagonal />
+            Save broadcast
           </Button>
         </div>
       </div>
