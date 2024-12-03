@@ -1,25 +1,25 @@
-import cn from "classnames";
-import React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import type { BadgeProps } from "./badge.props";
+import cn from "classnames"
+import React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import type { BadgeProps } from "./badge.props"
 import {
   getResponsiveClassNamesForProp,
   getVariableClassNamesForProp,
-} from "../../utils/props";
+} from "../../utils/props"
 
 export const Badge = React.forwardRef<React.ElementRef<"span">, BadgeProps>(
   function BaseBadge(props, ref) {
-    const { asChild, className: classNameProp, variant, size, ...rest } = props;
-    const Container = asChild ? Slot : "span";
+    const { asChild, className: classNameProp, variant, size, ...rest } = props
+    const Container = asChild ? Slot : "span"
 
     const { className } = getResponsiveClassNamesForProp<BadgeProps["size"]>(
       "size",
       size,
-      "md",
-    );
+      "md"
+    )
     const { className: variantClassName } = getVariableClassNamesForProp<
       BadgeProps["variant"]
-    >("variant", variant, "info");
+    >("variant", variant, "info")
 
     return (
       <Container
@@ -27,8 +27,8 @@ export const Badge = React.forwardRef<React.ElementRef<"span">, BadgeProps>(
         ref={ref}
         className={cn("kb-badge", className, variantClassName, classNameProp)}
       />
-    );
-  },
-);
+    )
+  }
+)
 
-Badge.displayName = "Badge";
+Badge.displayName = "Badge"

@@ -1,7 +1,7 @@
-import React, { type ComponentPropsWithoutRef } from "react"
+import React from "react"
 
 export type IconElement = React.ElementRef<"svg">
-export interface IconProps extends ComponentPropsWithoutRef<"svg"> {}
+export interface IconProps extends React.ComponentPropsWithoutRef<"svg"> {}
 
 export const CheckIcon = React.forwardRef<IconElement, IconProps>(
   (props, forwardedRef) => {
