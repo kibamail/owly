@@ -1,4 +1,5 @@
 .kb-button {
+  @apply --kb-text-body-md;
   --button-icon-default-width: 14px;
   --button-icon-default-height: 14px;
 
@@ -50,8 +51,6 @@
     outline: var(--width-2xs) solid var(--border-focus);
     position: relative;
   }
-
-  @apply --kb-text-body-md;
 }
 
 .kb-button {

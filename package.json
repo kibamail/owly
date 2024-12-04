@@ -10,8 +10,70 @@
     "dist",
     "index.css",
     "tokens.css",
-    "components.css"
+    "components.css",
+    "styles"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/cjs/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./badge": {
+      "types": "./dist/cjs/badge/index.d.ts",
+      "import": "./dist/esm/badge/index.js",
+      "require": "./dist/cjs/badge/index.js"
+    },
+    "./button": {
+      "types": "./dist/cjs/button/index.d.ts",
+      "import": "./dist/esm/button/index.js",
+      "require": "./dist/cjs/button/index.js"
+    },
+    "./checkbox": {
+      "types": "./dist/cjs/checkbox/index.d.ts",
+      "import": "./dist/esm/checkbox/index.js",
+      "require": "./dist/cjs/checkbox/index.js"
+    },
+    "./code-input": {
+      "types": "./dist/cjs/code-input/index.d.ts",
+      "import": "./dist/esm/code-input/index.js",
+      "require": "./dist/cjs/code-input/index.js"
+    },
+    "./input-hint": {
+      "types": "./dist/cjs/input-hint/index.d.ts",
+      "import": "./dist/esm/input-hint/index.js",
+      "require": "./dist/cjs/input-hint/index.js"
+    },
+    "./input-label": {
+      "types": "./dist/cjs/input-label/index.d.ts",
+      "import": "./dist/esm/input-label/index.js",
+      "require": "./dist/cjs/input-label/index.js"
+    },
+    "./radio-group": {
+      "types": "./dist/cjs/radio-group/index.d.ts",
+      "import": "./dist/esm/radio-group/index.js",
+      "require": "./dist/cjs/radio-group/index.js"
+    },
+    "./styles/badge.css": "./dist/styles/badge.css",
+    "./styles/button.css": "./dist/styles/button.css",
+    "./styles/checkbox.css": "./dist/styles/checkbox.css",
+    "./styles/code-input.css": "./dist/styles/code-input.css",
+    "./styles/input-hint.css": "./dist/styles/input-hint.css",
+    "./styles/input-label.css": "./dist/styles/input-label.css",
+    "./styles/radio-group.css": "./dist/styles/radio-group.css",
+    "./styles/tabs.css": "./dist/styles/tabs.css",
+    "./styles/text-field.css": "./dist/styles/text-field.css",
+    "./tabs": {
+      "types": "./dist/cjs/tabs/index.d.ts",
+      "import": "./dist/esm/tabs/index.js",
+      "require": "./dist/cjs/tabs/index.js"
+    },
+    "./text-field": {
+      "types": "./dist/cjs/text-field/index.d.ts",
+      "import": "./dist/esm/text-field/index.js",
+      "require": "./dist/cjs/text-field/index.js"
+    }
+  },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "pnpm build:clean && pnpm build:css && pnpm build:components && pnpm build:storybook",
@@ -21,7 +83,8 @@
     "build:css:index": "postcss styles/index.css -o index.css",
     "build:css:tokens": "postcss styles/tokens/index.css -o tokens.css",
     "build:css:components": "postcss components/index.css -o components.css",
-    "build:css": "pnpm build:css:index && pnpm build:css:components && pnpm build:css:tokens",
+    "build:css:individual": "tsx scripts/build-individual-component-css.ts",
+    "build:css": "pnpm build:css:index && pnpm build:css:components && pnpm build:css:tokens && pnpm build:css:individual",
     "build:clean": "rimraf dist",
     "test": "vitest --run --coverage",
     "test:watch": "vitest"

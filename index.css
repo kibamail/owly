@@ -246,20 +246,108 @@
     --radius-4xl: 32px;
     --radius-full: 9999px;
 }
-.kb-button:where([data-kb-disabled]){
-    pointer-events: none;
+:root --apply-kb-text-display-xl{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-display-xl);
+    line-height: var(--line-height-8xl);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-display);
 }
-.kb-button svg{
-    width: var(--button-icon-default-width);
-    height: var(--button-icon-default-height);
-    flex-shrink: 0;
+:root --apply-kb-text-display-lg{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-display-lg);
+    line-height: var(--line-height-7xl);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-display);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-display-md);
+    line-height: var(--line-height-6xl);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-display);
 }
-.kb-button:where(:focus){
-    outline: none;
+:root --apply-kb-text-display-sm{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-display-sm);
+    line-height: var(--line-height-5xl);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-display);
 }
-.kb-button:where(:focus-visible){
-    outline: var(--width-2xs) solid var(--border-focus);
-    position: relative;
+:root --apply-kb-text-display-xs{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-display-xs);
+    line-height: var(--line-height-3xl);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-display);
+}
+:root --apply-kb-text-heading-xl{
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-display-sm);
+    line-height: var(--line-height-2xl);
+    letter-spacing: var(--letter-spacing-xsmall);
+    font-family: var(--default-font-family-heading);
+}
+:root --apply-kb-text-heading-lg{
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-display-xs);
+    line-height: var(--line-height-3xl);
+    letter-spacing: var(--letter-spacing-xsmall);
+    font-family: var(--default-font-family-heading);
+}
+:root --apply-kb-text-heading-md{
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-body-2xl);
+    line-height: var(--line-height-2xl);
+    letter-spacing: var(--letter-spacing-small);
+    font-family: var(--default-font-family-heading);
+}
+:root --apply-kb-text-heading-sm{
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-body-xl);
+    line-height: var(--line-height-xl);
+    letter-spacing: var(--letter-spacing-small);
+    font-family: var(--default-font-family-heading);
+}
+:root --apply-kb-text-heading-xs{
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-body-lg);
+    line-height: var(--line-height-lg);
+    letter-spacing: var(--letter-spacing-small);
+    font-family: var(--default-font-family-heading);
+}
+:root --apply-kb-text-body-xl{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-body-xl);
+    line-height: var(--line-height-xl);
+    letter-spacing: var(--letter-spacing-small);
+    font-family: var(--default-font-family-body);
+}
+:root --apply-kb-text-body-lg{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-body-lg);
+    line-height: var(--line-height-lg);
+    letter-spacing: var(--letter-spacing-small);
+    font-family: var(--default-font-family-body);
+}
+:root --apply-kb-text-body-md{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-body-md);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-body);
+}
+:root --apply-kb-text-body-sm{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-body-sm);
+    line-height: var(--line-height-sm);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-body);
+}
+:root --apply-kb-text-body-xs{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-body-xs);
+    line-height: var(--line-height-xs);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-body);
 }
 .kb-button{
     font-weight: var(--font-weight-regular);
@@ -288,6 +376,21 @@
     transition: outline 150ms ease-in-out, background-color 150ms ease-in-out;
     width: -moz-fit-content;
     width: fit-content;
+}
+.kb-button:where([data-kb-disabled]){
+    pointer-events: none;
+}
+.kb-button svg{
+    width: var(--button-icon-default-width);
+    height: var(--button-icon-default-height);
+    flex-shrink: 0;
+}
+.kb-button:where(:focus){
+    outline: none;
+}
+.kb-button:where(:focus-visible){
+    outline: var(--width-2xs) solid var(--border-focus);
+    position: relative;
 }
 .kb-button:where(.kb-variant-primary){
     --button-border-color: var(--border-brand);

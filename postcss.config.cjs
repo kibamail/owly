@@ -5,8 +5,8 @@ module.exports = {
     require("postcss-import")({
       path: [path.relative(process.cwd(), "../")],
     }),
+    require('./postcss/apply-rules.cjs'),
     require("postcss-nesting"),
-    require("postcss-apply"),
     require("postcss-combine-duplicated-selectors"),
     require("postcss-discard-empty"),
     require("./postcss/whitespace.cjs"),
