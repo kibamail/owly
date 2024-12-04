@@ -20,3 +20,5 @@ export const CircleIcon = React.forwardRef<IconElement, IconProps>(
     )
   }
 )
+
+CircleIcon.displayName = "IconoirCircleIcon"

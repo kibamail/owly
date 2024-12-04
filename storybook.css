@@ -36,3 +36,19 @@
 .gap-6 {
   gap: 6px;
 }
+
+.gap-12 {
+  gap: 12px;
+}
+
+.max-w-md {
+  max-width: 320px;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}

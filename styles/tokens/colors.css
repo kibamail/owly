@@ -4,34 +4,38 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 :root {
-    --background-primary: var(--white-100);
-    --background-hover: var(--gray-20);
-    --background-pressed: var(--gray-30);
+  --background-primary: var(--white-100);
+  --background-hover: var(--gray-20);
+  --background-pressed: var(--gray-30);
 
-    --background-selected: var(--blue-100);
-    --background-disabled: var(--gray-20);
-    --background-inverse: var(--gray-800);
+  --background-selected: var(--blue-100);
+  --background-disabled: var(--gray-20);
+  --background-inverse: var(--gray-800);
 
-    --background-brand: var(--brown-500);
-    --background-brand-hover: var(--brown-500);
-    --background-brand-pressed: var(--brown-600);
-    --background-brand-disabled: var(--gray-20);
+  --background-brand: var(--brown-500);
+  --background-brand-hover: var(--brown-600);
+  --background-brand-pressed: var(--brown-700);
+  --background-brand-disabled: var(--gray-20);
 
-    --background-secondary: var(--gray-10);
+  --background-secondary: var(--gray-10);
+  --background-secondary-hover: var(--gray-20);
+  --background-secondary-pressed: var(--gray-30);
 
-    --background-info: var(--blue-500);
-    --background-info-subtle: var(--blue-0);
+  --background-info: var(--blue-500);
+  --background-info-subtle: var(--blue-0);
 
-    --background-positive: var(--green-500);
-    --background-positive-subtle: var(--green-0);
+  --background-positive: var(--green-500);
+  --background-positive-subtle: var(--green-0);
 
-    --background-negative: var(--red-500);
-    --background-negative-subtle: var(--red-0);
+  --background-negative: var(--red-500);
+  --background-negative-hover: var(--red-600);
+  --background-negative-pressed: var(--red-700);
+  --background-negative-subtle: var(--red-0);
 
-    --background-notice: var(--orange-500);
-    --background-notice-subtle: var(--orange-0);
+  --background-notice: var(--orange-500);
+  --background-notice-subtle: var(--orange-0);
 
-    --background-hover: var(--gray-20);
+  --background-hover: var(--gray-20);
 }
 
 /* * * * * * * * * * * * * * * * * * * */
@@ -40,20 +44,20 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 :root {
-    --border-primary: var(--gray-100);
-    --border-secondary: var(--gray-60);
-    --border-tertiary: var(--gray-30);
-    --border-disabled: var(--gray-40);
+  --border-primary: var(--gray-100);
+  --border-secondary: var(--gray-60);
+  --border-tertiary: var(--gray-30);
+  --border-disabled: var(--gray-40);
 
-    --border-focus: var(--blue-500);
-    --border-brand: var(--brown-600);
-    --border-inverse: var(--gray-0);
+  --border-focus: var(--blue-500);
+  --border-brand: var(--brown-600);
+  --border-inverse: var(--gray-0);
 
-    --border-info: var(--blue-500);
-    --border-notice: var(--orange-500);
-    --border-negative: var(--red-500);
-    --border-positive: var(--green-500);
-    --border-highlight: var(--purple-500);
+  --border-info: var(--blue-500);
+  --border-notice: var(--orange-500);
+  --border-negative: var(--red-500);
+  --border-positive: var(--green-500);
+  --border-highlight: var(--purple-500);
 }
 
 /* * * * * * * * * * * * * * * * * * * */
@@ -62,7 +66,7 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 :root {
-    --overlay-primary: var(--gray-900);
+  --overlay-primary: var(--gray-900);
 }
 
 /* * * * * * * * * * * * * * * * * * * */
@@ -71,34 +75,34 @@
 /*                                     */
 /* * * * * * * * * * * * * * * * * * * */
 :root {
-    --content-primary: var(--gray-900);
-    --content-secondary: var(--gray-600);
-    --content-tertiary: var(--gray-200);
+  --content-primary: var(--gray-900);
+  --content-secondary: var(--gray-600);
+  --content-tertiary: var(--gray-200);
 
-    --content-primary-inverse: var(--gray-0);
-    --content-secondary-inverse: var(--gray-10);
-    --content-tertiary-inverse: var(--gray-50);
+  --content-primary-inverse: var(--gray-0);
+  --content-secondary-inverse: var(--gray-10);
+  --content-tertiary-inverse: var(--gray-50);
 
-    --content-brand: var(--brown-500);
+  --content-brand: var(--brown-500);
 
-    --content-link: var(--blue-500);
-    --content-link-hover: var(--blue-600);
-    --content-link-pressed: var(--blue-700);
+  --content-link: var(--blue-500);
+  --content-link-hover: var(--blue-600);
+  --content-link-pressed: var(--blue-700);
 
-    --content-notice: var(--orange-500);
-    --content-notice-bold: var(--orange-700);
+  --content-notice: var(--orange-500);
+  --content-notice-bold: var(--orange-700);
 
-    --content-negative: var(--red-500);
-    --content-negative-bold: var(--red-700);
+  --content-negative: var(--red-500);
+  --content-negative-bold: var(--red-700);
 
-    --content-positive: var(--green-500);
-    --content-positive-bold: var(--green-700);
+  --content-positive: var(--green-500);
+  --content-positive-bold: var(--green-700);
 
-    --content-highlight: var(--purple-500);
-    --content-highlight-bold: var(--purple-700);
+  --content-highlight: var(--purple-500);
+  --content-highlight-bold: var(--purple-700);
 
-    --content-disabled: var(--gray-60);
+  --content-disabled: var(--gray-60);
 
-    --content-info: var(--blue-500);
-    --content-info-bold: var(--blue-600);
+  --content-info: var(--blue-500);
+  --content-info-bold: var(--blue-600);
 }
