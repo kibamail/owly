@@ -25,6 +25,7 @@ export const Types: TextFieldStoryFn = () => {
 
         <div className="">
           <TextField.Root placeholder="Enter your work email" type="email">
+            <TextField.Label>Email address</TextField.Label>
             <TextField.Slot side="left">
               <Mail />
             </TextField.Slot>

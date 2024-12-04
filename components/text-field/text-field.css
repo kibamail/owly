@@ -1,3 +1,6 @@
+@import "../input-label/input-label.css";
+@import "../input-hint/input-hint.css";
+
 .kb-text-field-root {
   display: flex;
   flex-direction: column;

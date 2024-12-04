@@ -1,0 +1,5 @@
+.kb-input-label {
+  @apply --kb-text-body-sm;
+  color: var(--content-secondary);
+  font-weight: var(--font-weight-medium);
+}

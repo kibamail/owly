@@ -51,7 +51,8 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.1",
     "@radix-ui/react-use-controllable-state": "^1.1.0",
-    "classnames": "^2.5.1"
+    "classnames": "^2.5.1",
+    "input-otp": "^1.4.1"
   },
   "peerDependencies": {
     "@types/react": "*",

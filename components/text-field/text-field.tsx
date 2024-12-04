@@ -5,7 +5,21 @@ import { composeRefs } from "@radix-ui/react-compose-refs"
 import { createContext } from "@radix-ui/react-context"
 import { getVariableClassNamesForProp } from "../../utils/props"
 import { useId } from "@radix-ui/react-id"
-import { WarningCircleIcon } from "./text-field-icons"
+
+import {
+  type InputLabelElement,
+  type InputLabelProps,
+  InputLabel,
+} from "../input-label"
+
+import {
+  InputError,
+  InputHint,
+  type InputHintElement,
+  type InputHintProps,
+  makeErrorId,
+  makeHintId,
+} from "../input-hint"
 
 const TEXT_FIELD_NAME = "TextField"
 const [TextFieldProvider, useTextFieldContext] = createContext<{
@@ -56,26 +70,32 @@ const TextFieldRoot = React.forwardRef<TextFieldElement, TextFieldProps>(
       (child) =>
         React.isValidElement(child) &&
         child.type !== TextFieldHint &&
-        child.type !== TextFieldError
+        child.type !== TextFieldError &&
+        child.type !== TextFieldLabel
     )
 
     const isInvalid = allChildren.some(
       (child) => React.isValidElement(child) && child.type === TextFieldError
     )
 
-    const hint = allChildren.filter(
+    const hints = allChildren.filter(
       (child) =>
         React.isValidElement(child) &&
         (child.type === TextFieldHint || child.type === TextFieldError)
     )
 
+    const label = allChildren.filter(
+      (child) => React.isValidElement(child) && child.type === TextFieldLabel
+    )
+
     return (
       <TextFieldProvider baseId={baseId}>
         <div
-          onPointerDown={onPointerDown}
           data-invalid={isInvalid}
+          onPointerDown={onPointerDown}
           className={cn("kb-text-field-root", className)}
         >
+          {label}
           <div className={cn("kb-text-field-content")}>
             <input
               spellCheck={false}
@@ -88,7 +108,7 @@ const TextFieldRoot = React.forwardRef<TextFieldElement, TextFieldProps>(
             />
             {slots}
           </div>
-          {hint}
+          {hints}
         </div>
       </TextFieldProvider>
     )
@@ -124,70 +144,46 @@ const TextFieldSlot = React.forwardRef<
   )
 })
 
+TextFieldSlot.displayName = "TextField.Slot"
+
 const TEXT_FIELD_HINT_NAME = "TextField.Hint"
 
-type HintElement = React.ElementRef<"span">
+const TextFieldHint = React.forwardRef<
+  InputHintElement,
+  Omit<InputHintProps, "baseId">
+>((props, forwardedRef) => {
+  const { baseId } = useTextFieldContext(TEXT_FIELD_HINT_NAME)
 
-export interface TextFieldHintProps extends ComponentPropsWithoutRef<"span"> {}
-
-const TextFieldHint = React.forwardRef<HintElement, TextFieldHintProps>(
-  (props, forwardedRef) => {
-    const { className, id, ...hintProps } = props
-    const { baseId } = useTextFieldContext(TEXT_FIELD_HINT_NAME)
-
-    const hintId = makeHintId(baseId)
-
-    return (
-      <div className={cn("kb-text-field-hint", className)}>
-        <WarningCircleIcon aria-hidden />
-        <span
-          {...hintProps}
-          id={id || hintId}
-          className={"kb-text-field-hint-text"}
-          ref={forwardedRef}
-        />
-      </div>
-    )
-  }
-)
+  return <InputHint baseId={baseId} {...props} ref={forwardedRef} />
+})
 
 TextFieldHint.displayName = "TextField.Hint"
 
 const TEXT_FIELD_ERROR_NAME = "TextField.Error"
 
-const TextFieldError = React.forwardRef<HintElement, TextFieldHintProps>(
-  (props, forwardedRef) => {
-    const { className, ...hintProps } = props
-    const { baseId } = useTextFieldContext(TEXT_FIELD_ERROR_NAME)
+const TextFieldError = React.forwardRef<
+  InputHintElement,
+  Omit<InputHintProps, "baseId">
+>((props, forwardedRef) => {
+  const { baseId } = useTextFieldContext(TEXT_FIELD_ERROR_NAME)
 
-    const errorId = makeErrorId(baseId)
-
-    return (
-      <TextFieldHint
-        id={errorId}
-        {...hintProps}
-        className={cn("kb-text-field-error", className)}
-        ref={forwardedRef}
-      />
-    )
-  }
-)
+  return <InputError baseId={baseId} {...props} ref={forwardedRef} />
+})
 
 TextFieldError.displayName = "TextField.Error"
 
-function makeHintId(baseId: string) {
-  return `${baseId}-hint`
-}
+const TextFieldLabel = React.forwardRef<InputLabelElement, InputLabelProps>(
+  (props, forwardedRef) => {
+    return <InputLabel {...props} ref={forwardedRef} />
+  }
+)
 
-function makeErrorId(baseId: string) {
-  return `${baseId}-error`
-}
-
-TextFieldSlot.displayName = "TextField.Slot"
+TextFieldLabel.displayName = "TextField.Label"
 
 export {
   TextFieldRoot as Root,
   TextFieldSlot as Slot,
   TextFieldHint as Hint,
   TextFieldError as Error,
+  TextFieldLabel as Label,
 }
