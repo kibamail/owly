@@ -1,7 +1,7 @@
 import {
   responsiveBreakpoints,
   type ResponsiveBreakpoint,
-} from "./breakpoints";
+} from "./breakpoints.js";
 import cn from "classnames";
 
 export type ResponsivePropDefinition<T> = Partial<

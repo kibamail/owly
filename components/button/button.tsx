@@ -4,8 +4,8 @@ import { Slot } from "@radix-ui/react-slot";
 import {
   getResponsiveClassNamesForProp,
   getVariableClassNamesForProp,
-} from "../../utils/props";
-import type { ButtonProps } from "./button.props";
+} from "../utils/props.js";
+import type { ButtonProps } from "./button.props.js";
 
 export const Button = React.forwardRef<React.ElementRef<"button">, ButtonProps>(
   function BaseButton(props, ref) {

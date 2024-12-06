@@ -1,11 +1,11 @@
 import cn from "classnames"
 import React from "react"
 import { Slot } from "@radix-ui/react-slot"
-import type { BadgeProps } from "./badge.props"
+import type { BadgeProps } from "./badge.props.js"
 import {
   getResponsiveClassNamesForProp,
   getVariableClassNamesForProp,
-} from "../../utils/props"
+} from "../utils/props.js"
 
 export const Badge = React.forwardRef<React.ElementRef<"span">, BadgeProps>(
   function BaseBadge(props, ref) {

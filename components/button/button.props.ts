@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import type { ResponsiveProp, SlottableComponentProp } from "../../utils/props";
+import type { ResponsiveProp, SlottableComponentProp } from "../utils/props.js";
 
 export const variants = [
   "primary",
@@ -14,7 +14,7 @@ export const sizes = ["lg", "md", "sm", "xs"] as const;
 
 export interface ButtonProps
   extends SlottableComponentProp,
-    ComponentProps<"button"> {
+  ComponentProps<"button"> {
   variant?: (typeof variants)[number];
   size?: ResponsiveProp<(typeof sizes)[number]>;
   width?: ResponsiveProp<(typeof widths)[number]>;

@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.0.0",
+  "version": "1.0.11",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -11,50 +11,68 @@
     "index.css",
     "tokens.css",
     "components.css",
-    "styles"
+    "styles",
+    "semantic-classes.css"
   ],
   "exports": {
     ".": {
-      "types": "./dist/cjs/index.d.ts",
+      "types": "./dist/esm/index.d.ts",
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     },
     "./badge": {
-      "types": "./dist/cjs/badge/index.d.ts",
+      "types": "./dist/esm/badge/index.d.ts",
       "import": "./dist/esm/badge/index.js",
       "require": "./dist/cjs/badge/index.js"
     },
+    "./text": {
+      "types": "./dist/esm/text/index.d.ts",
+      "import": "./dist/esm/text/index.js",
+      "require": "./dist/cjs/text/index.js"
+    },
+    "./heading": {
+      "types": "./dist/esm/heading/index.d.ts",
+      "import": "./dist/esm/heading/index.js",
+      "require": "./dist/cjs/heading/index.js"
+    },
     "./button": {
-      "types": "./dist/cjs/button/index.d.ts",
+      "types": "./dist/esm/button/index.d.ts",
       "import": "./dist/esm/button/index.js",
       "require": "./dist/cjs/button/index.js"
     },
     "./checkbox": {
-      "types": "./dist/cjs/checkbox/index.d.ts",
+      "types": "./dist/esm/checkbox/index.d.ts",
       "import": "./dist/esm/checkbox/index.js",
       "require": "./dist/cjs/checkbox/index.js"
     },
     "./code-input": {
-      "types": "./dist/cjs/code-input/index.d.ts",
+      "types": "./dist/esm/code-input/index.d.ts",
       "import": "./dist/esm/code-input/index.js",
       "require": "./dist/cjs/code-input/index.js"
     },
     "./input-hint": {
-      "types": "./dist/cjs/input-hint/index.d.ts",
+      "types": "./dist/esm/input-hint/index.d.ts",
       "import": "./dist/esm/input-hint/index.js",
       "require": "./dist/cjs/input-hint/index.js"
     },
     "./input-label": {
-      "types": "./dist/cjs/input-label/index.d.ts",
+      "types": "./dist/esm/input-label/index.d.ts",
       "import": "./dist/esm/input-label/index.js",
       "require": "./dist/cjs/input-label/index.js"
     },
     "./radio-group": {
-      "types": "./dist/cjs/radio-group/index.d.ts",
+      "types": "./dist/esm/radio-group/index.d.ts",
       "import": "./dist/esm/radio-group/index.js",
       "require": "./dist/cjs/radio-group/index.js"
     },
+    "./progress": {
+      "types": "./dist/esm/progress/index.d.ts",
+      "import": "./dist/esm/progress/index.js",
+      "require": "./dist/cjs/progress/index.js"
+    },
     "./styles/badge.css": "./dist/styles/badge.css",
+    "./styles/text.css": "./dist/styles/text.css",
+    "./styles/heading.css": "./dist/styles/heading.css",
     "./styles/button.css": "./dist/styles/button.css",
     "./styles/checkbox.css": "./dist/styles/checkbox.css",
     "./styles/code-input.css": "./dist/styles/code-input.css",
@@ -63,6 +81,11 @@
     "./styles/radio-group.css": "./dist/styles/radio-group.css",
     "./styles/tabs.css": "./dist/styles/tabs.css",
     "./styles/text-field.css": "./dist/styles/text-field.css",
+    "./styles/progress.css": "./dist/styles/progress.css",
+    "./styles/tokens.css": "./tokens.css",
+    "./styles/components.css": "./components.css",
+    "./styles/index.css": "./index.css",
+    "./styles/semantic-classes.css": "./dist/styles/semantic-classes.css",
     "./tabs": {
       "types": "./dist/cjs/tabs/index.d.ts",
       "import": "./dist/esm/tabs/index.js",
@@ -79,12 +102,13 @@
     "build": "pnpm build:clean && pnpm build:css && pnpm build:components && pnpm build:storybook",
     "build:storybook": "storybook build",
     "build:components": "tsx scripts/build-components.ts && pnpm build:components:types",
-    "build:components:types": "tsc --outdir dist/types && tsx scripts/copy-component-types.ts",
+    "build:components:types": "tsc --emitDeclarationOnly --outdir dist/types && tsx scripts/copy-component-types.ts",
+    "build:semantic-classes": "tsx scripts/generate-semantic-classes.ts",
     "build:css:index": "postcss styles/index.css -o index.css",
     "build:css:tokens": "postcss styles/tokens/index.css -o tokens.css",
     "build:css:components": "postcss components/index.css -o components.css",
     "build:css:individual": "tsx scripts/build-individual-component-css.ts",
-    "build:css": "pnpm build:css:index && pnpm build:css:components && pnpm build:css:tokens && pnpm build:css:individual",
+    "build:css": "pnpm build:css:index && pnpm build:css:components && pnpm build:css:tokens && pnpm build:css:individual && pnpm build:semantic-classes",
     "build:clean": "rimraf dist",
     "test": "vitest --run --coverage",
     "test:watch": "vitest"
@@ -109,6 +133,7 @@
     "@radix-ui/react-id": "^1.1.0",
     "@radix-ui/react-presence": "^1.1.1",
     "@radix-ui/react-primitive": "^2.0.0",
+    "@radix-ui/react-progress": "^1.1.0",
     "@radix-ui/react-radio-group": "^1.2.1",
     "@radix-ui/react-roving-focus": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",

@@ -4,7 +4,7 @@ import cn from "classnames"
 export type InputLabelElement = React.ElementRef<"label">
 
 export interface InputLabelProps
-  extends React.ComponentPropsWithoutRef<"label"> {}
+  extends React.ComponentPropsWithoutRef<"label"> { }
 
 const InputLabel = React.forwardRef<InputLabelElement, InputLabelProps>(
   (props, forwardedRef) => {

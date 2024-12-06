@@ -1,6 +1,6 @@
 import React from "react"
 import cn from "classnames"
-import { WarningCircleIcon } from "./input-hint-icons"
+import { WarningCircleIcon } from "./input-hint-icons.js"
 
 export type InputHintElement = React.ElementRef<"span">
 

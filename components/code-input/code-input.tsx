@@ -1,7 +1,7 @@
-import React from "react"
-import { OTPInput, type SlotProps, type OTPInputProps } from "input-otp"
-import { createContext } from "@radix-ui/react-context"
-import { useId } from "@radix-ui/react-id"
+import React from "react";
+import { OTPInput, type SlotProps, type OTPInputProps } from "input-otp";
+import { createContext } from "@radix-ui/react-context";
+import { useId } from "@radix-ui/react-id";
 
 import {
   type InputHintElement,
@@ -10,46 +10,46 @@ import {
   InputError,
   makeErrorId,
   makeHintId,
-} from "../input-hint"
+} from "../input-hint/input-hint.js";
 import {
   InputLabel,
   type InputLabelElement,
   type InputLabelProps,
-} from "../input-label"
+} from "../input-label/input-label.js";
 
-type CodeInputElement = React.ElementRef<typeof OTPInput>
+type CodeInputElement = React.ElementRef<typeof OTPInput>;
 
 export interface CodeInputProps extends Omit<OTPInputProps, "maxLength"> {
-  maxLength?: number
+  maxLength?: number;
 }
 
-const CODE_INPUT_NAME = "CodeInput"
+const CODE_INPUT_NAME = "CodeInput";
 
 const [CodeInputProvider, useCodeInputContext] = createContext<{
-  baseId: string
-}>(CODE_INPUT_NAME)
+  baseId: string;
+}>(CODE_INPUT_NAME);
 
 const CodeInput = React.forwardRef<CodeInputElement, CodeInputProps>(
   (props, forwardedRef) => {
-    const { maxLength = 6, children, ...otpInputProps } = props
+    const { maxLength = 6, children, ...otpInputProps } = props;
 
-    const baseId = useId()
-    const hintId = makeHintId(baseId)
-    const errorId = makeErrorId(baseId)
+    const baseId = useId();
+    const hintId = makeHintId(baseId);
+    const errorId = makeErrorId(baseId);
 
-    const allChildren = React.Children.toArray(children)
+    const allChildren = React.Children.toArray(children);
 
     const label = allChildren.filter(
-      (child) => React.isValidElement(child) && child.type === CodeInputLabel
-    )
+      (child) => React.isValidElement(child) && child.type === CodeInputLabel,
+    );
 
     const hints = allChildren.filter(
-      (child) => React.isValidElement(child) && child.type !== CodeInputLabel
-    )
+      (child) => React.isValidElement(child) && child.type !== CodeInputLabel,
+    );
 
     const isInvalid = allChildren.some(
-      (child) => React.isValidElement(child) && child.type === CodeInputError
-    )
+      (child) => React.isValidElement(child) && child.type === CodeInputError,
+    );
 
     return (
       <CodeInputProvider baseId={baseId}>
@@ -72,18 +72,18 @@ const CodeInput = React.forwardRef<CodeInputElement, CodeInputProps>(
           {hints}
         </div>
       </CodeInputProvider>
-    )
-  }
-)
+    );
+  },
+);
 
-CodeInput.displayName = "CodeInput"
+CodeInput.displayName = "CodeInput";
 
 function CodeInputCaret() {
   return (
     <div className={"kb-code-input-caret"}>
       <div />
     </div>
-  )
+  );
 }
 
 function CodeInputSlot(slot: SlotProps) {
@@ -91,42 +91,47 @@ function CodeInputSlot(slot: SlotProps) {
     <div className={"kb-code-input-slot"} data-active={slot.isActive}>
       {slot.char?.toUpperCase()} {slot.hasFakeCaret ? <CodeInputCaret /> : null}
     </div>
-  )
+  );
 }
 
-const CODE_INPUT_HINT_NAME = "CodeInput.Hint"
+const CODE_INPUT_HINT_NAME = "CodeInput.Hint";
 
 const CodeInputHint = React.forwardRef<
   InputHintElement,
   Omit<InputHintProps, "baseId">
 >((props, forwardedRef) => {
-  const { baseId } = useCodeInputContext(CODE_INPUT_HINT_NAME)
+  const { baseId } = useCodeInputContext(CODE_INPUT_HINT_NAME);
 
-  return <InputHint baseId={baseId} {...props} ref={forwardedRef} />
-})
+  return <InputHint baseId={baseId} {...props} ref={forwardedRef} />;
+});
 
-const CODE_INPUT_ERROR_NAME = "CodeInput.Error"
+const CODE_INPUT_ERROR_NAME = "CodeInput.Error";
 
 const CodeInputError = React.forwardRef<
   InputHintElement,
   Omit<InputHintProps, "baseId">
 >((props, forwardedRef) => {
-  const { baseId } = useCodeInputContext(CODE_INPUT_ERROR_NAME)
+  const { baseId } = useCodeInputContext(CODE_INPUT_ERROR_NAME);
 
-  return <InputError baseId={baseId} {...props} ref={forwardedRef} />
-})
+  return <InputError baseId={baseId} {...props} ref={forwardedRef} />;
+});
 
 const CodeInputLabel = React.forwardRef<InputLabelElement, InputLabelProps>(
   (props, forwardedRef) => {
-    return <InputLabel {...props} ref={forwardedRef} />
-  }
-)
+    return <InputLabel {...props} ref={forwardedRef} />;
+  },
+);
 
-CodeInputLabel.displayName = "CodeInput.Label"
+CodeInputLabel.displayName = "CodeInput.Label";
 
 export {
+  CodeInput,
+  CodeInputHint,
+  CodeInputError,
+  CodeInputLabel,
+  //
   CodeInput as Input,
   CodeInputHint as Hint,
   CodeInputError as Error,
   CodeInputLabel as Label,
-}
+};

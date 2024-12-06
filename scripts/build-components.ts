@@ -10,34 +10,39 @@ const entryPoints = glob
   .sync("components/**/*.ts*")
   .filter((file) => !file.includes(".stories."))
 
-await esbuild.build({
-  format: "esm",
-  target: "es2020",
-  sourcemap: true,
-  minify: true,
-  outdir: esmOutputDirectory,
-  entryPoints,
-})
+async function main() {
+  await esbuild.build({
+    format: "esm",
+    target: "es2020",
+    sourcemap: true,
+    minify: true,
+    outdir: esmOutputDirectory,
+    entryPoints,
+  })
 
-await esbuild.build({
-  format: "cjs",
-  target: "es2020",
-  sourcemap: true,
-  minify: true,
-  outdir: cjsOutputDirectory,
-  entryPoints,
-})
+  await esbuild.build({
+    format: "cjs",
+    target: "es2020",
+    sourcemap: true,
+    minify: true,
+    outdir: cjsOutputDirectory,
+    entryPoints,
+  })
 
-if (!fs.existsSync(esmOutputDirectory)) {
-  fs.mkdirSync(esmOutputDirectory, { recursive: true })
+  if (!fs.existsSync(esmOutputDirectory)) {
+    fs.mkdirSync(esmOutputDirectory, { recursive: true })
+  }
+
+  if (!fs.existsSync(cjsOutputDirectory)) {
+    fs.mkdirSync(cjsOutputDirectory, { recursive: true })
+  }
+
+  fs.writeFileSync(
+    path.join(esmOutputDirectory, "package.json"),
+    JSON.stringify({ type: "module" }, null, 2) + "\n",
+    "utf-8"
+  )
+
 }
 
-if (!fs.existsSync(cjsOutputDirectory)) {
-  fs.mkdirSync(cjsOutputDirectory, { recursive: true })
-}
-
-fs.writeFileSync(
-  path.join(esmOutputDirectory, "package.json"),
-  JSON.stringify({ type: "module" }, null, 2) + "\n",
-  "utf-8"
-)
+main()

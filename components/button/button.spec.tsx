@@ -1,8 +1,8 @@
 import React from "react";
 import { describe, test } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
-import { Button } from "./button";
-import { variants } from "./button.props";
+import { Button } from "./button.js";
+import { variants } from "./button.props.js";
 import { beforeEach } from "vitest";
 
 describe("@button", () => {

@@ -1,17 +1,17 @@
-import React from "react"
-import cn from "classnames"
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import React from "react";
+import cn from "classnames";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 
-import type { CheckboxElement, CheckboxProps } from "./checkbox.props"
-import { useControllableState } from "@radix-ui/react-use-controllable-state"
+import type { CheckboxElement, CheckboxProps } from "./checkbox.props.js";
+import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import {
   getResponsiveClassNamesForProp,
   getVariableClassNamesForProp,
-} from "../../utils/props"
+} from "../utils/props.js";
 
-import { CheckIcon, MinusIcon } from "./checkbox-icons"
+import { CheckIcon, MinusIcon } from "./checkbox-icons.js";
 
-export const Check = React.forwardRef<CheckboxElement, CheckboxProps>(
+const CheckInput = React.forwardRef<CheckboxElement, CheckboxProps>(
   (props, forwardedRef) => {
     const {
       checked,
@@ -21,19 +21,19 @@ export const Check = React.forwardRef<CheckboxElement, CheckboxProps>(
       variant,
       size,
       ...checkboxProps
-    } = props
+    } = props;
     const [state, setState] = useControllableState({
       defaultProp: defaultChecked,
       prop: checked,
       onChange: onCheckedChange,
-    })
+    });
     const { className: variantClassName } = getVariableClassNamesForProp<
       CheckboxProps["variant"]
-    >("variant", variant, "default")
+    >("variant", variant, "default");
 
     const { className: sizeClassName } = getResponsiveClassNamesForProp<
       CheckboxProps["size"]
-    >("size", size, "md")
+    >("size", size, "md");
 
     return (
       <CheckboxPrimitive.Root
@@ -44,7 +44,7 @@ export const Check = React.forwardRef<CheckboxElement, CheckboxProps>(
           "kb-checkbox-root",
           variantClassName,
           sizeClassName,
-          className
+          className,
         )}
         defaultChecked={defaultChecked}
         checked={state}
@@ -55,6 +55,8 @@ export const Check = React.forwardRef<CheckboxElement, CheckboxProps>(
           {state === "indeterminate" ? <MinusIcon /> : <CheckIcon />}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
-    )
-  }
-)
+    );
+  },
+);
+
+export { CheckInput as Checkbox };

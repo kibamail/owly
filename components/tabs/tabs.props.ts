@@ -1,5 +1,5 @@
-import { type TabsProps } from "./tabs-primitive";
-import type { ResponsiveProp } from "../../utils/props";
+import { type TabsProps } from "./tabs-primitive.js";
+import type { ResponsiveProp } from "../utils/props.js";
 
 export const widths = ["fit", "full"] as const;
 

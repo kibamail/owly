@@ -1,42 +1,41 @@
-import React from "react"
-import cn from "classnames"
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
+import React from "react";
+import cn from "classnames";
+import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 
 import {
   type RadioGroupProps,
   type RadioGroupItemProps,
-} from "./radio-group.props"
-import { getResponsiveClassNamesForProp } from "../../utils/props"
-import { CircleIcon } from "./radio-group-icons"
+} from "./radio-group.props.js";
+import { getResponsiveClassNamesForProp } from "../utils/props.js";
+import { CircleIcon } from "./radio-group-icons.js";
 
-type RadioGroupRootElement = React.ElementRef<typeof RadioGroupPrimitive.Root>
+type RadioGroupRootElement = React.ElementRef<typeof RadioGroupPrimitive.Root>;
 
-export const RadioGroup = React.forwardRef<
-  RadioGroupRootElement,
-  RadioGroupProps
->((props, forwardedRef) => {
-  const { size, className } = props
+const RadioGroup = React.forwardRef<RadioGroupRootElement, RadioGroupProps>(
+  (props, forwardedRef) => {
+    const { size, className } = props;
 
-  const { className: sizeClassName } = getResponsiveClassNamesForProp<
-    RadioGroupProps["size"]
-  >("size", size, "md")
+    const { className: sizeClassName } = getResponsiveClassNamesForProp<
+      RadioGroupProps["size"]
+    >("size", size, "md");
 
-  return (
-    <RadioGroupPrimitive.Root
-      className={cn("kb-radio-group", sizeClassName, className)}
-      {...props}
-      ref={forwardedRef}
-    />
-  )
-})
+    return (
+      <RadioGroupPrimitive.Root
+        className={cn("kb-radio-group", sizeClassName, className)}
+        {...props}
+        ref={forwardedRef}
+      />
+    );
+  },
+);
 
-type RadioGroupItemElement = React.ElementRef<typeof RadioGroupPrimitive.Item>
+type RadioGroupItemElement = React.ElementRef<typeof RadioGroupPrimitive.Item>;
 
-export const RadioGroupItem = React.forwardRef<
+const RadioGroupItem = React.forwardRef<
   RadioGroupItemElement,
   RadioGroupItemProps
 >((props, forwardedRef) => {
-  const { className, ...radioItemProps } = props
+  const { className, ...radioItemProps } = props;
 
   return (
     <RadioGroupPrimitive.Item
@@ -51,5 +50,13 @@ export const RadioGroupItem = React.forwardRef<
         <CircleIcon />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
-  )
-})
+  );
+});
+
+export {
+  RadioGroup,
+  RadioGroupItem,
+  //
+  RadioGroup as Group,
+  RadioGroupItem as Item,
+};

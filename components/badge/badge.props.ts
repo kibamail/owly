@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import type { ResponsiveProp, SlottableComponentProp } from "../../utils/props";
+import type { ResponsiveProp, SlottableComponentProp } from "../utils/props.js";
 
 export const variants = ["success", "error", "info", "warning", "neutral"] as const;
 

@@ -1,10 +1,10 @@
 import React from "react";
-import * as TabsPrimitive from "./tabs-primitive";
+import * as TabsPrimitive from "./tabs-primitive.js";
 
-import { type TabsRootProps } from "./tabs.props";
+import { type TabsRootProps } from "./tabs.props.js";
 
 import cn from "classnames";
-import { getResponsiveClassNamesForProp } from "../../utils/props";
+import { getResponsiveClassNamesForProp } from "../utils/props.js";
 
 const TabsRoot = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Root>,

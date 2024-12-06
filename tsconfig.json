@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es2017",
+    "module": "ESNext",
     "moduleResolution": "Node",
-    "lib": ["DOM", "ESNext", "DOM.Iterable"],
+    "lib": [
+      "DOM",
+      "ESNext",
+      "DOM.Iterable"
+    ],
     "jsx": "react",
     "declaration": true,
     "emitDeclarationOnly": true,
