@@ -2,7 +2,7 @@ import React from "react"
 import type { Meta, StoryFn } from "@storybook/react"
 
 import * as TextField from "./text-field"
-import { Eye, Mail } from "iconoir-react"
+import { Eye, Mail, XmarkCircle } from "iconoir-react"
 
 const meta: Meta<typeof TextField> = {
   title: "Components/TextField",
@@ -84,6 +84,43 @@ export const Types: TextFieldStoryFn = () => {
             <TextField.Error>Your password is incorrect.</TextField.Error>
             <TextField.Hint>
               It must be at least 8 characters long
+            </TextField.Hint>
+          </TextField.Root>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>With multiple hints</h5>
+
+        <div className="">
+          <TextField.Root placeholder="Enter a strong password" type="password">
+            <TextField.Slot side="right">
+              <Eye />
+            </TextField.Slot>
+            <TextField.Error>Your password is incorrect.</TextField.Error>
+            <TextField.Hint>
+              <TextField.HintIcon>
+                <XmarkCircle />
+              </TextField.HintIcon>
+              It must be at least 8 characters long
+            </TextField.Hint>
+            <TextField.Hint>
+              <TextField.HintIcon>
+                <XmarkCircle />
+              </TextField.HintIcon>
+              Must contain at least one capital letter
+            </TextField.Hint>
+            <TextField.Hint>
+              <TextField.HintIcon>
+                <XmarkCircle />
+              </TextField.HintIcon>
+              Must have a special character
+            </TextField.Hint>
+            <TextField.Hint>
+              <TextField.HintIcon>
+                <XmarkCircle />
+              </TextField.HintIcon>
+              Must have a number
             </TextField.Hint>
           </TextField.Root>
         </div>

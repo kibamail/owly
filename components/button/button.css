@@ -33,7 +33,7 @@
 
   width: fit-content;
 
-  &:where([data-kb-disabled]) {
+  &:where([data-kb-disabled="true"]) {
     pointer-events: none;
   }
 
@@ -54,6 +54,10 @@
 }
 
 .kb-button {
+  &:where(.kb-loading) {
+    position: relative;
+  }
+
   &:where(.kb-variant-primary) {
     --button-border-color: var(--border-brand);
     --button-background-color: var(--background-brand);
@@ -64,7 +68,7 @@
       0px 1px 0px 0px var(--black-10);
 
     @media (hover: hover) {
-      &:where(:hover):where(:not([data-kb-disabled])) {
+      &:where(:hover):where(:not([data-kb-disabled="true"])) {
         --button-background-color: var(--background-brand-hover);
       }
     }
@@ -73,10 +77,17 @@
       --button-background-color: var(--background-brand-pressed);
     }
 
-    &:where([data-kb-disabled]) {
+    &:where([data-kb-disabled="true"]) {
       --button-border-color: var(--border-disabled);
-      --button-content-color: var(--content-tertiary-inverse);
       --button-background-color: var(--background-brand-disabled);
+    }
+
+    &:where([data-kb-disabled="true"]:not(.kb-loading)) {
+      --button-content-color: var(--content-tertiary-inverse);
+    }
+
+    &:where([data-kb-disabled="true"].kb-loading) {
+      --button-content-color: var(--content-tertiary);
     }
   }
 
@@ -92,7 +103,7 @@
     --button-background-active-color: transparent;
 
     @media (hover: hover) {
-      &:where(:hover):where(:not([data-kb-disabled])) {
+      &:where(:hover):where(:not([data-kb-disabled="true"])) {
         --button-background-color: var(--background-secondary-hover);
       }
     }
@@ -101,10 +112,17 @@
       --button-background-color: var(--background-secondary-pressed);
     }
 
-    &:where([data-kb-disabled]) {
+    &:where([data-kb-disabled="true"]) {
       --button-border-color: var(--border-tertiary);
-      --button-content-color: var(--content-disabled);
       --button-background-color: var(--background-primary);
+    }
+
+    &:where([data-kb-disabled="true"]:not(.kb-loading)) {
+      --button-content-color: var(--content-disabled);
+    }
+
+    &:where([data-kb-disabled="true"].kb-loading) {
+      --button-content-color: var(--content-secondary);
     }
   }
 
@@ -121,7 +139,7 @@
     --button-background-active-color: transparent;
 
     @media (hover: hover) {
-      &:where(:hover):where(:not([data-kb-disabled])) {
+      &:where(:hover):where(:not([data-kb-disabled="true"])) {
         --button-background-color: var(--background-negative-hover);
       }
     }
@@ -130,11 +148,18 @@
       --button-background-color: var(--background-negative-pressed);
     }
 
-    &:where([data-kb-disabled]) {
+    &:where([data-kb-disabled="true"]) {
       /* TODO: Make this box shadow a semantic variable */
       --button-border-color: var(--black-5);
-      --button-content-color: var(--content-primary-inverse);
       --button-background-color: var(--background-negative-subtle);
+    }
+
+    &:where([data-kb-disabled="true"]:not(.kb-loading)) {
+      --button-content-color: var(--content-primary-inverse);
+    }
+
+    &:where([data-kb-disabled="true"].kb-loading) {
+      --button-content-color: var(--content-tertiary);
     }
   }
 
@@ -148,7 +173,7 @@
     --button-background-active-color: transparent;
 
     @media (hover: hover) {
-      &:where(:hover):where(:not([data-kb-disabled])) {
+      &:where(:hover):where(:not([data-kb-disabled="true"])) {
         --button-background-color: var(--background-hover);
       }
     }
@@ -157,7 +182,7 @@
       --button-background-color: var(--background-pressed);
     }
 
-    &:where([data-kb-disabled]) {
+    &:where([data-kb-disabled="true"]) {
       --button-border-color: transparent;
       --button-content-color: var(--content-disabled);
       --button-background-color: transparent;
@@ -201,4 +226,12 @@
   .kb-button {
     transition: none;
   }
+}
+
+.kb-loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
 }

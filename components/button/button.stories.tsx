@@ -1,22 +1,22 @@
-import React from "react";
+import React from "react"
 import {
   SendDiagonal,
   CheckCircle,
   XmarkCircle,
   BadgeCheck,
-} from "iconoir-react";
-import type { Meta, StoryFn } from "@storybook/react";
+} from "iconoir-react"
+import type { Meta, StoryFn } from "@storybook/react"
 
-import { Button } from "./button";
+import { Button } from "./button"
 
 const meta = {
   title: "Components/Button",
   component: Button,
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Button>
 
-export default meta;
+export default meta
 
-type ButtonStoryFn = StoryFn<typeof Button>;
+type ButtonStoryFn = StoryFn<typeof Button>
 
 export const Variants: ButtonStoryFn = () => {
   return (
@@ -34,7 +34,17 @@ export const Variants: ButtonStoryFn = () => {
       <div className="box">
         <h5>Primary disabled</h5>
         <div>
-          <Button variant="primary" disabled>
+          <Button variant="primary" disabled={true}>
+            <SendDiagonal />
+            Save changes
+          </Button>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Primary loading</h5>
+        <div>
+          <Button variant="primary" loading={true}>
             <SendDiagonal />
             Save changes
           </Button>
@@ -62,6 +72,16 @@ export const Variants: ButtonStoryFn = () => {
       </div>
 
       <div className="box">
+        <h5>Secondary loading</h5>
+        <div>
+          <Button variant="secondary" loading>
+            <XmarkCircle />
+            Cancel action
+          </Button>
+        </div>
+      </div>
+
+      <div className="box">
         <h5>Destructive</h5>
         <div>
           <Button variant="destructive">
@@ -75,6 +95,16 @@ export const Variants: ButtonStoryFn = () => {
         <h5>Destructive disabled</h5>
         <div>
           <Button variant="destructive" disabled>
+            <XmarkCircle />
+            Delete emails
+          </Button>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Destructive Loading</h5>
+        <div>
+          <Button variant="destructive" loading>
             <XmarkCircle />
             Delete emails
           </Button>
@@ -100,9 +130,19 @@ export const Variants: ButtonStoryFn = () => {
           </Button>
         </div>
       </div>
+
+      <div className="box">
+        <h5>Tertiary loading</h5>
+        <div>
+          <Button variant="tertiary" loading>
+            <BadgeCheck />
+            Clean up emails
+          </Button>
+        </div>
+      </div>
     </>
-  );
-};
+  )
+}
 
 export const Widths: ButtonStoryFn = () => {
   return (
@@ -133,5 +173,5 @@ export const Widths: ButtonStoryFn = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}

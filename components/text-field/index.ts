@@ -4,10 +4,13 @@ export {
   Hint,
   Error,
   Label,
+  HintIcon,
+  TextFieldHintIcon,
+  type TextFieldSlotProps,
   TextFieldHint,
   TextFieldRoot,
   TextFieldSlot,
   TextFieldError,
   TextFieldLabel,
   type TextFieldProps,
-} from "./text-field.js";
+} from "./text-field.js"
