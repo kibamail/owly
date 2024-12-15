@@ -30,6 +30,11 @@
       "import": "./dist/esm/text/index.js",
       "require": "./dist/cjs/text/index.js"
     },
+    "./alert": {
+      "types": "./dist/esm/alert/index.d.ts",
+      "import": "./dist/esm/alert/index.js",
+      "require": "./dist/cjs/alert/index.js"
+    },
     "./heading": {
       "types": "./dist/esm/heading/index.d.ts",
       "import": "./dist/esm/heading/index.js",
@@ -88,6 +93,7 @@
     "./styles/text-field.css": "./dist/styles/text-field.css",
     "./styles/progress.css": "./dist/styles/progress.css",
     "./styles/spinner.css": "./dist/styles/spinner.css",
+    "./styles/alert.css": "./dist/styles/alert.css",
     "./styles/tokens.css": "./tokens.css",
     "./styles/components.css": "./components.css",
     "./styles/index.css": "./index.css",

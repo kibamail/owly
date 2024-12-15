@@ -16,9 +16,9 @@ export const Button = React.forwardRef<React.ElementRef<"button">, ButtonProps>(
       className: classNameProp,
       variant,
       size,
-      loading,
+      loading = false,
       width,
-      disabled = props.loading,
+      disabled = props.loading ?? false,
       children,
       ...buttonProps
     } = props
