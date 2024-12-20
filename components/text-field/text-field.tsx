@@ -35,8 +35,6 @@ const TextFieldRoot = React.forwardRef<TextFieldElement, TextFieldProps>(
     const { className, children, ...inputProps } = props
 
     const baseId = useId()
-    const hintId = makeHintId(baseId)
-    const errorId = makeErrorId(baseId)
 
     function onPointerDown(event: React.PointerEvent<HTMLDivElement>) {
       const target = event.target as HTMLElement

@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.0.18",
+  "version": "1.0.24",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -91,6 +91,7 @@
     "./styles/radio-group.css": "./dist/styles/radio-group.css",
     "./styles/tabs.css": "./dist/styles/tabs.css",
     "./styles/text-field.css": "./dist/styles/text-field.css",
+    "./styles/select-field.css": "./dist/styles/select-field.css",
     "./styles/progress.css": "./dist/styles/progress.css",
     "./styles/spinner.css": "./dist/styles/spinner.css",
     "./styles/alert.css": "./dist/styles/alert.css",
@@ -107,6 +108,11 @@
       "types": "./dist/cjs/text-field/index.d.ts",
       "import": "./dist/esm/text-field/index.js",
       "require": "./dist/cjs/text-field/index.js"
+    },
+    "./select-field": {
+      "types": "./dist/cjs/select-field/index.d.ts",
+      "import": "./dist/esm/select-field/index.js",
+      "require": "./dist/cjs/select-field/index.js"
     }
   },
   "scripts": {
@@ -148,6 +154,8 @@
     "@radix-ui/react-progress": "^1.1.0",
     "@radix-ui/react-radio-group": "^1.2.1",
     "@radix-ui/react-roving-focus": "^1.1.0",
+    "@radix-ui/react-scroll-area": "^1.2.2",
+    "@radix-ui/react-select": "^2.1.4",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.1",
     "@radix-ui/react-use-controllable-state": "^1.1.0",

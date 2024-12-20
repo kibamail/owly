@@ -4,9 +4,9 @@ import { Slot } from "@radix-ui/react-slot"
 import {
   getVariableClassNamesForProp,
   type SlottableComponentProp,
-} from "../utils/props"
+} from "../utils/props.js"
 
-import { Text } from "../text/text"
+import { Text } from "../text/text.js"
 
 type AlertRootElement = React.ElementRef<"div">
 

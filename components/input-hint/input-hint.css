@@ -7,6 +7,7 @@
   svg {
     width: var(--spacing-xl);
     height: var(--spacing-xl);
+    flex-shrink: 0;
   }
 
   .kb-input-hint-text {

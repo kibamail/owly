@@ -30,6 +30,10 @@
   font-family: var(--default-font-family);
 }
 
+.w-full {
+  width: 100%;
+}
+
 .flex {
   display: flex;
 }
