@@ -81,3 +81,70 @@ export const Width: TabsStoryFn = () => {
     </>
   );
 };
+
+export const Variants: TabsStoryFn = () => {
+  return (
+    <>
+      <div className="box">
+        <h5>Primary</h5>
+        <div>
+          <Tabs.Root defaultValue="pending">
+            <Tabs.List>
+              <Tabs.Trigger value="sent">
+                Sent
+              </Tabs.Trigger>
+              <Tabs.Trigger value="pending">
+                Scheduled
+              </Tabs.Trigger>
+              <Tabs.Trigger value="archived">
+                Drafts
+              </Tabs.Trigger>
+
+              <Tabs.Indicator />
+            </Tabs.List>
+
+            <Tabs.Content value="pending">
+              These newsletters are pending
+            </Tabs.Content>
+            <Tabs.Content value="sent">
+              These newsletters were already sent
+            </Tabs.Content>
+            <Tabs.Content value="archived">Archived newsletters</Tabs.Content>
+          </Tabs.Root>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Secondary</h5>
+        <div>
+          <Tabs.Root defaultValue="pending" variant='secondary'>
+            <Tabs.List>
+              <Tabs.Trigger value="sent">
+                <SendDiagonal />
+                Sent
+              </Tabs.Trigger>
+              <Tabs.Trigger value="pending">
+                <MinusCircle />
+                Pending
+              </Tabs.Trigger>
+              <Tabs.Trigger value="archived">
+                <Archive />
+                Archived
+              </Tabs.Trigger>
+
+              <Tabs.Indicator />
+            </Tabs.List>
+
+            <Tabs.Content value="pending">
+              These newsletters are pending
+            </Tabs.Content>
+            <Tabs.Content value="sent">
+              These newsletters were already sent
+            </Tabs.Content>
+            <Tabs.Content value="archived">Archived newsletters</Tabs.Content>
+          </Tabs.Root>
+        </div>
+      </div>
+    </>
+  );
+};

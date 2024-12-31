@@ -1,6 +1,6 @@
 .kb-input-hint {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--spacing-xs);
   color: var(--content-tertiary);
 

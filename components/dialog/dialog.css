@@ -1,0 +1,67 @@
+.kb-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-secondary);
+}
+
+.kb-dialog-content {
+  width: 100%;
+  max-width: 560px;
+  background: var(--background-primary);
+  border-radius: var(--radius-3xl);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 50;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border-width: var(--width-px);
+  border-color: var(--border-tertiary);
+  border-style: solid;
+
+  /* TODO: Make this box shadow semantic */
+  box-shadow: 0px 16px 24px -8px var(--black-10);
+}
+
+.kb-dialog-footer {
+  border-top-width: var(--width-px);
+  border-top-color: var(--border-tertiary);
+  border-top-style: solid;
+  padding: var(--spacing-2xl);
+}
+
+.kb-dialog-header {
+  padding: var(--spacing-2xl);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+
+  border-bottom-width: var(--width-px);
+  border-bottom-color: var(--border-tertiary);
+  border-bottom-style: solid;
+
+  .kb-dialog-close {
+    position: absolute;
+    right: var(--spacing-xl);
+    top: var(--spacing-xl);
+    color: var(--content-disabled);
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:where(:hover) {
+        color: var(--content-tertiary);
+      }
+    }
+
+    svg {
+      width: var(--spacing-2xl);
+      height: var(--spacing-2xl);
+    }
+  }
+}
+
+.kb-dialog-description {
+  color: var(--content-secondary);
+}

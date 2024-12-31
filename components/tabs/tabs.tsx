@@ -4,20 +4,26 @@ import * as TabsPrimitive from "./tabs-primitive.js";
 import { type TabsRootProps } from "./tabs.props.js";
 
 import cn from "classnames";
-import { getResponsiveClassNamesForProp } from "../utils/props.js";
+import { getResponsiveClassNamesForProp, getVariableClassNamesForProp } from "../utils/props.js";
+
+
 
 const TabsRoot = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Root>,
   TabsRootProps
->(({ className, width, ...props }, ref) => {
+>(({ className, width, variant, ...props }, ref) => {
   const { className: widthClassName } = getResponsiveClassNamesForProp<
     TabsRootProps["width"]
   >("width", width, "fit");
 
+  const { className: variantClassName } = getVariableClassNamesForProp<
+    TabsRootProps["variant"]
+  >("variant", variant, "primary");
+
   return (
     <TabsPrimitive.Root
       ref={ref}
-      className={cn("kb-tabs-root", widthClassName, className)}
+      className={cn("kb-tabs-root", widthClassName, variantClassName, className)}
       {...props}
     />
   );

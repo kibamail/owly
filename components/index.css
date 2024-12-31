@@ -2,6 +2,7 @@
 @import "./tabs/tabs.css";
 @import "./text/text.css";
 @import "./badge/badge.css";
+@import "./dialog/dialog.css";
 @import "./button/button.css";
 @import "./heading/heading.css";
 @import "./spinner/spinner.css";

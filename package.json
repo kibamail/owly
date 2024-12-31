@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.0.24",
+  "version": "1.0.27",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -24,6 +24,11 @@
       "types": "./dist/esm/badge/index.d.ts",
       "import": "./dist/esm/badge/index.js",
       "require": "./dist/cjs/badge/index.js"
+    },
+    "./dialog": {
+      "types": "./dist/esm/dialog/index.d.ts",
+      "import": "./dist/esm/dialog/index.js",
+      "require": "./dist/cjs/dialog/index.js"
     },
     "./text": {
       "types": "./dist/esm/text/index.d.ts",
@@ -95,6 +100,7 @@
     "./styles/progress.css": "./dist/styles/progress.css",
     "./styles/spinner.css": "./dist/styles/spinner.css",
     "./styles/alert.css": "./dist/styles/alert.css",
+    "./styles/dialog.css": "./dist/styles/dialog.css",
     "./styles/tokens.css": "./tokens.css",
     "./styles/components.css": "./components.css",
     "./styles/index.css": "./index.css",
@@ -147,6 +153,7 @@
     "@radix-ui/react-checkbox": "^1.1.2",
     "@radix-ui/react-compose-refs": "^1.1.0",
     "@radix-ui/react-context": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-direction": "^1.1.0",
     "@radix-ui/react-id": "^1.1.0",
     "@radix-ui/react-presence": "^1.1.1",

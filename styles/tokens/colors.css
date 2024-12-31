@@ -67,6 +67,7 @@
 /* * * * * * * * * * * * * * * * * * * */
 :root {
   --overlay-primary: var(--gray-900);
+  --overlay-secondary: rgba(17, 17, 17, 0.2);
 }
 
 /* * * * * * * * * * * * * * * * * * * */
