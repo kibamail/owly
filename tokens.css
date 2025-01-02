@@ -349,7 +349,6 @@
     line-height: var(--line-height-md);
     letter-spacing: var(--letter-spacing-none);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
 }
 :root --apply-kb-text-body-sm {
     font-weight: var(--font-weight-regular);
@@ -357,7 +356,6 @@
     line-height: var(--line-height-sm);
     letter-spacing: var(--letter-spacing-none);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
 }
 :root --apply-kb-text-body-xs {
     font-weight: var(--font-weight-regular);

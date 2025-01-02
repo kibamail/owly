@@ -1,12 +1,17 @@
-import React from "react";
-import * as TabsPrimitive from "./tabs-primitive.js";
+import React from "react"
+import * as TabsPrimitive from "./tabs-primitive.js"
 
-import { type TabsRootProps } from "./tabs.props.js";
+import { type TabsRootProps } from "./tabs.props.js"
 
-import cn from "classnames";
-import { getResponsiveClassNamesForProp, getVariableClassNamesForProp } from "../utils/props.js";
+import cn from "classnames"
+import {
+  getResponsiveClassNamesForProp,
+  getVariableClassNamesForProp,
+} from "../utils/props.js"
 
+import { createContext } from "@radix-ui/react-context"
 
+const [TabsProvider, useTabsContext] = createContext<TabsRootProps>("Tabs")
 
 const TabsRoot = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Root>,
@@ -14,47 +19,70 @@ const TabsRoot = React.forwardRef<
 >(({ className, width, variant, ...props }, ref) => {
   const { className: widthClassName } = getResponsiveClassNamesForProp<
     TabsRootProps["width"]
-  >("width", width, "fit");
+  >("width", width, "fit")
 
   const { className: variantClassName } = getVariableClassNamesForProp<
     TabsRootProps["variant"]
-  >("variant", variant, "primary");
+  >("variant", variant, "primary")
 
   return (
-    <TabsPrimitive.Root
-      ref={ref}
-      className={cn("kb-tabs-root", widthClassName, variantClassName, className)}
-      {...props}
-    />
-  );
-});
+    <TabsProvider variant={variant} width={width}>
+      <TabsPrimitive.Root
+        ref={ref}
+        className={cn(
+          "kb-tabs-root",
+          widthClassName,
+          variantClassName,
+          className
+        )}
+        {...props}
+      />
+    </TabsProvider>
+  )
+})
 
-TabsRoot.displayName = TabsPrimitive.Root.displayName;
+TabsRoot.displayName = TabsPrimitive.Root.displayName
 
 const TabsList = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.List
-    ref={ref}
-    className={cn("kb-tabs-list", className)}
-    {...props}
-  />
-));
-TabsList.displayName = TabsPrimitive.List.displayName;
+>(({ className, ...props }, ref) => {
+  const { variant } = useTabsContext("TabsList")
+
+  const { className: variantClassName } = getVariableClassNamesForProp<
+    TabsRootProps["variant"]
+  >("variant", variant, "primary")
+
+  return (
+    <TabsPrimitive.List
+      ref={ref}
+      className={cn("kb-tabs-list", variantClassName, className)}
+      {...props}
+    />
+  )
+})
+TabsList.displayName = TabsPrimitive.List.displayName
 
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.Trigger
-    ref={ref}
-    className={cn("kb-reset kb-tabs-trigger", className)}
-    {...props}
-  />
-));
+>(({ className, ...props }, ref) => {
+  const { variant } = useTabsContext("TabsList")
 
-TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
+  const { className: variantClassName } = getVariableClassNamesForProp<
+    TabsRootProps["variant"]
+  >("variant", variant, "primary")
+
+  return (
+    <TabsPrimitive.Trigger
+      ref={ref}
+      className={cn("kb-reset kb-tabs-trigger", variantClassName, className)}
+      {...props}
+    />
+  )
+})
+
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 
 const TabsContent = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Content>,
@@ -65,25 +93,33 @@ const TabsContent = React.forwardRef<
     className={cn("kb-tabs-content", className)}
     {...props}
   />
-));
-TabsContent.displayName = TabsPrimitive.Content.displayName;
+))
+TabsContent.displayName = TabsPrimitive.Content.displayName
 
 const TabsIndicator = React.forwardRef<
   React.ElementRef<(typeof TabsPrimitive)["Indicator"]>,
   React.ComponentPropsWithoutRef<(typeof TabsPrimitive)["Indicator"]>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.Indicator
-    ref={ref}
-    className={cn("kb-tabs-indicator", className)}
-    {...props}
-  />
-));
+>(({ className, ...props }, ref) => {
+  const { variant } = useTabsContext("TabsList")
 
-const Root = TabsRoot;
-const List = TabsList;
-const Trigger = TabsTrigger;
-const Content = TabsContent;
-const Indicator = TabsIndicator;
+  const { className: variantClassName } = getVariableClassNamesForProp<
+    TabsRootProps["variant"]
+  >("variant", variant, "primary")
+
+  return (
+    <TabsPrimitive.Indicator
+      ref={ref}
+      className={cn("kb-tabs-indicator", variantClassName, className)}
+      {...props}
+    />
+  )
+})
+
+const Root = TabsRoot
+const List = TabsList
+const Trigger = TabsTrigger
+const Content = TabsContent
+const Indicator = TabsIndicator
 
 export {
   //
@@ -97,4 +133,4 @@ export {
   Trigger,
   Content,
   Indicator,
-};
+}

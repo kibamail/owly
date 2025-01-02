@@ -31,6 +31,29 @@
       color: var(--content-secondary);
     }
   }
+
+  @apply --kb-text-body-md;
+
+  &:where(.kb-variant-primary) {
+    z-index: 2;
+
+    display: flex;
+    padding: var(--spacing-sm) var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex: 1 0 0;
+    align-self: stretch;
+
+    font-family: var(--default-font-family);
+
+    border-width: 0px;
+    background: transparent;
+
+    &:where([data-state="inactive"]) {
+      color: var(--content-tertiary);
+    }
+  }
 }
 
 .kb-tabs-list {
@@ -44,80 +67,56 @@
 
   height: var(--tabs-list-height);
   box-sizing: border-box;
-}
 
-.kb-tabs-indicator {
-  transition: transform 250ms ease-in-out;
-}
-
-.kb-tabs-root {
   &:where(.kb-variant-primary) {
-    .kb-tabs-list {
-      --tabs-list-height: 36px;
+    --tabs-list-height: 36px;
 
-      border-radius: var(--radius-lg);
-      border: var(--width-px) solid var(--border-tertiary);
-      background: var(--background-hover);
-      /* TODO: Make this box shadow a semantic variable */
-      box-shadow: 0px 2px 0px 0px var(--black-5) inset,
-        0px -2px 0px 0px var(--white-100) inset;
+    border-radius: var(--radius-lg);
+    border: var(--width-px) solid var(--border-tertiary);
+    background: var(--background-hover);
+    /* TODO: Make this box shadow a semantic variable */
+    box-shadow: 0px 2px 0px 0px var(--black-5) inset,
+      0px -2px 0px 0px var(--white-100) inset;
 
-      padding: var(--spacing-xs);
-    }
+    padding: var(--spacing-xs);
 
-    .kb-tabs-trigger {
-      z-index: 2;
-
-      display: flex;
-      padding: var(--spacing-sm) var(--spacing-md);
-      justify-content: center;
-      align-items: center;
-      gap: var(--spacing-md);
-      flex: 1 0 0;
-      align-self: stretch;
-
-      font-family: var(--default-font-family);
-
-      border-width: 0px;
-      background: transparent;
-
-      &:where([data-state="inactive"]) {
-        color: var(--content-tertiary);
-      }
-
-      @apply --kb-text-body-md;
-    }
-
-    .kb-tabs-indicator {
-      width: calc(var(--tabs-indicator-active-position-size) * 1px);
-
-      height: calc(100% - calc(var(--spacing-xs) * 2));
-
-      border-radius: var(--radius-md);
-
-      background: var(--background-primary);
-      /* TODO: Make this box shadow a semantic variable */
-      box-shadow: 0px 2px 4px 0px var(--black-5);
-    }
-  }
-
-  &:where(.kb-variant-secondary) {
-    .kb-tabs-list {
+    &:where(.kb-variant-secondary) {
       --tabs-list-height: 36px;
 
       height: var(--tabs-list-height);
       border-bottom: var(--width-px) solid var(--black-5);
     }
+  }
 
-    .kb-tabs-indicator {
-      height: 4px;
-      bottom: -4px;
-      background: var(--content-brand);
-      width: calc(var(--tabs-indicator-active-position-size) * 1px);
-      border-radius: var(--radius-full);
-      box-shadow: 0px 2px 0px 0px var(--white-5) inset,
-        0px 1px 0px 0px var(--black-10);
-    }
+  &:where(.kb-variant-secondary) {
+    border-bottom: var(--width-px) solid var(--black-5);
+  }
+}
+
+.kb-tabs-indicator {
+  transition: transform 250ms ease-in-out;
+
+  &:where(.kb-variant-primary) {
+    width: calc(var(--tabs-indicator-active-position-size) * 1px);
+
+    height: calc(100% - calc(var(--spacing-xs) * 2));
+
+    border-radius: var(--radius-md);
+
+    background: var(--background-primary);
+    /* TODO: Make this box shadow a semantic variable */
+    box-shadow: 0px 2px 4px 0px var(--black-5);
+  }
+
+  &:where(.kb-variant-secondary) {
+    height: 4px;
+    bottom: -4px;
+    background: var(--content-brand);
+    width: calc(var(--tabs-indicator-active-position-size) * 1px);
+    border-radius: var(--radius-full);
+
+    box-shadow: 0px 2px 0px 0px var(--white-5) inset,
+      0px 1px 0px 0px var(--black-10);
   }
 }
 

@@ -145,7 +145,6 @@
     line-height: var(--line-height-2xl);
     letter-spacing: var(--letter-spacing-xsmall);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
   }
 
   --apply-kb-text-heading-lg {
@@ -154,7 +153,6 @@
     line-height: var(--line-height-3xl);
     letter-spacing: var(--letter-spacing-xsmall);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
   }
 
   --apply-kb-text-heading-md {
@@ -163,7 +161,6 @@
     line-height: var(--line-height-2xl);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
   }
 
   --apply-kb-text-heading-sm {
@@ -172,7 +169,6 @@
     line-height: var(--line-height-xl);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
   }
 
   --apply-kb-text-heading-xs {
@@ -181,7 +177,6 @@
     line-height: var(--line-height-lg);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
   }
 
   /* * * * * * * * * * * * * * * * * * * */
@@ -195,7 +190,6 @@
     line-height: var(--line-height-xl);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
   }
 
   --apply-kb-text-body-lg {
@@ -204,7 +198,6 @@
     line-height: var(--line-height-lg);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
   }
 
   --apply-kb-text-body-md {
@@ -213,7 +206,6 @@
     line-height: var(--line-height-md);
     letter-spacing: var(--letter-spacing-none);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
   }
 
   --apply-kb-text-body-sm {
@@ -222,7 +214,6 @@
     line-height: var(--line-height-sm);
     letter-spacing: var(--letter-spacing-none);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
   }
 
   --apply-kb-text-body-xs {
@@ -231,6 +222,5 @@
     line-height: var(--line-height-xs);
     letter-spacing: var(--letter-spacing-none);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
   }
 }
