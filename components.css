@@ -230,7 +230,6 @@
     line-height: var(--line-height-xs);
     letter-spacing: var(--letter-spacing-none);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
 }
 .kb-text:where(.kb-r-size-sm) {
     font-weight: var(--font-weight-regular);
@@ -252,7 +251,6 @@
     line-height: var(--line-height-lg);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
 }
 .kb-text:where(.kb-r-size-xl) {
     font-weight: var(--font-weight-regular);
@@ -260,7 +258,6 @@
     line-height: var(--line-height-xl);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
 }
 @media (min-width: 640px) {
     .kb-text:where(.sm\:kb-r-size-xs) {
@@ -269,7 +266,6 @@
         line-height: var(--line-height-xs);
         letter-spacing: var(--letter-spacing-none);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.sm\:kb-r-size-sm) {
         font-weight: var(--font-weight-regular);
@@ -291,7 +287,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.sm\:kb-r-size-xl) {
         font-weight: var(--font-weight-regular);
@@ -299,7 +294,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
 }
 @media (min-width: 768px) {
@@ -309,7 +303,6 @@
         line-height: var(--line-height-xs);
         letter-spacing: var(--letter-spacing-none);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.md\:kb-r-size-sm) {
         font-weight: var(--font-weight-regular);
@@ -331,7 +324,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.md\:kb-r-size-xl) {
         font-weight: var(--font-weight-regular);
@@ -339,7 +331,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
 }
 @media (min-width: 1024px) {
@@ -349,7 +340,6 @@
         line-height: var(--line-height-xs);
         letter-spacing: var(--letter-spacing-none);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.lg\:kb-r-size-sm) {
         font-weight: var(--font-weight-regular);
@@ -371,7 +361,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.lg\:kb-r-size-xl) {
         font-weight: var(--font-weight-regular);
@@ -379,7 +368,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
 }
 @media (min-width: 1280px) {
@@ -389,7 +377,6 @@
         line-height: var(--line-height-xs);
         letter-spacing: var(--letter-spacing-none);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.xl\:kb-r-size-sm) {
         font-weight: var(--font-weight-regular);
@@ -411,7 +398,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.xl\:kb-r-size-xl) {
         font-weight: var(--font-weight-regular);
@@ -419,7 +405,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
 }
 @media (min-width: 1536px) {
@@ -429,7 +414,6 @@
         line-height: var(--line-height-xs);
         letter-spacing: var(--letter-spacing-none);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.\32xl\:kb-r-size-sm) {
         font-weight: var(--font-weight-regular);
@@ -451,7 +435,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
     .kb-text:where(.\32xl\:kb-r-size-xl) {
         font-weight: var(--font-weight-regular);
@@ -459,7 +442,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-body);
-        color: var(--content-primary);
     }
 }
 .kb-badge {
@@ -977,7 +959,6 @@
     line-height: var(--line-height-lg);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 .kb-heading:where(.kb-r-variant-heading):where(.kb-r-size-sm) {
     font-weight: var(--font-weight-semibold);
@@ -985,7 +966,6 @@
     line-height: var(--line-height-xl);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 .kb-heading:where(.kb-r-variant-heading):where(.kb-r-size-md) {
     font-weight: var(--font-weight-semibold);
@@ -993,7 +973,6 @@
     line-height: var(--line-height-2xl);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 .kb-heading:where(.kb-r-variant-heading):where(.kb-r-size-lg) {
     font-weight: var(--font-weight-semibold);
@@ -1001,7 +980,6 @@
     line-height: var(--line-height-3xl);
     letter-spacing: var(--letter-spacing-xsmall);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 .kb-heading:where(.kb-r-variant-heading):where(.kb-r-size-xl) {
     font-weight: var(--font-weight-semibold);
@@ -1009,7 +987,6 @@
     line-height: var(--line-height-2xl);
     letter-spacing: var(--letter-spacing-xsmall);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 .kb-heading:where(.kb-r-variant-display):where(.kb-r-size-xs) {
     font-weight: var(--font-weight-regular);
@@ -1058,7 +1035,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.sm\:kb-r-variant-heading):where(.sm\:kb-r-size-sm) {
         font-weight: var(--font-weight-semibold);
@@ -1066,7 +1042,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.sm\:kb-r-variant-heading):where(.sm\:kb-r-size-md) {
         font-weight: var(--font-weight-semibold);
@@ -1074,7 +1049,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.sm\:kb-r-variant-heading):where(.sm\:kb-r-size-lg) {
         font-weight: var(--font-weight-semibold);
@@ -1082,7 +1056,6 @@
         line-height: var(--line-height-3xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.sm\:kb-r-variant-heading):where(.sm\:kb-r-size-xl) {
         font-weight: var(--font-weight-semibold);
@@ -1090,7 +1063,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.sm\:kb-r-variant-display):where(.sm\:kb-r-size-xs) {
         font-weight: var(--font-weight-regular);
@@ -1140,7 +1112,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.md\:kb-r-variant-heading):where(.md\:kb-r-size-sm) {
         font-weight: var(--font-weight-semibold);
@@ -1148,7 +1119,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.md\:kb-r-variant-heading):where(.md\:kb-r-size-md) {
         font-weight: var(--font-weight-semibold);
@@ -1156,7 +1126,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.md\:kb-r-variant-heading):where(.md\:kb-r-size-lg) {
         font-weight: var(--font-weight-semibold);
@@ -1164,7 +1133,6 @@
         line-height: var(--line-height-3xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.md\:kb-r-variant-heading):where(.md\:kb-r-size-xl) {
         font-weight: var(--font-weight-semibold);
@@ -1172,7 +1140,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.md\:kb-r-variant-display):where(.md\:kb-r-size-xs) {
         font-weight: var(--font-weight-regular);
@@ -1222,7 +1189,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.lg\:kb-r-variant-heading):where(.lg\:kb-r-size-sm) {
         font-weight: var(--font-weight-semibold);
@@ -1230,7 +1196,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.lg\:kb-r-variant-heading):where(.lg\:kb-r-size-md) {
         font-weight: var(--font-weight-semibold);
@@ -1238,7 +1203,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.lg\:kb-r-variant-heading):where(.lg\:kb-r-size-lg) {
         font-weight: var(--font-weight-semibold);
@@ -1246,7 +1210,6 @@
         line-height: var(--line-height-3xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.lg\:kb-r-variant-heading):where(.lg\:kb-r-size-xl) {
         font-weight: var(--font-weight-semibold);
@@ -1254,7 +1217,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.lg\:kb-r-variant-display):where(.lg\:kb-r-size-xs) {
         font-weight: var(--font-weight-regular);
@@ -1304,7 +1266,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.xl\:kb-r-variant-heading):where(.xl\:kb-r-size-sm) {
         font-weight: var(--font-weight-semibold);
@@ -1312,7 +1273,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.xl\:kb-r-variant-heading):where(.xl\:kb-r-size-md) {
         font-weight: var(--font-weight-semibold);
@@ -1320,7 +1280,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.xl\:kb-r-variant-heading):where(.xl\:kb-r-size-lg) {
         font-weight: var(--font-weight-semibold);
@@ -1328,7 +1287,6 @@
         line-height: var(--line-height-3xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.xl\:kb-r-variant-heading):where(.xl\:kb-r-size-xl) {
         font-weight: var(--font-weight-semibold);
@@ -1336,7 +1294,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.xl\:kb-r-variant-display):where(.xl\:kb-r-size-xs) {
         font-weight: var(--font-weight-regular);
@@ -1386,7 +1343,6 @@
         line-height: var(--line-height-lg);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.\32xl\:kb-r-variant-heading):where(.\32xl\:kb-r-size-sm) {
         font-weight: var(--font-weight-semibold);
@@ -1394,7 +1350,6 @@
         line-height: var(--line-height-xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.\32xl\:kb-r-variant-heading):where(.\32xl\:kb-r-size-md) {
         font-weight: var(--font-weight-semibold);
@@ -1402,7 +1357,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-small);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.\32xl\:kb-r-variant-heading):where(.\32xl\:kb-r-size-lg) {
         font-weight: var(--font-weight-semibold);
@@ -1410,7 +1364,6 @@
         line-height: var(--line-height-3xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.\32xl\:kb-r-variant-heading):where(.\32xl\:kb-r-size-xl) {
         font-weight: var(--font-weight-semibold);
@@ -1418,7 +1371,6 @@
         line-height: var(--line-height-2xl);
         letter-spacing: var(--letter-spacing-xsmall);
         font-family: var(--default-font-family-heading);
-        color: var(--content-primary);
     }
     .kb-heading:where(.\32xl\:kb-r-variant-display):where(.\32xl\:kb-r-size-xs) {
         font-weight: var(--font-weight-regular);
@@ -1752,6 +1704,92 @@
 .kb-checkbox-root:where([data-state="checked"],[data-state="indeterminate"]) .kb-checkbox-indicator {
     color: var(--white-100);
 }
+.kb-calendar-root {
+    display: flex;
+    flex-direction: column;
+    max-width: 340px;
+    height: 356px;
+    max-height: 356px;
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    background-color: var(--background-primary);
+    box-shadow: 0px 16px 24px -8px var(--black-10);
+    border: 1px solid var(--border-tertiary);
+}
+.kb-calendar-header {
+    height: 36px;
+    box-sizing: border-box;
+    padding: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-secondary);
+    border-radius: var(--radius-lg);
+}
+.kb-calendar-header-button {
+    color: var(--content-secondary);
+}
+.kb-calendar-week-days {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-xs);
+}
+.kb-calendar-week-day {
+    text-transform: uppercase;
+    color: var(--content-tertiary);
+    font-size: var(--font-body-md);
+    width: var(--spacing-5xl);
+    height: var(--spacing-5xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.kb-calendar-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: var(--spacing-xs);
+}
+.kb-calendar-day {
+    width: var(--spacing-5xl);
+    height: var(--spacing-5xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-width: var(--width-px);
+    border-color: transparent;
+    border-radius: var(--radius-md);
+    background-color: transparent;
+}
+@media (hover: hover) {
+    .kb-calendar-day:where(:hover:not(.kb-calendar-day-disabled)) {
+        background-color: var(--background-hover);
+        cursor: pointer;
+    }
+}
+.kb-calendar-day:where(.kb-calendar-day-in-current-month) {
+    color: var(--content-secondary);
+}
+.kb-calendar-day:where(:not(.kb-calendar-day-in-current-month)) {
+    color: var(--content-disabled);
+}
+.kb-calendar-day:where(.kb-calendar-day-selected) {
+    background-color: var(--background-brand);
+    color: var(--white-100);
+}
+.kb-calendar-day:where(.kb-calendar-day-disabled) {
+    color: var(--content-disabled);
+    cursor: not-allowed;
+}
+.kb-calendar-day:where(.kb-calendar-day-now) {
+    border-color: var(--border-brand);
+}
+.kb-calendar-header-label {
+    color: var(--content-secondary);
+}
 .kb-input-label {
     font-weight: var(--font-weight-regular);
     font-size: var(--font-body-md);
@@ -1816,7 +1854,6 @@
     line-height: var(--line-height-lg);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
     display: flex;
     align-items: center;
     justify-content: center;

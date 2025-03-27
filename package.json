@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.0.32",
+  "version": "1.0.36",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -24,6 +24,11 @@
       "types": "./dist/esm/badge/index.d.ts",
       "import": "./dist/esm/badge/index.js",
       "require": "./dist/cjs/badge/index.js"
+    },
+    "./calendar": {
+      "types": "./dist/esm/calendar/index.d.ts",
+      "import": "./dist/esm/calendar/index.js",
+      "require": "./dist/cjs/calendar/index.js"
     },
     "./dialog": {
       "types": "./dist/esm/dialog/index.d.ts",
@@ -87,6 +92,7 @@
     },
     "./styles/badge.css": "./dist/styles/badge.css",
     "./styles/text.css": "./dist/styles/text.css",
+    "./styles/calendar.css": "./dist/styles/calendar.css",
     "./styles/heading.css": "./dist/styles/heading.css",
     "./styles/button.css": "./dist/styles/button.css",
     "./styles/checkbox.css": "./dist/styles/checkbox.css",
@@ -166,8 +172,10 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.1",
     "@radix-ui/react-use-controllable-state": "^1.1.0",
+    "@rehookify/datepicker": "^6.6.8",
     "classnames": "^2.5.1",
-    "input-otp": "^1.4.1"
+    "input-otp": "^1.4.1",
+    "react-day-picker": "^9.5.1"
   },
   "peerDependencies": {
     "@types/react": "*",

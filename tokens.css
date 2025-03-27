@@ -293,7 +293,6 @@
     line-height: var(--line-height-2xl);
     letter-spacing: var(--letter-spacing-xsmall);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 :root --apply-kb-text-heading-lg {
     font-weight: var(--font-weight-semibold);
@@ -301,7 +300,6 @@
     line-height: var(--line-height-3xl);
     letter-spacing: var(--letter-spacing-xsmall);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 :root --apply-kb-text-heading-md {
     font-weight: var(--font-weight-semibold);
@@ -309,7 +307,6 @@
     line-height: var(--line-height-2xl);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 :root --apply-kb-text-heading-sm {
     font-weight: var(--font-weight-semibold);
@@ -317,7 +314,6 @@
     line-height: var(--line-height-xl);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 :root --apply-kb-text-heading-xs {
     font-weight: var(--font-weight-semibold);
@@ -325,7 +321,6 @@
     line-height: var(--line-height-lg);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-heading);
-    color: var(--content-primary);
 }
 :root --apply-kb-text-body-xl {
     font-weight: var(--font-weight-regular);
@@ -333,7 +328,6 @@
     line-height: var(--line-height-xl);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
 }
 :root --apply-kb-text-body-lg {
     font-weight: var(--font-weight-regular);
@@ -341,7 +335,6 @@
     line-height: var(--line-height-lg);
     letter-spacing: var(--letter-spacing-small);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
 }
 :root --apply-kb-text-body-md {
     font-weight: var(--font-weight-regular);
@@ -363,5 +356,4 @@
     line-height: var(--line-height-xs);
     letter-spacing: var(--letter-spacing-none);
     font-family: var(--default-font-family-body);
-    color: var(--content-primary);
 }

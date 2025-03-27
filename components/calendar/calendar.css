@@ -1,0 +1,99 @@
+.kb-calendar-root {
+ display: flex;
+ flex-direction: column;
+ max-width: 340px;
+ height: 356px;
+ max-height: 356px;
+ border-radius: var(--radius-2xl);
+ padding: var(--spacing-xl);
+ background-color: var(--background-primary);
+ box-shadow: 0px 16px 24px -8px var(--black-10);
+ border: 1px solid var(--border-tertiary);
+}
+
+.kb-calendar-header {
+ height: 36px;
+ box-sizing: border-box;
+ padding: var(--spacing-xs);
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ background-color: var(--background-secondary);
+ border-radius: var(--radius-lg);
+}
+
+.kb-calendar-header-button {
+ color: var(--content-secondary);
+}
+
+.kb-calendar-week-days {
+ display: grid;
+ align-items: center;
+ grid-template-columns: repeat(7, 1fr);
+ gap: var(--spacing-xs);
+}
+
+.kb-calendar-week-day {
+ text-transform: uppercase;
+ color: var(--content-tertiary);
+ font-size: var(--font-body-md);
+ width: var(--spacing-5xl);
+ height: var(--spacing-5xl);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-sizing: border-box;
+}
+
+.kb-calendar-days-grid {
+ display: grid;
+ grid-template-columns: repeat(7, 1fr);
+ grid-template-rows: repeat(6, 1fr);
+ gap: var(--spacing-xs);
+}
+
+.kb-calendar-day {
+ width: var(--spacing-5xl);
+ height: var(--spacing-5xl);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-sizing: border-box;
+ border-width: var(--width-px);
+ border-color: transparent;
+ border-radius: var(--radius-md);
+ background-color: transparent;
+
+ @media (hover: hover) {
+  &:where(:hover:not(.kb-calendar-day-disabled)) {
+   background-color: var(--background-hover);
+   cursor: pointer;
+  }
+ }
+
+ &:where(.kb-calendar-day-in-current-month) {
+  color: var(--content-secondary);
+ }
+
+ &:where(:not(.kb-calendar-day-in-current-month)) {
+  color: var(--content-disabled);
+ }
+
+ &:where(.kb-calendar-day-selected) {
+  background-color: var(--background-brand);
+  color: var(--white-100);
+ }
+
+ &:where(.kb-calendar-day-disabled) {
+  color: var(--content-disabled);
+  cursor: not-allowed;
+ }
+
+ &:where(.kb-calendar-day-now) {
+  border-color: var(--border-brand);
+ }
+}
+
+.kb-calendar-header-label {
+ color: var(--content-secondary);
+}
