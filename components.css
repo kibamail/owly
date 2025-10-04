@@ -2302,3 +2302,182 @@
     flex-grow: 1;
     color: var(--content-secondary);
 }
+.kb-multi-select-root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-sm);
+}
+.kb-multi-select-root:where([data-invalid="true"]) .kb-multi-select-trigger {
+    border-color: var(--border-negative);
+}
+.kb-multi-select-root:where([data-disabled="true"]) .kb-input-hint {
+    color: var(--content-tertiary-inverse);
+}
+:is(.kb-multi-select-root:where([data-disabled="true"]) .kb-input-hint) .kb-input-hint-text {
+    color: var(--content-tertiary-inverse);
+}
+.kb-multi-select-trigger {
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-body-md);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-body);
+    --button-icon-default-width: 1rem;
+    --button-icon-default-height: 1rem;
+    --button-padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border-top: var(--width-px) solid var(--button-border-color);
+    border-left: var(--width-px) solid var(--button-border-color);
+    border-right: var(--width-px) solid var(--button-border-color);
+    border-bottom: var(--width-2xs) solid var(--button-border-color);
+    background: var(--button-background-color);
+    box-shadow: var(--button-shadow);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--button-padding);
+    color: var(--content-secondary);
+    font-family: var(--default-font-family);
+    transition: outline 150ms ease-in-out, background-color 150ms ease-in-out;
+    width: 100%;
+    --button-border-color: var(--border-tertiary);
+    --button-background-color: var(--background-secondary);
+    --button-shadow: 0px 2px 0px 0px var(--white-5) inset, 0px 1px 0px 0px var(--black-10);
+    --button-background-active-color: transparent;
+    cursor: pointer;
+}
+.kb-multi-select-trigger:where([data-placeholder]) {
+    color: var(--content-tertiary-inverse);
+}
+.kb-multi-select-trigger svg {
+    width: var(--button-icon-default-width);
+    height: var(--button-icon-default-height);
+    color: var(--content-tertiary-inverse);
+    flex-shrink: 0;
+    margin-left: auto;
+}
+.kb-multi-select-trigger:where(:focus) {
+    outline: none;
+}
+.kb-multi-select-trigger:where(:focus-visible) {
+    outline: var(--width-2xs) solid var(--border-focus);
+    position: relative;
+}
+@media (hover: hover) {
+    .kb-multi-select-trigger:where(:hover):where(:not([data-disabled])) {
+        --button-background-color: var(--background-secondary-hover);
+    }
+}
+.kb-multi-select-trigger:where([data-disabled]) {
+    cursor: not-allowed;
+    color: var(--content-tertiary-inverse);
+}
+.kb-multi-select-trigger:where([data-disabled]) .kb-multi-select-trigger-inner {
+    color: var(--content-tertiary-inverse);
+}
+.kb-multi-select-trigger:where(:active):where(:not([data-disabled])) {
+    --button-background-color: var(--background-secondary-pressed);
+}
+.kb-multi-select-trigger .kb-multi-select-trigger-inner {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+:is(.kb-multi-select-trigger .kb-multi-select-trigger-inner) .kb-multi-select-trigger-text {
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-body-md);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-body);
+    color: var(--content-secondary);
+}
+:is(.kb-multi-select-trigger:where([data-disabled]) .kb-multi-select-trigger-inner) .kb-multi-select-trigger-text {
+    color: var(--content-tertiary-inverse);
+}
+.kb-multi-select-trigger .kb-multi-select-icon {
+    flex-shrink: 0;
+    color: var(--content-tertiary);
+}
+.kb-multi-select-trigger:where([data-disabled]) .kb-multi-select-icon {
+    color: var(--content-tertiary-inverse);
+}
+.kb-multi-select-separator {
+    height: var(--width-px);
+    background: var(--black-5);
+    margin: var(--spacing-xs) 0;
+}
+.kb-multi-select-content {
+    max-height: var(--radix-popover-content-available-height);
+    border-radius: var(--radius-md);
+    box-sizing: border-box;
+    border-width: var(--width-px);
+    border-style: solid;
+    border-color: var(--border-tertiary);
+    background: var(--background-primary);
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0px 16px 24px -8px var(--black-10);
+}
+.kb-multi-select-content .kb-multi-select-viewport {
+    box-sizing: border-box;
+    padding: var(--spacing-xs);
+}
+.kb-multi-select-item {
+    width: 100%;
+    padding: var(--spacing-md);
+    height: 36px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border: none;
+}
+.kb-multi-select-item:where(:focus) {
+    outline: none;
+}
+.kb-multi-select-item:where(:focus-visible) {
+    outline: var(--width-2xs) solid var(--border-focus);
+    position: relative;
+}
+.kb-multi-select-item:where([data-disabled]) .kb-text {
+    color: var(--content-tertiary-inverse);
+}
+.kb-multi-select-item:where([data-disabled]) {
+    cursor: not-allowed;
+}
+@media (hover: hover) {
+    .kb-multi-select-item:where(:hover:not([data-disabled])) {
+        background: var(--background-secondary-hover);
+        cursor: pointer;
+    }
+}
+.kb-multi-select-item .kb-multi-select-item-indicator {
+    margin-left: auto;
+}
+.kb-multi-select-item:where(:not([data-disabled])) .kb-text {
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-body-md);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-body);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-grow: 1;
+    color: var(--content-secondary);
+}
+.kb-multi-select-group {
+    display: flex;
+    flex-direction: column;
+}
+.kb-multi-select-label {
+    padding: var(--spacing-md);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-body-sm);
+    line-height: var(--line-height-sm);
+    letter-spacing: var(--letter-spacing-none);
+    font-family: var(--default-font-family-body);
+    font-weight: 600;
+    color: var(--content-tertiary);
+}
