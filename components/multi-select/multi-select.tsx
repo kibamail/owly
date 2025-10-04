@@ -57,7 +57,6 @@ const MultiSelectRoot = React.forwardRef<
   const {
     children,
     name,
-    style,
     className,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,

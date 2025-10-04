@@ -103,6 +103,7 @@
     "./styles/tabs.css": "./dist/styles/tabs.css",
     "./styles/text-field.css": "./dist/styles/text-field.css",
     "./styles/select-field.css": "./dist/styles/select-field.css",
+    "./styles/multi-select.css": "./dist/styles/multi-select.css",
     "./styles/progress.css": "./dist/styles/progress.css",
     "./styles/spinner.css": "./dist/styles/spinner.css",
     "./styles/alert.css": "./dist/styles/alert.css",
@@ -125,6 +126,11 @@
       "types": "./dist/cjs/select-field/index.d.ts",
       "import": "./dist/esm/select-field/index.js",
       "require": "./dist/cjs/select-field/index.js"
+    },
+    "./multi-select": {
+      "types": "./dist/cjs/multi-select/index.d.ts",
+      "import": "./dist/esm/multi-select/index.js",
+      "require": "./dist/cjs/multi-select/index.js"
     }
   },
   "scripts": {
