@@ -7,7 +7,6 @@ export const ThemeToggle: React.FC = () => {
   console.log('theme from component', theme);
 
   React.useEffect(() => {
-    // Update theme state when it changes
     const observer = new MutationObserver(() => {
       setLocalTheme(getTheme());
     });
@@ -22,12 +21,9 @@ export const ThemeToggle: React.FC = () => {
 
   const handleToggle = React.useCallback(() => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
-    // Update the theme immediately
     setLocalTheme(nextTheme);
-    // Force immediate DOM update
     requestAnimationFrame(() => {
       toggleTheme();
-      // Force style recalculation
       document.documentElement.style.setProperty(
         'color',
         'var(--content-primary)'

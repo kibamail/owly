@@ -4,26 +4,20 @@ const THEME_KEY = 'owly-theme-preference';
 
 export const setTheme = (theme: Theme) => {
   console.log('theme', theme);
-  // Ensure we have a valid theme
   if (theme !== 'light' && theme !== 'dark') {
     console.warn('Invalid theme specified:', theme);
-    theme = 'light'; // fallback to light theme
+    theme = 'light';
   }
 
-  // Set the theme in localStorage first
   localStorage.setItem(THEME_KEY, theme);
 
-  // Then update the DOM
   document.documentElement.setAttribute('data-theme', theme);
 
-  // Force immediate style application
   requestAnimationFrame(() => {
-    // Force a reflow to ensure styles are applied
     document.documentElement.style.display = 'none';
     document.documentElement.offsetHeight;
     document.documentElement.style.display = '';
 
-    // Update critical styles immediately
     document.documentElement.style.setProperty('color-scheme', theme);
     document.body.style.setProperty(
       'background-color',
@@ -55,7 +49,6 @@ export const initializeTheme = () => {
     setTheme(prefersDark ? 'dark' : 'light');
   }
 
-  // Listen for system theme changes
   window
     .matchMedia('(prefers-color-scheme: dark)')
     .addEventListener('change', (e) => {
@@ -64,14 +57,12 @@ export const initializeTheme = () => {
       }
     });
 
-  // Listen for localStorage changes
   window.addEventListener('storage', (e) => {
     if (e.key === THEME_KEY && e.newValue) {
       setTheme(e.newValue as Theme);
     }
   });
 
-  // Add a mutation observer to ensure theme is always in sync
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (
