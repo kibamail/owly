@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 import '../styles/index.css';
+import '../styles/tokens/colors.css';
 import '../styles/tokens/dark.css';
 import '../storybook.css';
 
