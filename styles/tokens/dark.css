@@ -1,0 +1,108 @@
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*         Background colors           */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root[data-theme='dark'] {
+  --background-primary: var(--gray-900);
+  --background-hover: var(--gray-800);
+  --background-pressed: var(--gray-700);
+
+  --background-selected: var(--blue-800);
+  --background-disabled: var(--gray-60);
+  --background-inverse: var(--gray-10);
+
+  --background-brand: var(--brown-400);
+  --background-brand-hover: var(--brown-300);
+  --background-brand-pressed: var(--brown-200);
+  --background-brand-disabled: var(--gray-800);
+
+  --background-secondary: var(--gray-600);
+  --background-secondary-hover: var(--gray-700);
+  --background-secondary-pressed: var(--gray-600);
+
+  --background-info: var(--blue-600);
+  --background-info-subtle: var(--blue-900);
+
+  --background-positive: var(--green-600);
+  --background-positive-subtle: var(--green-900);
+
+  --background-negative: var(--red-700);
+  --background-negative-hover: var(--red-300);
+  --background-negative-pressed: var(--red-200);
+  --background-negative-subtle: var(--red-900);
+
+  --background-notice: var(--orange-600);
+  --background-notice-subtle: var(--orange-900);
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*              Borders                */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root[data-theme='dark'] {
+  --border-primary: var(--gray-700);
+  --border-secondary: var(--gray-600);
+  --border-tertiary: var(--gray-500);
+  --border-disabled: var(--gray-700);
+
+  --border-focus: var(--blue-400);
+  --border-brand: var(--brown-300);
+  --border-inverse: var(--gray-900);
+
+  --border-info: var(--blue-400);
+  --border-notice: var(--orange-400);
+  --border-negative: var(--red-400);
+  --border-positive: var(--green-400);
+  --border-highlight: var(--purple-400);
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*              Overlays               */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root[data-theme='dark'] {
+  --overlay-primary: var(--gray-0);
+  --overlay-secondary: rgba(255, 255, 255, 0.2);
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*              Content                */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root[data-theme='dark'] {
+  --content-primary: var(--gray-0);
+  --content-secondary: var(--gray-300);
+  --content-tertiary: var(--gray-700);
+  --content-tertiary-inverse: var(--gray-400);
+
+  --content-primary-inverse: var(--gray-900);
+  --content-secondary-inverse: var(--gray-800);
+  --content-tertiary-inverse: var(--gray-600);
+
+  --content-brand: var(--brown-400);
+
+  --content-link: var(--blue-400);
+  --content-link-hover: var(--blue-300);
+  --content-link-pressed: var(--blue-200);
+
+  --content-notice: var(--orange-400);
+  --content-notice-bold: var(--orange-200);
+
+  --content-negative: var(--red-400);
+  --content-negative-bold: var(--red-200);
+
+  --content-positive: var(--green-400);
+  --content-positive-bold: var(--green-200);
+
+  --content-highlight: var(--purple-400);
+  --content-highlight-bold: var(--purple-200);
+
+  --content-disabled: var(--gray-500);
+
+  --content-info: var(--blue-400);
+  --content-info-bold: var(--blue-300);
+}
