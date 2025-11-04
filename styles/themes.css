@@ -1,0 +1,17 @@
+@import './tokens/themes/light.css';
+@import './tokens/themes/dark.css';
+
+/* Set default theme */
+:root {
+  color-scheme: light dark;
+}
+
+/* Default to light theme variables if no theme is set */
+:root:not([data-theme]) {
+  @import './tokens/themes/light.css';
+}
+
+/* Force immediate style recalculation for theme changes */
+[data-theme] * {
+  forced-color-adjust: none;
+}

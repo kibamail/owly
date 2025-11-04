@@ -1,7 +1,10 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react';
+import { useEffect } from 'react';
+import { initializeTheme } from '../utils/theme-switcher';
 
-import "../styles/index.css";
-import "../storybook.css";
+import '../styles/index.css';
+import '../storybook.css';
+import '../styles/themes.css';
 
 const preview: Preview = {
   parameters: {
@@ -12,6 +15,15 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    // Initialize theme system for each story
+    (Story) => {
+      useEffect(() => {
+        initializeTheme();
+      }, []);
+      return Story();
+    },
+  ],
 };
 
 export default preview;
