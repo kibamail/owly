@@ -1,0 +1,108 @@
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*         Background colors           */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+:root[data-theme='dark'] {
+  /* Invert primary background from white to near-black */
+  --background-primary: var(--gray-900);
+  --background-hover: var(--gray-800);
+  --background-pressed: var(--gray-700);
+
+  /* Adjust selected state for better contrast */
+  --background-selected: var(--blue-800);
+  --background-disabled: var(--gray-800);
+  --background-inverse: var(--gray-0);
+
+  /* Brand colors adjusted for dark mode */
+  --background-brand: var(--white-100);
+  --background-brand-hover: var(--gray-10);
+  --background-brand-pressed: var(--gray-20);
+  --background-brand-disabled: var(--gray-800);
+
+  /* Secondary backgrounds for dark mode */
+  --background-secondary: var(--gray-800);
+  --background-secondary-hover: var(--gray-700);
+  --background-secondary-pressed: var(--gray-600);
+
+  /* Status colors adjusted for dark mode */
+  --background-info: var(--blue-800);
+  --background-info-subtle: var(--blue-900);
+
+  --background-positive: var(--green-800);
+  --background-positive-subtle: var(--green-900);
+
+  --background-negative: var(--red-800);
+  --background-negative-hover: var(--red-700);
+  --background-negative-pressed: var(--red-600);
+  --background-negative-subtle: var(--red-900);
+
+  --background-notice: var(--orange-800);
+  --background-notice-subtle: var(--orange-900);
+
+  /* * * * * * * * * * * * * * * * * * * */
+  /*              Borders                */
+  /* * * * * * * * * * * * * * * * * * * */
+
+  --border-primary: var(--gray-700);
+  --border-secondary: var(--gray-600);
+  --border-tertiary: var(--gray-500);
+  --border-disabled: var(--gray-700);
+
+  --border-focus: var(--blue-400);
+  --border-brand: var(--white-100);
+  --border-inverse: var(--gray-900);
+
+  --border-info: var(--blue-400);
+  --border-notice: var(--orange-400);
+  --border-negative: var(--red-400);
+  --border-positive: var(--green-400);
+  --border-highlight: var(--purple-400);
+
+  /* * * * * * * * * * * * * * * * * * * */
+  /*              Overlays               */
+  /* * * * * * * * * * * * * * * * * * * */
+
+  --overlay-primary: var(--black-100);
+  --overlay-secondary: rgba(0, 0, 0, 0.4);
+
+  /* * * * * * * * * * * * * * * * * * * */
+  /*              Content                */
+  /* * * * * * * * * * * * * * * * * * * */
+
+  /* Invert text colors for dark mode */
+  --content-primary: var(--gray-0);
+  --content-secondary: var(--gray-20);
+  --content-tertiary: var(--gray-40);
+  --content-tertiary-inverse: var(--gray-600);
+
+  --content-primary-inverse: var(--gray-900);
+  --content-secondary-inverse: var(--gray-800);
+  --content-tertiary-inverse: var(--gray-700);
+
+  /* Brand content color inverted for dark mode */
+  --content-brand: var(--gray-900);
+
+  /* Interactive content colors adjusted for dark mode */
+  --content-link: var(--blue-300);
+  --content-link-hover: var(--blue-200);
+  --content-link-pressed: var(--blue-100);
+
+  /* Status content colors adjusted for better visibility */
+  --content-notice: var(--orange-300);
+  --content-notice-bold: var(--orange-200);
+
+  --content-negative: var(--red-300);
+  --content-negative-bold: var(--red-200);
+
+  --content-positive: var(--green-300);
+  --content-positive-bold: var(--green-200);
+
+  --content-highlight: var(--purple-300);
+  --content-highlight-bold: var(--purple-200);
+
+  --content-disabled: var(--gray-600);
+
+  --content-info: var(--blue-300);
+  --content-info-bold: var(--blue-200);
+}
