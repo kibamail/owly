@@ -6,6 +6,7 @@ module.exports = {
       path: [path.relative(process.cwd(), "../")],
     }),
     require('./postcss/apply-rules.cjs'),
+    require('./postcss/screen-breakpoints.cjs'),
     require("postcss-nesting"),
     require("postcss-combine-duplicated-selectors"),
     require("postcss-discard-empty"),

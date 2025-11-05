@@ -182,7 +182,8 @@
     "@rehookify/datepicker": "^6.6.8",
     "classnames": "^2.5.1",
     "input-otp": "^1.4.1",
-    "react-day-picker": "^9.5.1"
+    "react-day-picker": "^9.5.1",
+    "storybook-addon-responsive-views": "^2.3.0"
   },
   "peerDependencies": {
     "@types/react": "*",
