@@ -90,24 +90,31 @@
       "import": "./dist/esm/spinner/index.js",
       "require": "./dist/cjs/spinner/index.js"
     },
+    "./styles/alert.css": "./dist/styles/alert.css",
     "./styles/badge.css": "./dist/styles/badge.css",
-    "./styles/text.css": "./dist/styles/text.css",
-    "./styles/calendar.css": "./dist/styles/calendar.css",
-    "./styles/heading.css": "./dist/styles/heading.css",
     "./styles/button.css": "./dist/styles/button.css",
+    "./styles/calendar.css": "./dist/styles/calendar.css",
     "./styles/checkbox.css": "./dist/styles/checkbox.css",
     "./styles/code-input.css": "./dist/styles/code-input.css",
+    "./styles/command-search.css": "./dist/styles/command-search.css",
+    "./styles/dashboard-layout.css": "./dist/styles/dashboard-layout.css",
+    "./styles/dialog.css": "./dist/styles/dialog.css",
+    "./styles/filter.css": "./dist/styles/filter.css",
+    "./styles/heading.css": "./dist/styles/heading.css",
     "./styles/input-hint.css": "./dist/styles/input-hint.css",
     "./styles/input-label.css": "./dist/styles/input-label.css",
-    "./styles/radio-group.css": "./dist/styles/radio-group.css",
-    "./styles/tabs.css": "./dist/styles/tabs.css",
-    "./styles/text-field.css": "./dist/styles/text-field.css",
-    "./styles/select-field.css": "./dist/styles/select-field.css",
+    "./styles/letter-avatar.css": "./dist/styles/letter-avatar.css",
     "./styles/multi-select.css": "./dist/styles/multi-select.css",
     "./styles/progress.css": "./dist/styles/progress.css",
+    "./styles/radio-group.css": "./dist/styles/radio-group.css",
+    "./styles/scrollarea.css": "./dist/styles/scrollarea.css",
+    "./styles/select-field.css": "./dist/styles/select-field.css",
     "./styles/spinner.css": "./dist/styles/spinner.css",
-    "./styles/alert.css": "./dist/styles/alert.css",
-    "./styles/dialog.css": "./dist/styles/dialog.css",
+    "./styles/table.css": "./dist/styles/table.css",
+    "./styles/tabs.css": "./dist/styles/tabs.css",
+    "./styles/text.css": "./dist/styles/text.css",
+    "./styles/text-field.css": "./dist/styles/text-field.css",
+    "./styles/user-dropdown.css": "./dist/styles/user-dropdown.css",
     "./styles/tokens.css": "./tokens.css",
     "./styles/components.css": "./components.css",
     "./styles/index.css": "./index.css",
@@ -131,6 +138,41 @@
       "types": "./dist/cjs/multi-select/index.d.ts",
       "import": "./dist/esm/multi-select/index.js",
       "require": "./dist/cjs/multi-select/index.js"
+    },
+    "./command-search": {
+      "types": "./dist/cjs/command-search/index.d.ts",
+      "import": "./dist/esm/command-search/index.js",
+      "require": "./dist/cjs/command-search/index.js"
+    },
+    "./dashboard-layout": {
+      "types": "./dist/cjs/dashboard-layout/index.d.ts",
+      "import": "./dist/esm/dashboard-layout/index.js",
+      "require": "./dist/cjs/dashboard-layout/index.js"
+    },
+    "./filter": {
+      "types": "./dist/cjs/filter/index.d.ts",
+      "import": "./dist/esm/filter/index.js",
+      "require": "./dist/cjs/filter/index.js"
+    },
+    "./letter-avatar": {
+      "types": "./dist/cjs/letter-avatar/index.d.ts",
+      "import": "./dist/esm/letter-avatar/index.js",
+      "require": "./dist/cjs/letter-avatar/index.js"
+    },
+    "./scrollarea": {
+      "types": "./dist/cjs/scrollarea/index.d.ts",
+      "import": "./dist/esm/scrollarea/index.js",
+      "require": "./dist/cjs/scrollarea/index.js"
+    },
+    "./table": {
+      "types": "./dist/cjs/table/index.d.ts",
+      "import": "./dist/esm/table/index.js",
+      "require": "./dist/cjs/table/index.js"
+    },
+    "./user-dropdown": {
+      "types": "./dist/cjs/user-dropdown/index.d.ts",
+      "import": "./dist/esm/user-dropdown/index.js",
+      "require": "./dist/cjs/user-dropdown/index.js"
     }
   },
   "scripts": {

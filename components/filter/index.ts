@@ -2,6 +2,6 @@ export { Filter } from "./filter";
 export type {
   FilterFieldDefinition,
   FilterOperator,
-  FilterFieldType,
+  FilterValueData,
   FilterValue,
 } from "./filter.types";
