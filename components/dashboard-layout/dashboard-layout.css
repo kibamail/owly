@@ -2,8 +2,9 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--background-secondary);
-  padding-right: var(--spacing-md);
   padding-bottom: var(--spacing-md);
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -18,22 +19,102 @@
 }
 
 .kb-dashboard-layout-sidebar {
+  width: 260px;
+  height: auto;
+  padding: var(--spacing-md);
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.kb-dashboard-layout-sidebar-dropdown {
   width: 100%;
-  height: 64px;
   padding: var(--spacing-md);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 40;
+}
+
+.kb-dashboard-layout-sidebar-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  gap: var(--spacing-md);
+  position: relative;
+  z-index: 42;
+}
+
+.kb-dashboard-layout-sidebar-menu-button {
+  all: unset;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--content-primary);
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+
+  &:where(:hover) {
+    background-color: var(--background-hover);
+  }
+
+  &:where(:focus-visible) {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+  }
+}
+
+.kb-dashboard-layout-sidebar-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 64px);
+  background: var(--background-primary);
+  z-index: 41;
+  padding: var(--spacing-md);
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  animation: kb-dashboard-sidebar-zoom-in 0.15s ease;
+  transform-origin: top;
+  box-shadow: 0px 16px 24px -8px var(--black-10);
+}
+
+.kb-dashboard-layout-sidebar-dropdown[data-state="open"]
+  .kb-dashboard-layout-sidebar-dropdown-content {
+  display: flex;
 }
 
 .kb-dashboard-layout-sidebar-footer {
   margin-top: auto;
 }
 
+@keyframes kb-dashboard-sidebar-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @md {
   .kb-dashboard-layout-root {
     flex-direction: row;
     padding-top: var(--spacing-md);
+    padding-right: var(--spacing-md);
   }
 
   .kb-dashboard-layout-content-shell {
@@ -42,7 +123,10 @@
   }
 
   .kb-dashboard-layout-sidebar {
-    width: 260px;
-    height: auto;
+    display: flex;
+  }
+
+  .kb-dashboard-layout-sidebar-dropdown {
+    display: none;
   }
 }

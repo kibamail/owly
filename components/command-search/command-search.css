@@ -38,7 +38,35 @@
   position: fixed;
   inset: 0;
   background: rgba(17, 17, 17, 0.2);
+  backdrop-filter: blur(4px);
   z-index: 49;
+  animation: kb-command-search-overlay-fade-in 0.2s ease;
+}
+
+.kb-command-search-dialog-overlay[data-state="closing"] {
+  animation: kb-command-search-overlay-fade-out 0.15s ease;
+}
+
+@keyframes kb-command-search-overlay-fade-in {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+@keyframes kb-command-search-overlay-fade-out {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
 }
 
 .kb-command-search-dialog {
@@ -58,6 +86,33 @@
   border-color: var(--border-tertiary);
   border-style: solid;
   box-shadow: 0px 16px 24px -8px var(--black-10);
+  animation: kb-command-search-dialog-zoom-in 0.15s ease;
+}
+
+.kb-command-search-dialog[data-state="closing"] {
+  animation: kb-command-search-dialog-zoom-out 0.15s ease;
+}
+
+@keyframes kb-command-search-dialog-zoom-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes kb-command-search-dialog-zoom-out {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.96);
+  }
 }
 
 @md {
@@ -68,6 +123,33 @@
     top: 50%;
     bottom: auto;
     transform: translate(-50%, -50%);
+    animation: kb-command-search-dialog-zoom-in-desktop 0.15s ease;
+  }
+
+  .kb-command-search-dialog[data-state="closing"] {
+    animation: kb-command-search-dialog-zoom-out-desktop 0.15s ease;
+  }
+
+  @keyframes kb-command-search-dialog-zoom-in-desktop {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @keyframes kb-command-search-dialog-zoom-out-desktop {
+    from {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.96);
+    }
   }
 }
 
