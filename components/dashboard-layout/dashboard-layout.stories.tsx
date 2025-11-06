@@ -366,14 +366,6 @@ export const Default: DashboardLayoutStoryFn = () => {
 
                 <Tabs.Indicator />
               </Tabs.List>
-
-              <Tabs.Content value="pending" style={{ padding: "16px" }}>
-                These newsletters are pending
-              </Tabs.Content>
-              <Tabs.Content value="sent" style={{ padding: "16px" }}>
-                These newsletters were already sent
-              </Tabs.Content>
-              <Tabs.Content value="archived">Archived newsletters</Tabs.Content>
             </Tabs.Root>
           </DashboardLayout.Content>
         </DashboardLayout.ContentShell>
