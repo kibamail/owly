@@ -51,8 +51,8 @@
 
 .kb-dashboard-layout-sidebar-menu-button {
   all: unset;
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,6 +61,11 @@
   color: var(--content-primary);
   transition: background-color 0.15s ease;
   flex-shrink: 0;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 
   &:where(:hover) {
     background-color: var(--background-hover);
@@ -95,8 +100,94 @@
   display: flex;
 }
 
+.kb-dashboard-layout-sidebar-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--spacing-xl);
+}
+
+.kb-dashboard-layout-sidebar-group-title {
+  font-size: 12px;
+  color: var(--content-tertiary);
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-family: var(--default-font-family-body);
+  text-transform: uppercase;
+}
+
+.kb-dashboard-layout-sidebar-group-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kb-dashboard-layout-sidebar-item {
+  height: 36px;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: var(--width-px) solid transparent;
+  border-bottom: var(--width-2xs) solid transparent;
+  color: var(--content-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
+  font-family: var(--default-font-family);
+  font-size: 14px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--content-tertiary);
+  }
+
+  @media (hover: hover) {
+    &:where(:hover) {
+      background-color: var(--background-hover);
+    }
+  }
+
+  &:where([data-active="true"]) {
+    background: var(--background-primary);
+    border-color: var(--border-tertiary);
+    border-bottom-color: var(--border-tertiary);
+    box-shadow: 0 1px 0 0 var(--black-5);
+  }
+}
+
 .kb-dashboard-layout-sidebar-footer {
   margin-top: auto;
+}
+
+.kb-dashboard-layout-footer-notes {
+  display: flex;
+  flex-direction: column;
+}
+
+.kb-dashboard-layout-footer-notes-divider {
+  width: 100%;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.kb-dashboard-layout-footer-notes-link-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  justify-content: space-evenly;
+}
+
+.kb-dashboard-layout-footer-notes-link {
+  font-size: 12px;
+  color: var(--content-tertiary);
+  font-family: var(--default-font-family);
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 @keyframes kb-dashboard-sidebar-zoom-in {

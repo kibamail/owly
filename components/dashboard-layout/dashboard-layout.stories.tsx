@@ -146,16 +146,42 @@ export const Default: DashboardLayoutStoryFn = () => {
               <CommandSearch.Footer />
             </CommandSearch.Content>
           </CommandSearch.Root>
+          <DashboardLayout.SidebarGroup title="Navigation">
+            <DashboardLayout.SidebarItem active>
+              <HomeAltSlimHoriz />
+              Dashboard
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <User />
+              Engage
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <SwipeLeftGesture />
+              Send
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <SecureWindow />
+              Settings
+            </DashboardLayout.SidebarItem>
+          </DashboardLayout.SidebarGroup>
+          <DashboardLayout.SidebarGroup title="Quick Actions">
+            <DashboardLayout.SidebarItem>
+              <Plus />
+              New Broadcast
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <Plus />
+              Add Contact
+            </DashboardLayout.SidebarItem>
+          </DashboardLayout.SidebarGroup>
           <DashboardLayout.SidebarFooter>
-            <div
-              style={{
-                padding: "8px",
-                background: "rgba(0,0,0,0.05)",
-                borderRadius: "8px",
-              }}
-            >
-              Footer content
-            </div>
+            <DashboardLayout.FooterNotes>
+              <DashboardLayout.FooterNotesLinkGroup>
+                <DashboardLayout.FooterNotesLink>Privacy</DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>Terms</DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>Help Center</DashboardLayout.FooterNotesLink>
+              </DashboardLayout.FooterNotesLinkGroup>
+            </DashboardLayout.FooterNotes>
           </DashboardLayout.SidebarFooter>
         </DashboardLayout.SidebarDropdown>
         <DashboardLayout.Sidebar>
@@ -271,16 +297,42 @@ export const Default: DashboardLayoutStoryFn = () => {
               <CommandSearch.Footer />
             </CommandSearch.Content>
           </CommandSearch.Root>
+          <DashboardLayout.SidebarGroup title="Navigation">
+            <DashboardLayout.SidebarItem active>
+              <HomeAltSlimHoriz />
+              Dashboard
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <User />
+              Engage
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <SwipeLeftGesture />
+              Send
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <SecureWindow />
+              Settings
+            </DashboardLayout.SidebarItem>
+          </DashboardLayout.SidebarGroup>
+          <DashboardLayout.SidebarGroup title="Quick Actions">
+            <DashboardLayout.SidebarItem>
+              <Plus />
+              New Broadcast
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <Plus />
+              Add Contact
+            </DashboardLayout.SidebarItem>
+          </DashboardLayout.SidebarGroup>
           <DashboardLayout.SidebarFooter>
-            <div
-              style={{
-                padding: "8px",
-                background: "rgba(0,0,0,0.05)",
-                borderRadius: "8px",
-              }}
-            >
-              Footer content
-            </div>
+            <DashboardLayout.FooterNotes>
+              <DashboardLayout.FooterNotesLinkGroup>
+                <DashboardLayout.FooterNotesLink>Privacy</DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>Terms</DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>Help Center</DashboardLayout.FooterNotesLink>
+              </DashboardLayout.FooterNotesLinkGroup>
+            </DashboardLayout.FooterNotes>
           </DashboardLayout.SidebarFooter>
         </DashboardLayout.Sidebar>
         <DashboardLayout.ContentShell />
