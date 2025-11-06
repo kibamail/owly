@@ -44,21 +44,31 @@
 .kb-command-search-dialog {
   width: 100%;
   max-width: 720px;
-  height: 396px;
-  max-height: 396px;
+  height: 100vh;
   background: var(--background-primary);
-  border-radius: var(--radius-xl);
+
   position: fixed;
   left: 50%;
-  top: 50%;
+  bottom: 0;
   z-index: 50;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   border-width: var(--width-px);
   border-color: var(--border-tertiary);
   border-style: solid;
   box-shadow: 0px 16px 24px -8px var(--black-10);
+}
+
+@md {
+  .kb-command-search-dialog {
+    height: 396px;
+    max-height: 396px;
+    border-radius: var(--radius-xl);
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .kb-command-search-dialog-input-wrapper {
