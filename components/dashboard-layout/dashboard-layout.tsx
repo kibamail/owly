@@ -8,6 +8,7 @@ const DASHBOARD_LAYOUT_NAME = "DashboardLayout";
 type DashboardLayoutElement = React.ElementRef<"div">;
 type DashboardLayoutContentShellElement = React.ElementRef<"div">;
 type DashboardLayoutContentElement = React.ElementRef<"div">;
+type DashboardLayoutStickyContentHeaderContainerElement = React.ElementRef<"div">;
 type DashboardLayoutContentHeaderElement = React.ElementRef<"div">;
 type DashboardLayoutContentActionsElement = React.ElementRef<"div">;
 type DashboardLayoutSidebarElement = React.ElementRef<"div">;
@@ -26,6 +27,8 @@ interface DashboardLayoutProps extends React.ComponentPropsWithoutRef<"div"> {
 interface DashboardLayoutContentShellProps
   extends React.ComponentPropsWithoutRef<"div"> {}
 interface DashboardLayoutContentProps
+  extends React.ComponentPropsWithoutRef<"div"> {}
+interface DashboardLayoutStickyContentHeaderContainerProps
   extends React.ComponentPropsWithoutRef<"div"> {}
 interface DashboardLayoutContentHeaderProps
   extends React.ComponentPropsWithoutRef<"div"> {
@@ -179,6 +182,25 @@ const DashboardLayoutContent = React.forwardRef<
 });
 
 DashboardLayoutContent.displayName = "DashboardLayout.Content";
+
+const DashboardLayoutStickyContentHeaderContainer = React.forwardRef<
+  DashboardLayoutStickyContentHeaderContainerElement,
+  DashboardLayoutStickyContentHeaderContainerProps
+>((props, forwardedRef) => {
+  const { className, children, ...divProps } = props;
+
+  return (
+    <div
+      {...divProps}
+      ref={forwardedRef}
+      className={cn("kb-dashboard-layout-sticky-content-header-container", className)}
+    >
+      {children}
+    </div>
+  );
+});
+
+DashboardLayoutStickyContentHeaderContainer.displayName = "DashboardLayout.StickyContentHeaderContainer";
 
 const DashboardLayoutContentHeader = React.forwardRef<
   DashboardLayoutContentHeaderElement,
@@ -447,6 +469,7 @@ export {
   DashboardLayoutRoot,
   DashboardLayoutContentShell,
   DashboardLayoutContent,
+  DashboardLayoutStickyContentHeaderContainer,
   DashboardLayoutContentHeader,
   DashboardLayoutContentActions,
   DashboardLayoutSidebar,
@@ -460,6 +483,7 @@ export {
   DashboardLayoutRoot as Root,
   DashboardLayoutContentShell as ContentShell,
   DashboardLayoutContent as Content,
+  DashboardLayoutStickyContentHeaderContainer as StickyContentHeaderContainer,
   DashboardLayoutContentHeader as ContentHeader,
   DashboardLayoutContentActions as ContentActions,
   DashboardLayoutSidebar as Sidebar,

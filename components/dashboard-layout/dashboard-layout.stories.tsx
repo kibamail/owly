@@ -23,6 +23,100 @@ import "../command-search/command-search.css";
 import "../text-field/text-field.css";
 import "../button/button.css";
 import * as Tabs from "../tabs/tabs";
+import * as Table from "../table/table";
+import "../table/table.css";
+import { Checkbox } from "../checkbox";
+
+// Generate 100 random contacts
+const generateContacts = () => {
+  const firstNames = [
+    "John",
+    "Jane",
+    "Michael",
+    "Sarah",
+    "David",
+    "Emily",
+    "Robert",
+    "Lisa",
+    "James",
+    "Mary",
+    "William",
+    "Jennifer",
+    "Richard",
+    "Linda",
+    "Thomas",
+    "Patricia",
+    "Charles",
+    "Elizabeth",
+    "Daniel",
+    "Susan",
+    "Matthew",
+    "Jessica",
+    "Anthony",
+    "Nancy",
+    "Mark",
+    "Karen",
+    "Donald",
+    "Betty",
+    "Steven",
+    "Helen",
+  ];
+  const lastNames = [
+    "Smith",
+    "Johnson",
+    "Williams",
+    "Brown",
+    "Jones",
+    "Garcia",
+    "Miller",
+    "Davis",
+    "Rodriguez",
+    "Martinez",
+    "Hernandez",
+    "Lopez",
+    "Gonzalez",
+    "Wilson",
+    "Anderson",
+    "Thomas",
+    "Taylor",
+    "Moore",
+    "Jackson",
+    "Martin",
+    "Lee",
+    "Thompson",
+    "White",
+    "Harris",
+    "Clark",
+    "Lewis",
+    "Robinson",
+    "Walker",
+  ];
+
+  const contacts = [];
+  for (let i = 0; i < 100; i++) {
+    const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+    const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+    const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}${i}@example.com`;
+
+    // Generate random date in the past 2 years
+    const randomDate = new Date(
+      Date.now() - Math.floor(Math.random() * 730 * 24 * 60 * 60 * 1000)
+    );
+    const dateSubscribed = randomDate.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+
+    contacts.push({
+      name: `${firstName} ${lastName}`,
+      email,
+      dateSubscribed,
+    });
+  }
+
+  return contacts;
+};
 
 const meta: Meta<typeof DashboardLayout> = {
   title: "Components/DashboardLayout",
@@ -32,6 +126,8 @@ type DashboardLayoutStoryFn = StoryFn<typeof DashboardLayout>;
 
 export const Default: DashboardLayoutStoryFn = () => {
   const [selectedItem, setSelectedItem] = React.useState("acme");
+  const contacts = React.useMemo(() => generateContacts(), []);
+  const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
 
   return (
     <>
@@ -352,20 +448,79 @@ export const Default: DashboardLayoutStoryFn = () => {
         </DashboardLayout.Sidebar>
         <DashboardLayout.ContentShell>
           <DashboardLayout.Content>
-            <DashboardLayout.ContentHeader title="Audience">
-              <DashboardLayout.ContentActions>
-                <Button variant="primary">Add Contact</Button>
-              </DashboardLayout.ContentActions>
-            </DashboardLayout.ContentHeader>
+            <DashboardLayout.StickyContentHeaderContainer>
+              <DashboardLayout.ContentHeader title="Audience">
+                <DashboardLayout.ContentActions>
+                  <Button variant="primary">Add Contact</Button>
+                </DashboardLayout.ContentActions>
+              </DashboardLayout.ContentHeader>
 
-            <Tabs.Root defaultValue="pending" variant="secondary">
-              <Tabs.List>
-                <Tabs.Trigger value="sent">Contacts</Tabs.Trigger>
-                <Tabs.Trigger value="pending">Properties</Tabs.Trigger>
-                <Tabs.Trigger value="archived">Segments</Tabs.Trigger>
+              <Tabs.Root
+                defaultValue="contacts"
+                variant="secondary"
+                style={{ width: "100%" }}
+              >
+                <Tabs.List>
+                  <Tabs.Trigger value="contacts">Contacts</Tabs.Trigger>
+                  <Tabs.Trigger value="properties">Properties</Tabs.Trigger>
+                  <Tabs.Trigger value="segments">Segments</Tabs.Trigger>
+                  <Tabs.Trigger value="groups">Groups</Tabs.Trigger>
 
-                <Tabs.Indicator />
-              </Tabs.List>
+                  <Tabs.Indicator />
+                </Tabs.List>
+              </Tabs.Root>
+            </DashboardLayout.StickyContentHeaderContainer>
+
+            <Tabs.Root
+              defaultValue="contacts"
+              variant="secondary"
+              style={{ width: "100%" }}
+            >
+              <Tabs.Content
+                value="contacts"
+                style={{ width: "100%", paddingTop: "32px" }}
+              >
+                <Table.Container>
+                  <Table.Root>
+                    <Table.Header>
+                      <Table.Row>
+                        <Table.Head minWidth={64}>
+                          <Checkbox />
+                        </Table.Head>
+                        <Table.Head minWidth={220}>Name</Table.Head>
+                        <Table.Head>Email</Table.Head>
+                        <Table.Head minWidth={320}>Date Subscribed</Table.Head>
+                      </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                      {contacts.map((contact, index) => {
+                        const isSelected = selectedRows.includes(index);
+                        return (
+                          <Table.Row key={index} selected={isSelected}>
+                            <Table.Cell>
+                              <Checkbox
+                                checked={isSelected}
+                                onCheckedChange={(checked) => {
+                                  if (checked) {
+                                    setSelectedRows([...selectedRows, index]);
+                                  } else {
+                                    setSelectedRows(
+                                      selectedRows.filter((i) => i !== index)
+                                    );
+                                  }
+                                }}
+                              />
+                            </Table.Cell>
+                            <Table.Cell>{contact.name}</Table.Cell>
+                            <Table.Cell>{contact.email}</Table.Cell>
+                            <Table.Cell>{contact.dateSubscribed}</Table.Cell>
+                          </Table.Row>
+                        );
+                      })}
+                    </Table.Body>
+                  </Table.Root>
+                </Table.Container>
+              </Tabs.Content>
             </Tabs.Root>
           </DashboardLayout.Content>
         </DashboardLayout.ContentShell>

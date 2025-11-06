@@ -28,6 +28,14 @@
   box-sizing: border-box;
 }
 
+.kb-dashboard-layout-sticky-content-header-container {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-secondary);
+  padding-bottom: var(--spacing-xl);
+  z-index: 10;
+}
+
 .kb-dashboard-layout-content-header {
   display: flex;
   align-items: center;
