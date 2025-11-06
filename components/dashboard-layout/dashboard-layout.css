@@ -22,6 +22,12 @@
   height: 64px;
   padding: var(--spacing-md);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.kb-dashboard-layout-sidebar-footer {
+  margin-top: auto;
 }
 
 @md {

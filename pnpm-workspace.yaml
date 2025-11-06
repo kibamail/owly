@@ -1,2 +1,7 @@
 onlyBuiltDependencies:
+  - core-js
+  - core-js-pure
+  - ejs
   - esbuild
+  - fsevents
+  - highlight.js

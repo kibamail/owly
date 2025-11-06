@@ -32,6 +32,8 @@
   --background-negative-pressed: var(--red-700);
   --background-negative-subtle: var(--red-0);
 
+  --background-highlight: var(--purple-500);
+
   --background-notice: var(--orange-500);
   --background-notice-subtle: var(--orange-0);
 

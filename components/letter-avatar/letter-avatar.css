@@ -1,0 +1,50 @@
+.kb-letter-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--white-100);
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+  border: none;
+  font-family: var(--default-font-family);
+}
+
+@breakpoints {
+  .kb-letter-avatar {
+    &:where(.kb-r-size-small) {
+      width: 20px;
+      height: 20px;
+      font-size: var(--font-body-xs);
+    }
+
+    &:where(.kb-r-size-medium) {
+      width: 24px;
+      height: 24px;
+      font-size: var(--font-body-sm);
+    }
+  }
+}
+
+.kb-letter-avatar {
+  &:where(.kb-color-notice) {
+    background-color: var(--background-notice);
+  }
+
+  &:where(.kb-color-negative) {
+    background-color: var(--background-negative);
+  }
+
+  &:where(.kb-color-highlight) {
+    background-color: var(--background-highlight);
+  }
+
+  &:where(.kb-color-positive) {
+    background-color: var(--background-positive);
+  }
+
+  &:where(.kb-color-info) {
+    background-color: var(--background-info);
+  }
+}
