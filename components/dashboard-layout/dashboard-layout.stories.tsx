@@ -4,6 +4,7 @@ import * as DashboardLayout from "./dashboard-layout";
 import * as UserDropdown from "../user-dropdown/user-dropdown";
 import { LetterAvatar } from "../letter-avatar/letter-avatar";
 import * as CommandSearch from "../command-search/command-search";
+import { Button } from "../button/button";
 import {
   User,
   Settings,
@@ -20,6 +21,8 @@ import "../user-dropdown/user-dropdown.css";
 import "../letter-avatar/letter-avatar.css";
 import "../command-search/command-search.css";
 import "../text-field/text-field.css";
+import "../button/button.css";
+import * as Tabs from "../tabs/tabs";
 
 const meta: Meta<typeof DashboardLayout> = {
   title: "Components/DashboardLayout",
@@ -177,9 +180,15 @@ export const Default: DashboardLayoutStoryFn = () => {
           <DashboardLayout.SidebarFooter>
             <DashboardLayout.FooterNotes>
               <DashboardLayout.FooterNotesLinkGroup>
-                <DashboardLayout.FooterNotesLink>Privacy</DashboardLayout.FooterNotesLink>
-                <DashboardLayout.FooterNotesLink>Terms</DashboardLayout.FooterNotesLink>
-                <DashboardLayout.FooterNotesLink>Help Center</DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>
+                  Privacy
+                </DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>
+                  Terms
+                </DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>
+                  Help Center
+                </DashboardLayout.FooterNotesLink>
               </DashboardLayout.FooterNotesLinkGroup>
             </DashboardLayout.FooterNotes>
           </DashboardLayout.SidebarFooter>
@@ -328,14 +337,46 @@ export const Default: DashboardLayoutStoryFn = () => {
           <DashboardLayout.SidebarFooter>
             <DashboardLayout.FooterNotes>
               <DashboardLayout.FooterNotesLinkGroup>
-                <DashboardLayout.FooterNotesLink>Privacy</DashboardLayout.FooterNotesLink>
-                <DashboardLayout.FooterNotesLink>Terms</DashboardLayout.FooterNotesLink>
-                <DashboardLayout.FooterNotesLink>Help Center</DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>
+                  Privacy
+                </DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>
+                  Terms
+                </DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>
+                  Help Center
+                </DashboardLayout.FooterNotesLink>
               </DashboardLayout.FooterNotesLinkGroup>
             </DashboardLayout.FooterNotes>
           </DashboardLayout.SidebarFooter>
         </DashboardLayout.Sidebar>
-        <DashboardLayout.ContentShell />
+        <DashboardLayout.ContentShell>
+          <DashboardLayout.Content>
+            <DashboardLayout.ContentHeader title="Audience">
+              <DashboardLayout.ContentActions>
+                <Button variant="primary">Add Contact</Button>
+              </DashboardLayout.ContentActions>
+            </DashboardLayout.ContentHeader>
+
+            <Tabs.Root defaultValue="pending" variant="secondary">
+              <Tabs.List>
+                <Tabs.Trigger value="sent">Contacts</Tabs.Trigger>
+                <Tabs.Trigger value="pending">Properties</Tabs.Trigger>
+                <Tabs.Trigger value="archived">Segments</Tabs.Trigger>
+
+                <Tabs.Indicator />
+              </Tabs.List>
+
+              <Tabs.Content value="pending" style={{ padding: "16px" }}>
+                These newsletters are pending
+              </Tabs.Content>
+              <Tabs.Content value="sent" style={{ padding: "16px" }}>
+                These newsletters were already sent
+              </Tabs.Content>
+              <Tabs.Content value="archived">Archived newsletters</Tabs.Content>
+            </Tabs.Root>
+          </DashboardLayout.Content>
+        </DashboardLayout.ContentShell>
       </DashboardLayout.Root>
     </>
   );

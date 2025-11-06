@@ -7,6 +7,9 @@ const DASHBOARD_LAYOUT_NAME = "DashboardLayout";
 
 type DashboardLayoutElement = React.ElementRef<"div">;
 type DashboardLayoutContentShellElement = React.ElementRef<"div">;
+type DashboardLayoutContentElement = React.ElementRef<"div">;
+type DashboardLayoutContentHeaderElement = React.ElementRef<"div">;
+type DashboardLayoutContentActionsElement = React.ElementRef<"div">;
 type DashboardLayoutSidebarElement = React.ElementRef<"div">;
 type DashboardLayoutSidebarDropdownElement = React.ElementRef<"div">;
 type DashboardLayoutSidebarGroupElement = React.ElementRef<"div">;
@@ -21,6 +24,14 @@ interface DashboardLayoutProps extends React.ComponentPropsWithoutRef<"div"> {
   onSidebarOpenChange?: (open: boolean) => void;
 }
 interface DashboardLayoutContentShellProps
+  extends React.ComponentPropsWithoutRef<"div"> {}
+interface DashboardLayoutContentProps
+  extends React.ComponentPropsWithoutRef<"div"> {}
+interface DashboardLayoutContentHeaderProps
+  extends React.ComponentPropsWithoutRef<"div"> {
+  title?: string;
+}
+interface DashboardLayoutContentActionsProps
   extends React.ComponentPropsWithoutRef<"div"> {}
 interface DashboardLayoutSidebarProps
   extends React.ComponentPropsWithoutRef<"div"> {}
@@ -149,6 +160,66 @@ const DashboardLayoutContentShell = React.forwardRef<
 });
 
 DashboardLayoutContentShell.displayName = "DashboardLayout.ContentShell";
+
+const DashboardLayoutContent = React.forwardRef<
+  DashboardLayoutContentElement,
+  DashboardLayoutContentProps
+>((props, forwardedRef) => {
+  const { className, children, ...divProps } = props;
+
+  return (
+    <div
+      {...divProps}
+      ref={forwardedRef}
+      className={cn("kb-dashboard-layout-content", className)}
+    >
+      {children}
+    </div>
+  );
+});
+
+DashboardLayoutContent.displayName = "DashboardLayout.Content";
+
+const DashboardLayoutContentHeader = React.forwardRef<
+  DashboardLayoutContentHeaderElement,
+  DashboardLayoutContentHeaderProps
+>((props, forwardedRef) => {
+  const { className, children, title, ...divProps } = props;
+
+  return (
+    <div
+      {...divProps}
+      ref={forwardedRef}
+      className={cn("kb-dashboard-layout-content-header", className)}
+    >
+      {title && (
+        <h1 className="kb-dashboard-layout-content-header-title">{title}</h1>
+      )}
+      {children}
+    </div>
+  );
+});
+
+DashboardLayoutContentHeader.displayName = "DashboardLayout.ContentHeader";
+
+const DashboardLayoutContentActions = React.forwardRef<
+  DashboardLayoutContentActionsElement,
+  DashboardLayoutContentActionsProps
+>((props, forwardedRef) => {
+  const { className, children, ...divProps } = props;
+
+  return (
+    <div
+      {...divProps}
+      ref={forwardedRef}
+      className={cn("kb-dashboard-layout-content-actions", className)}
+    >
+      {children}
+    </div>
+  );
+});
+
+DashboardLayoutContentActions.displayName = "DashboardLayout.ContentActions";
 
 const DashboardLayoutSidebar = React.forwardRef<
   DashboardLayoutSidebarElement,
@@ -375,6 +446,9 @@ DashboardLayoutFooterNotesLink.displayName = "DashboardLayout.FooterNotes.Link";
 export {
   DashboardLayoutRoot,
   DashboardLayoutContentShell,
+  DashboardLayoutContent,
+  DashboardLayoutContentHeader,
+  DashboardLayoutContentActions,
   DashboardLayoutSidebar,
   DashboardLayoutSidebarDropdown,
   DashboardLayoutSidebarGroup,
@@ -385,6 +459,9 @@ export {
   DashboardLayoutFooterNotesLink,
   DashboardLayoutRoot as Root,
   DashboardLayoutContentShell as ContentShell,
+  DashboardLayoutContent as Content,
+  DashboardLayoutContentHeader as ContentHeader,
+  DashboardLayoutContentActions as ContentActions,
   DashboardLayoutSidebar as Sidebar,
   DashboardLayoutSidebarDropdown as SidebarDropdown,
   DashboardLayoutSidebarGroup as SidebarGroup,
