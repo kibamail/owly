@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -11,6 +11,7 @@
     "index.css",
     "tokens.css",
     "components.css",
+    "tailwind.css",
     "styles",
     "semantic-classes.css"
   ],
@@ -118,6 +119,7 @@
     "./styles/components.css": "./components.css",
     "./styles/index.css": "./index.css",
     "./styles/semantic-classes.css": "./dist/styles/semantic-classes.css",
+    "./styles/tailwind.css": "./tailwind.css",
     "./tabs": {
       "types": "./dist/cjs/tabs/index.d.ts",
       "import": "./dist/esm/tabs/index.js",
