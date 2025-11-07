@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import cn from "classnames";
 import * as ProgressPrimitive from "@radix-ui/react-progress";

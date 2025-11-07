@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { OTPInput, type SlotProps, type OTPInputProps } from "input-otp";
 import { createContext } from "@radix-ui/react-context";
