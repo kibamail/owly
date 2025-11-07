@@ -1,3 +1,5 @@
+"use client"
+
 export { Filter } from "./filter";
 export type {
   FilterFieldDefinition,

@@ -1,3 +1,5 @@
+"use client"
+
 // Simple components - export everything
 export * from "./badge/index.js";
 export * from "./button/index.js";
