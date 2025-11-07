@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import cn from "classnames"
-import * as React from "react"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { requireReactElement } from "../utils/require-react-element.js"
+import cn from "classnames";
+import * as React from "react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { requireReactElement } from "../utils/require-react-element.js";
 
-import { XMarkIcon } from "./dialog-icons.js"
-import { Heading } from "../heading/heading.js"
-import { Text } from "../text/text.js"
+import { XMarkIcon } from "./dialog-icons.js";
+import { Heading } from "../heading/heading.js";
+import { Text } from "../text/text.js";
 
 interface DialogRootProps
   extends Omit<
@@ -17,11 +17,11 @@ interface DialogRootProps
 
 const DialogRoot: React.FC<DialogRootProps> = (props) => (
   <DialogPrimitive.Root {...props} modal />
-)
+);
 
-DialogRoot.displayName = "Dialog.Root"
+DialogRoot.displayName = "Dialog.Root";
 
-type DialogTriggerElement = React.ElementRef<typeof DialogPrimitive.Trigger>
+type DialogTriggerElement = React.ElementRef<typeof DialogPrimitive.Trigger>;
 
 interface DialogTriggerProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Trigger> {}
@@ -30,25 +30,25 @@ const DialogTrigger = React.forwardRef<
   DialogTriggerProps
 >(({ children, ...props }, forwardedRef) => (
   <DialogPrimitive.Trigger {...props} ref={forwardedRef} asChild>
-    {requireReactElement(children)}
+    {children}
   </DialogPrimitive.Trigger>
-))
+));
 
-DialogTrigger.displayName = "Dialog.Trigger"
+DialogTrigger.displayName = "Dialog.Trigger";
 
-type DialogContentElement = React.ElementRef<typeof DialogPrimitive.Content>
+type DialogContentElement = React.ElementRef<typeof DialogPrimitive.Content>;
 interface DialogContentProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {
   container?: React.ComponentPropsWithoutRef<
     typeof DialogPrimitive.Portal
-  >["container"]
+  >["container"];
 }
 
 const DialogContent = React.forwardRef<
   DialogContentElement,
   DialogContentProps
 >(({ ...props }, forwardedRef) => {
-  const { className, forceMount, container, ...contentProps } = props
+  const { className, forceMount, container, ...contentProps } = props;
 
   return (
     <DialogPrimitive.Portal container={container} forceMount={forceMount}>
@@ -59,17 +59,17 @@ const DialogContent = React.forwardRef<
         className={cn("kb-dialog-content", className)}
       />
     </DialogPrimitive.Portal>
-  )
-})
-DialogContent.displayName = "Dialog.Content"
+  );
+});
+DialogContent.displayName = "Dialog.Content";
 
-type DialogFooterElement = React.ElementRef<"div">
+type DialogFooterElement = React.ElementRef<"div">;
 
 const DialogFooter = React.forwardRef<
   DialogFooterElement,
   React.ComponentPropsWithoutRef<"div">
 >((props, forwardedRef) => {
-  const { className, ...footerProps } = props
+  const { className, ...footerProps } = props;
 
   return (
     <div
@@ -77,18 +77,18 @@ const DialogFooter = React.forwardRef<
       ref={forwardedRef}
       className={cn("kb-dialog-footer", className)}
     />
-  )
-})
+  );
+});
 
-DialogFooter.displayName = "Dialog.Footer"
+DialogFooter.displayName = "Dialog.Footer";
 
-type DialogHeaderElement = React.ElementRef<"div">
+type DialogHeaderElement = React.ElementRef<"div">;
 
 const DialogHeader = React.forwardRef<
   DialogHeaderElement,
   React.ComponentPropsWithoutRef<"div">
 >((props, forwardedRef) => {
-  const { className, children, ...footerProps } = props
+  const { className, children, ...footerProps } = props;
 
   return (
     <div
@@ -108,17 +108,17 @@ const DialogHeader = React.forwardRef<
         </button>
       </DialogPrimitive.Close>
     </div>
-  )
-})
+  );
+});
 
-DialogHeader.displayName = "Dialog.Header"
+DialogHeader.displayName = "Dialog.Header";
 
-type DialogTitleElement = React.ElementRef<typeof Heading>
-type DialogTitleProps = React.ComponentPropsWithoutRef<typeof Heading>
+type DialogTitleElement = React.ElementRef<typeof Heading>;
+type DialogTitleProps = React.ComponentPropsWithoutRef<typeof Heading>;
 
 const DialogTitle = React.forwardRef<DialogTitleElement, DialogTitleProps>(
   (props, forwardedRef) => {
-    const { children, ...headingProps } = props
+    const { children, ...headingProps } = props;
     return (
       <DialogPrimitive.Title asChild>
         <Heading
@@ -130,20 +130,20 @@ const DialogTitle = React.forwardRef<DialogTitleElement, DialogTitleProps>(
           {children}
         </Heading>
       </DialogPrimitive.Title>
-    )
+    );
   }
-)
+);
 
-DialogTitle.displayName = "Dialog.Title"
+DialogTitle.displayName = "Dialog.Title";
 
-type DialogDescriptionElement = React.ElementRef<typeof Text>
-type DialogDescriptionProps = React.ComponentPropsWithoutRef<typeof Text>
+type DialogDescriptionElement = React.ElementRef<typeof Text>;
+type DialogDescriptionProps = React.ComponentPropsWithoutRef<typeof Text>;
 
 const DialogDescription = React.forwardRef<
   DialogDescriptionElement,
   DialogDescriptionProps
 >((props, forwardedRef) => {
-  const { children, className, ...textProps } = props
+  const { children, className, ...textProps } = props;
   return (
     <DialogPrimitive.Title asChild>
       <Text
@@ -154,12 +154,12 @@ const DialogDescription = React.forwardRef<
         {children}
       </Text>
     </DialogPrimitive.Title>
-  )
-})
+  );
+});
 
-DialogDescription.displayName = "Dialog.Description"
+DialogDescription.displayName = "Dialog.Description";
 
-const DialogClose = DialogPrimitive.Close
+const DialogClose = DialogPrimitive.Close;
 
 export {
   DialogRoot as Root,
@@ -170,4 +170,4 @@ export {
   DialogTitle as Title,
   DialogClose as Close,
   DialogDescription as Description,
-}
+};
