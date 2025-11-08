@@ -3,7 +3,6 @@
 import cn from "classnames";
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { requireReactElement } from "../utils/require-react-element.js";
 
 import { XMarkIcon } from "./dialog-icons.js";
 import { Heading } from "../heading/heading.js";

@@ -155,6 +155,25 @@
   margin: var(--spacing-xs) 0;
 }
 
+/* Size variants */
+.kb-select-root.kb-size-sm {
+  .kb-select-trigger {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-body-sm);
+    min-height: 32px;
+  }
+
+  .kb-select-item {
+    min-height: 32px;
+    height: 32px;
+    font-size: var(--font-body-sm);
+  }
+
+  .kb-select-trigger-inner .kb-select-item-text {
+    font-size: var(--font-body-sm);
+  }
+}
+
 .kb-select-content {
   min-width: var(--radix-select-trigger-width);
   max-height: var(--radix-select-content-available-height);
@@ -195,6 +214,7 @@
 .kb-select-item {
   width: 100%;
   padding: var(--spacing-md);
+  min-height: 36px;
   height: 36px;
   border-radius: var(--radius-md);
   display: flex;

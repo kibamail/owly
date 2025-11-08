@@ -177,4 +177,66 @@ export const Types: SelectStoryFn = () => {
   )
 }
 
+export const Sizes: SelectStoryFn = () => {
+  return (
+    <div className="grid grid-cols-2 gap-12">
+      <div className="box">
+        <h5>Regular Size (default)</h5>
+        <Select.Root defaultValue="apple">
+          <Select.Label>Choose a fruit</Select.Label>
+          <Select.Trigger />
+          <Select.Content>
+            <Select.Item value="orange">Orange</Select.Item>
+            <Select.Item value="apple">Apple</Select.Item>
+            <Select.Item value="carrot">Carrot</Select.Item>
+            <Select.Item value="potato">Potato</Select.Item>
+          </Select.Content>
+        </Select.Root>
+      </div>
+
+      <div className="box">
+        <h5>Small Size</h5>
+        <Select.Root size="sm" defaultValue="apple">
+          <Select.Label>Choose a fruit</Select.Label>
+          <Select.Trigger />
+          <Select.Content>
+            <Select.Item value="orange">Orange</Select.Item>
+            <Select.Item value="apple">Apple</Select.Item>
+            <Select.Item value="carrot">Carrot</Select.Item>
+            <Select.Item value="potato">Potato</Select.Item>
+          </Select.Content>
+        </Select.Root>
+      </div>
+
+      <div className="box">
+        <h5>Regular with Hint</h5>
+        <Select.Root defaultValue="carrot">
+          <Select.Trigger />
+          <Select.Content>
+            <Select.Item value="orange">Orange</Select.Item>
+            <Select.Item value="apple">Apple</Select.Item>
+            <Select.Item value="carrot">Carrot</Select.Item>
+            <Select.Item value="potato">Potato</Select.Item>
+          </Select.Content>
+          <Select.Hint>You can only select one option</Select.Hint>
+        </Select.Root>
+      </div>
+
+      <div className="box">
+        <h5>Small with Hint</h5>
+        <Select.Root size="sm" defaultValue="carrot">
+          <Select.Trigger />
+          <Select.Content>
+            <Select.Item value="orange">Orange</Select.Item>
+            <Select.Item value="apple">Apple</Select.Item>
+            <Select.Item value="carrot">Carrot</Select.Item>
+            <Select.Item value="potato">Potato</Select.Item>
+          </Select.Content>
+          <Select.Hint>You can only select one option</Select.Hint>
+        </Select.Root>
+      </div>
+    </div>
+  )
+}
+
 export default meta

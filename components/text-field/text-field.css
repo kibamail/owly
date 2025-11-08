@@ -67,6 +67,14 @@
   }
 }
 
+/* Size variants */
+.kb-text-field-root.kb-size-sm {
+  .kb-text-field-input {
+    height: 32px;
+    font-size: var(--font-body-sm);
+  }
+}
+
 .kb-text-field-slot {
   flex-shrink: 0;
 

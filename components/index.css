@@ -21,4 +21,5 @@
 @import "./tabs/tabs.css";
 @import "./text/text.css";
 @import "./text-field/text-field.css";
+@import "./toast/toast.css";
 @import "./user-dropdown/user-dropdown.css";

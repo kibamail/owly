@@ -129,4 +129,46 @@ export const Types: TextFieldStoryFn = () => {
   )
 }
 
+export const Sizes: TextFieldStoryFn = () => {
+  return (
+    <div className="grid grid-cols-2 gap-12">
+      <div className="box">
+        <h5>Regular Size (default)</h5>
+        <TextField.Root placeholder="Enter your email" type="email">
+          <TextField.Label>Email address</TextField.Label>
+          <TextField.Slot side="left">
+            <Mail />
+          </TextField.Slot>
+        </TextField.Root>
+      </div>
+
+      <div className="box">
+        <h5>Small Size</h5>
+        <TextField.Root size="sm" placeholder="Enter your email" type="email">
+          <TextField.Label>Email address</TextField.Label>
+          <TextField.Slot side="left">
+            <Mail />
+          </TextField.Slot>
+        </TextField.Root>
+      </div>
+
+      <div className="box">
+        <h5>Regular with Hint</h5>
+        <TextField.Root placeholder="Choose a password" type="password">
+          <TextField.Label>Password</TextField.Label>
+          <TextField.Hint>Must be at least 8 characters</TextField.Hint>
+        </TextField.Root>
+      </div>
+
+      <div className="box">
+        <h5>Small with Hint</h5>
+        <TextField.Root size="sm" placeholder="Choose a password" type="password">
+          <TextField.Label>Password</TextField.Label>
+          <TextField.Hint>Must be at least 8 characters</TextField.Hint>
+        </TextField.Root>
+      </div>
+    </div>
+  )
+}
+
 export default meta

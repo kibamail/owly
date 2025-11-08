@@ -21,6 +21,7 @@ import {
   type InputHintElement,
   type InputHintProps,
 } from "../input-hint/input-hint.js"
+import { getVariableClassNamesForProp } from "../utils/props.js"
 
 type HiddenSelectFieldInputElement = React.ElementRef<"input">
 
@@ -29,15 +30,19 @@ type HiddenInputProps = Pick<
   "style" | "name" | "aria-label" | "aria-labelledby"
 >
 
+export const sizes = ["regular", "sm"] as const
+
 const SELECT_FIELD_NAME = "SelectField"
 const [SelectFieldProvider, useSelectFieldContext] = createContext<{
   baseId: string
+  size: (typeof sizes)[number]
 }>(SELECT_FIELD_NAME)
 
 interface SelectFieldRootProps
   extends React.ComponentPropsWithoutRef<typeof SelectFieldPrimitive.Root>,
     HiddenInputProps {
   className?: string
+  size?: (typeof sizes)[number]
 }
 
 const SelectFieldRoot = React.forwardRef<
@@ -49,6 +54,7 @@ const SelectFieldRoot = React.forwardRef<
     name,
     style,
     className,
+    size = "regular",
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     ...rootProps
@@ -77,8 +83,12 @@ const SelectFieldRoot = React.forwardRef<
 
   const baseId = useId()
 
+  const { className: sizeClassName } = getVariableClassNamesForProp<
+    SelectFieldRootProps["size"]
+  >("size", size)
+
   return (
-    <SelectFieldProvider baseId={baseId}>
+    <SelectFieldProvider baseId={baseId} size={size}>
       <SelectFieldPrimitive.Root
         {...rootProps}
         onValueChange={onSelectFieldValueChange}
@@ -94,7 +104,7 @@ const SelectFieldRoot = React.forwardRef<
         <div
           data-invalid={isInvalid}
           data-disabled={rootProps.disabled}
-          className={cn("kb-select-root", className)}
+          className={cn("kb-select-root", className, sizeClassName)}
         >
           {children}
         </div>

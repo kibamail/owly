@@ -29,12 +29,20 @@ const [TextFieldProvider, useTextFieldContext] = createContext<{
   baseId: string
 }>(TEXT_FIELD_NAME)
 
-export interface TextFieldProps extends ComponentPropsWithoutRef<"input"> {}
+export const sizes = ["regular", "sm"] as const
+
+export interface TextFieldProps extends ComponentPropsWithoutRef<"input"> {
+  size?: (typeof sizes)[number]
+}
 
 const TextFieldRoot = React.forwardRef<TextFieldElement, TextFieldProps>(
   (props, forwardedRef) => {
     const inputRef = React.useRef<HTMLInputElement>(null)
-    const { className, children, ...inputProps } = props
+    const { className, children, size = "regular", ...inputProps } = props
+
+    const { className: sizeClassName } = getVariableClassNamesForProp<
+      TextFieldProps["size"]
+    >("size", size)
 
     const baseId = useId()
 
@@ -121,7 +129,7 @@ const TextFieldRoot = React.forwardRef<TextFieldElement, TextFieldProps>(
         <div
           data-invalid={isInvalid}
           onPointerDown={onPointerDown}
-          className={cn("kb-text-field-root", className)}
+          className={cn("kb-text-field-root", className, sizeClassName)}
         >
           {label}
           <div className={cn("kb-text-field-content")}>
