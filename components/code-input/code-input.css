@@ -4,7 +4,7 @@
 .kb-code-input-root {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: var(--sp-sm);
 
   &:where([data-invalid="true"]) {
     .kb-code-input-slot {
@@ -15,15 +15,15 @@
 
 .kb-code-input {
   display: flex;
-  gap: var(--spacing-md);
+  gap: var(--sp-md);
 }
 
 .kb-code-input-slots-6 :nth-child(4) {
-  margin-left: var(--spacing-md);
+  margin-left: var(--sp-md);
 }
 
 .kb-code-input-slot {
-  width: var(--spacing-5xl);
+  width: var(--sp-5xl);
   height: 25px;
   border: 1px solid red;
 
@@ -77,7 +77,7 @@
 
   > div {
     width: var(--width-px);
-    height: var(--spacing-3xl);
+    height: var(--sp-3xl);
     background: var(--content-primary);
     animation: caret-blink 1s ease-out infinite;
   }
@@ -86,12 +86,12 @@
 .kb-code-input-hint {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
   color: var(--content-tertiary);
 
   svg {
-    width: var(--spacing-xl);
-    height: var(--spacing-xl);
+    width: var(--sp-xl);
+    height: var(--sp-xl);
   }
 
   .kb-text-field-hint-text {

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: var(--spacing-sm);
+  gap: var(--sp-sm);
 
   &:where([data-invalid="true"]) {
     .kb-select-trigger {
@@ -25,7 +25,7 @@
   --button-icon-default-width: 1rem;
   --button-icon-default-height: 1rem;
 
-  --button-padding: var(--spacing-md) var(--spacing-lg);
+  --button-padding: var(--sp-md) var(--sp-lg);
 
   border-radius: var(--radius-md);
 
@@ -41,7 +41,7 @@
   display: inline-flex;
   align-items: center;
 
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
   padding: var(--button-padding);
 
   color: var(--content-secondary);
@@ -114,11 +114,11 @@
 
       display: flex;
       align-items: center;
-      gap: var(--spacing-md);
+      gap: var(--sp-md);
 
       svg {
-        --button-icon-default-width: var(--spacing-2xl);
-        --button-icon-default-height: var(--spacing-2xl);
+        --button-icon-default-width: var(--sp-2xl);
+        --button-icon-default-height: var(--sp-2xl);
 
         color: var(--content-secondary);
       }
@@ -152,13 +152,13 @@
 .kb-select-separator {
   height: var(--width-px);
   background: var(--black-5);
-  margin: var(--spacing-xs) 0;
+  margin: var(--sp-xs) 0;
 }
 
 /* Size variants */
 .kb-select-root.kb-size-sm {
   .kb-select-trigger {
-    padding: var(--spacing-xs) var(--spacing-md);
+    padding: var(--sp-xs) var(--sp-md);
     font-size: var(--font-body-sm);
     min-height: 32px;
   }
@@ -196,7 +196,7 @@
 
   .kb-select-viewport {
     box-sizing: border-box;
-    padding: var(--spacing-xs);
+    padding: var(--sp-xs);
   }
 }
 
@@ -213,7 +213,7 @@
 
 .kb-select-item {
   width: 100%;
-  padding: var(--spacing-md);
+  padding: var(--sp-md);
   min-height: 36px;
   height: 36px;
   border-radius: var(--radius-md);
@@ -227,8 +227,8 @@
   }
 
   svg {
-    width: var(--spacing-2xl);
-    height: var(--spacing-2xl);
+    width: var(--sp-2xl);
+    height: var(--sp-2xl);
   }
 
   &:where(:focus-visible) {
@@ -259,7 +259,7 @@
 
       display: flex;
       align-items: center;
-      gap: var(--spacing-md);
+      gap: var(--sp-md);
       flex-grow: 1;
 
       color: var(--content-secondary);

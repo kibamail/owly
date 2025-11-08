@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: var(--spacing-sm);
+  gap: var(--sp-sm);
 
   &:where([data-invalid="true"]) {
     .kb-text-field-content {
@@ -15,7 +15,7 @@
 }
 
 .kb-text-field-content {
-  --text-field-input-padding: var(--spacing-md);
+  --text-field-input-padding: var(--sp-md);
 
   display: flex;
   align-items: stretch;
@@ -46,7 +46,7 @@
 .kb-text-field-input {
   color: var(--content-primary);
 
-  padding: 0px var(--spacing-md);
+  padding: 0px var(--sp-md);
 
   width: 100%;
   background: transparent;
@@ -99,12 +99,12 @@
 .kb-text-field-hint {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
   color: var(--content-tertiary);
 
   svg {
-    width: var(--spacing-xl);
-    height: var(--spacing-xl);
+    width: var(--sp-xl);
+    height: var(--sp-xl);
   }
 
   .kb-text-field-hint-text {

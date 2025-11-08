@@ -34,7 +34,7 @@
 
 .kb-table-head {
   height: 56px;
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--sp-xl);
   text-align: left;
   font-weight: 500;
   font-size: 14px;
@@ -44,7 +44,7 @@
 
 .kb-table-cell {
   height: 48px;
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--sp-xl);
   font-size: 14px;
   color: var(--content-secondary);
   box-sizing: border-box;

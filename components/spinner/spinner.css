@@ -71,18 +71,18 @@
 @breakpoints {
   .kb-spinner {
     &:where(.kb-r-size-md) {
-      width: var(--spacing-lg);
-      height: var(--spacing-lg);
+      width: var(--sp-lg);
+      height: var(--sp-lg);
     }
 
     &:where(.kb-r-size-lg) {
-      width: var(--spacing-xl);
-      height: var(--spacing-xl);
+      width: var(--sp-xl);
+      height: var(--sp-xl);
     }
 
     &:where(.kb-r-size-xl) {
-      width: var(--spacing-2xl);
-      height: var(--spacing-2xl);
+      width: var(--sp-2xl);
+      height: var(--sp-2xl);
     }
   }
 }

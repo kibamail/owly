@@ -1,7 +1,7 @@
 .kb-radio-group {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2xl);
+  gap: var(--sp-2xl);
 }
 
 .kb-radio-group-item {
@@ -25,20 +25,20 @@
   .kb-radio-group {
     &:where(.kb-r-size-sm) {
       .kb-radio-group-item {
-        width: var(--spacing-xl);
-        height: var(--spacing-xl);
+        width: var(--sp-xl);
+        height: var(--sp-xl);
 
         .kb-radio-group-indicator {
-          width: var(--spacing-sm);
-          height: var(--spacing-sm);
+          width: var(--sp-sm);
+          height: var(--sp-sm);
         }
       }
     }
 
     &:where(.kb-r-size-md) {
       .kb-radio-group-item {
-        width: var(--spacing-2xl);
-        height: var(--spacing-2xl);
+        width: var(--sp-2xl);
+        height: var(--sp-2xl);
       }
     }
   }

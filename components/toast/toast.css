@@ -8,21 +8,21 @@
   border: var(--width-px) solid var(--toast-border-color);
 
   box-shadow: 0px 8px 16px -4px var(--black-5);
-  padding: var(--spacing-lg);
+  padding: var(--sp-lg);
 
   box-sizing: border-box;
 
   display: grid;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
   grid-template-columns: auto 1fr auto;
 }
 
 .kb-toast {
   .kb-toast-icon {
-    --toast-icon-height: var(--spacing-2xl);
-    --toast-icon-width: var(--spacing-2xl);
+    --toast-icon-height: var(--sp-2xl);
+    --toast-icon-width: var(--sp-2xl);
 
     display: flex;
     align-items: center;
@@ -54,7 +54,7 @@
     background: transparent;
     border: none;
     padding: 0;
-    margin-top: var(--spacing-xs);
+    margin-top: var(--sp-xs);
     font-family: var(--default-font-family-body);
     font-size: var(--font-body-sm);
   }
@@ -82,6 +82,10 @@
 
   .kb-toast-icon {
     svg {
+      color: var(--toast-icon-color);
+    }
+
+    .kb-spinner {
       color: var(--toast-icon-color);
     }
   }
@@ -124,6 +128,14 @@
     --toast-border-color: var(--border-tertiary);
     --toast-background-color: var(--background-pressed);
     --toast-icon-color: var(--content-tertiary-inverse);
+  }
+}
+
+.kb-toast {
+  &:where(.kb-variant-loading) {
+    --toast-border-color: var(--border-info);
+    --toast-background-color: var(--background-info-subtle);
+    --toast-icon-color: var(--content-info);
   }
 }
 
@@ -198,7 +210,7 @@
 
 @keyframes toast-slide-in-left {
   from {
-    transform: translateX(calc(-100% - var(--spacing-xl)));
+    transform: translateX(calc(-100% - var(--sp-xl)));
   }
   to {
     transform: translateX(0);
@@ -207,7 +219,7 @@
 
 @keyframes toast-slide-in-right {
   from {
-    transform: translateX(calc(100% + var(--spacing-xl)));
+    transform: translateX(calc(100% + var(--sp-xl)));
   }
   to {
     transform: translateX(0);
@@ -216,7 +228,7 @@
 
 @keyframes toast-slide-in-top {
   from {
-    transform: translateY(calc(-100% - var(--spacing-xl)));
+    transform: translateY(calc(-100% - var(--sp-xl)));
   }
   to {
     transform: translateY(0);
@@ -225,7 +237,7 @@
 
 @keyframes toast-slide-in-bottom {
   from {
-    transform: translateY(calc(100% + var(--spacing-xl)));
+    transform: translateY(calc(100% + var(--sp-xl)));
   }
   to {
     transform: translateY(0);
@@ -237,7 +249,7 @@
     transform: translateX(var(--radix-toast-swipe-end-x));
   }
   to {
-    transform: translateX(calc(-100% - var(--spacing-xl)));
+    transform: translateX(calc(-100% - var(--sp-xl)));
   }
 }
 
@@ -246,7 +258,7 @@
     transform: translateX(var(--radix-toast-swipe-end-x));
   }
   to {
-    transform: translateX(calc(100% + var(--spacing-xl)));
+    transform: translateX(calc(100% + var(--sp-xl)));
   }
 }
 
@@ -255,7 +267,7 @@
     transform: translateY(var(--radix-toast-swipe-end-y));
   }
   to {
-    transform: translateY(calc(-100% - var(--spacing-xl)));
+    transform: translateY(calc(-100% - var(--sp-xl)));
   }
 }
 
@@ -264,18 +276,18 @@
     transform: translateY(var(--radix-toast-swipe-end-y));
   }
   to {
-    transform: translateY(calc(100% + var(--spacing-xl)));
+    transform: translateY(calc(100% + var(--sp-xl)));
   }
 }
 
 /* Toast Viewport - positioning for stacked toasts */
 .kb-toast-viewport {
-  --viewport-padding: var(--spacing-xl);
+  --viewport-padding: var(--sp-xl);
   position: fixed;
   display: flex;
   flex-direction: column;
   padding: var(--viewport-padding);
-  gap: var(--spacing-md);
+  gap: var(--sp-md);
   width: 390px;
   max-width: 100vw;
   margin: 0;

@@ -1,6 +1,9 @@
+"use client"
+
 import React from "react"
 import * as Toast from "./toast.js"
 import { XmarkIcon } from "./xmark-icon.js"
+import { getDefaultIconForVariant } from "./toast-icons.js"
 
 export const toastPositions = [
   "top-left",
@@ -156,7 +159,9 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
                   duration={toast.duration}
                   data-position={position}
                 >
-                  {toast.icon && <Toast.Icon>{toast.icon}</Toast.Icon>}
+                  <Toast.Icon>
+                    {toast.icon ?? getDefaultIconForVariant(toast.variant)}
+                  </Toast.Icon>
                   <div>
                     <Toast.Title>{toast.title}</Toast.Title>
                     {toast.description && (

@@ -24,14 +24,13 @@ const VariantsDemo = () => {
     <div className="space-y-4">
       <div className="box">
         <h5>Toast Variants</h5>
-        <p className="mb-4">Click buttons to trigger different toast variants</p>
+        <p className="mb-4">Click buttons to trigger different toast variants with default icons</p>
         <div className="flex gap-2 flex-wrap">
           <button
             className="kb-button"
             onClick={() =>
               toast.toast({
                 title: "We received your payment. We will be in touch via email.",
-                icon: <LabelSolid />,
               })
             }
           >
@@ -41,9 +40,7 @@ const VariantsDemo = () => {
           <button
             className="kb-button"
             onClick={() =>
-              toast.error("Failed to authenticate you with Github.", {
-                icon: <WarningCircleSolid />,
-              })
+              toast.error("Failed to authenticate you with Github.")
             }
           >
             Error
@@ -52,9 +49,7 @@ const VariantsDemo = () => {
           <button
             className="kb-button"
             onClick={() =>
-              toast.warning("Your email credits are about to expire.", {
-                icon: <WarningTriangleSolid />,
-              })
+              toast.warning("Your email credits are about to expire.")
             }
           >
             Warning
@@ -63,9 +58,7 @@ const VariantsDemo = () => {
           <button
             className="kb-button"
             onClick={() =>
-              toast.success("We completed your account verification.", {
-                icon: <CheckCircleSolid />,
-              })
+              toast.success("We completed your account verification.")
             }
           >
             Success
@@ -74,9 +67,7 @@ const VariantsDemo = () => {
           <button
             className="kb-button"
             onClick={() =>
-              toast.info("We need some more documents to proceed.", {
-                icon: <WarningCircleSolid />,
-              })
+              toast.info("We need some more documents to proceed.")
             }
           >
             Info
@@ -85,12 +76,19 @@ const VariantsDemo = () => {
           <button
             className="kb-button"
             onClick={() =>
-              toast.feature("New feature available: Dark mode!", {
-                icon: <LabelSolid />,
-              })
+              toast.feature("New feature available: Dark mode!")
             }
           >
             Feature
+          </button>
+
+          <button
+            className="kb-button"
+            onClick={() =>
+              toast.loading("Processing your request...")
+            }
+          >
+            Loading
           </button>
         </div>
       </div>

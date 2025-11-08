@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 import { useToastContext, type ToastData } from "./toast-provider.js"
 
@@ -49,6 +51,13 @@ export const useToast = () => {
     [toast]
   )
 
+  const loading = React.useCallback(
+    (title: string, options?: Omit<ToastOptions, "title" | "variant">) => {
+      return toast({ ...options, title, variant: "loading" })
+    },
+    [toast]
+  )
+
   return {
     toast,
     success,
@@ -56,6 +65,7 @@ export const useToast = () => {
     warning,
     info,
     feature,
+    loading,
     dismiss: context.removeToast,
     update: context.updateToast,
   }

@@ -5,7 +5,7 @@
   height: 356px;
   max-height: 356px;
   border-radius: var(--radius-2xl);
-  padding: var(--spacing-xl);
+  padding: var(--sp-xl);
   background-color: var(--background-primary);
   box-shadow: 0px 16px 24px -8px var(--black-10);
   border: 1px solid var(--border-tertiary);
@@ -14,7 +14,7 @@
 .kb-calendar-header {
   height: 36px;
   box-sizing: border-box;
-  padding: var(--spacing-xs);
+  padding: var(--sp-xs);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,15 +30,15 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(7, 1fr);
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
 }
 
 .kb-calendar-week-day {
   text-transform: uppercase;
   color: var(--content-tertiary);
   font-size: var(--font-body-md);
-  width: var(--spacing-5xl);
-  height: var(--spacing-5xl);
+  width: var(--sp-5xl);
+  height: var(--sp-5xl);
   font-family: var(--default-font-family-body);
   display: flex;
   align-items: center;
@@ -50,12 +50,12 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
 }
 
 .kb-calendar-day {
-  width: var(--spacing-5xl);
-  height: var(--spacing-5xl);
+  width: var(--sp-5xl);
+  height: var(--sp-5xl);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,8 +171,8 @@
   border-right: 1px solid var(--border-tertiary);
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-xl);
-  gap: var(--spacing-xs);
+  padding: var(--sp-xl);
+  gap: var(--sp-xs);
 
   @media (max-width: 768px) {
     display: none;
@@ -183,7 +183,7 @@
   all: unset;
   display: flex;
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--sp-md) var(--sp-lg);
   font-size: var(--font-body-md);
   font-family: var(--default-font-family);
   color: var(--content-secondary);
@@ -202,7 +202,7 @@
 
   &:where(:focus-visible) {
     outline: var(--width-2xs) solid var(--border-focus);
-    outline-offset: calc(-1 * var(--spacing-2xs));
+    outline-offset: calc(-1 * var(--sp-2xs));
   }
 }
 
@@ -223,7 +223,7 @@
 }
 
 .kb-calendar-range-month-container {
-  padding: var(--spacing-xl);
+  padding: var(--sp-xl);
   flex: 1;
 
   @media (max-width: 768px) {
@@ -266,11 +266,11 @@
   height: 68px;
   display: flex;
   align-items: center;
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--sp-xl);
 
   @media (max-width: 768px) {
     height: auto;
-    padding: var(--spacing-md) var(--spacing-xl);
+    padding: var(--sp-md) var(--sp-xl);
   }
 }
 
@@ -283,7 +283,7 @@
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: stretch;
-    gap: var(--spacing-md);
+    gap: var(--sp-md);
   }
 }
 
@@ -294,7 +294,7 @@
 .kb-calendar-range-footer-actions {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: var(--sp-sm);
 
   @media (max-width: 768px) {
     justify-content: space-between;

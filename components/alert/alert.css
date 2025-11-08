@@ -9,7 +9,7 @@
 
   /* TODO: Make shadow standard. */
   box-shadow: 0px 8px 16px -4px var(--black-5);
-  padding: var(--spacing-lg);
+  padding: var(--sp-lg);
 
   box-sizing: border-box;
 
@@ -17,14 +17,14 @@
   align-items: flex-start;
   /* flex-direction: column; */
   justify-content: flex-start;
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
   grid-template-columns: auto 1fr;
 }
 
 .kb-alert {
   .kb-alert-icon {
-    --alert-icon-height: var(--spacing-2xl);
-    --alert-icon-width: var(--spacing-2xl);
+    --alert-icon-height: var(--sp-2xl);
+    --alert-icon-width: var(--sp-2xl);
 
     display: flex;
     align-items: center;

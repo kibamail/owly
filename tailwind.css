@@ -180,20 +180,20 @@
   --color-kb-content-info-bold: var(--content-info-bold);
 
   /* ===== SPACING ===== */
-  --spacing-2xs: var(--spacing-2xs);
-  --spacing-xs: var(--spacing-xs);
-  --spacing-sm: var(--spacing-sm);
-  --spacing-md: var(--spacing-md);
-  --spacing-lg: var(--spacing-lg);
-  --spacing-xl: var(--spacing-xl);
-  --spacing-2xl: var(--spacing-2xl);
-  --spacing-3xl: var(--spacing-3xl);
-  --spacing-4xl: var(--spacing-4xl);
-  --spacing-5xl: var(--spacing-5xl);
-  --spacing-6xl: var(--spacing-6xl);
-  --spacing-7xl: var(--spacing-7xl);
-  --spacing-8xl: var(--spacing-8xl);
-  --spacing-9xl: var(--spacing-9xl);
+  --spacing-2xs: var(--sp-2xs);
+  --spacing-xs: var(--sp-xs);
+  --spacing-sm: var(--sp-sm);
+  --spacing-md: var(--sp-md);
+  --spacing-lg: var(--sp-lg);
+  --spacing-xl: var(--sp-xl);
+  --spacing-2xl: var(--sp-2xl);
+  --spacing-3xl: var(--sp-3xl);
+  --spacing-4xl: var(--sp-4xl);
+  --spacing-5xl: var(--sp-5xl);
+  --spacing-6xl: var(--sp-6xl);
+  --spacing-7xl: var(--sp-7xl);
+  --spacing-8xl: var(--sp-8xl);
+  --spacing-9xl: var(--sp-9xl);
 
   /* ===== BORDER RADIUS ===== */
   --radius-2xs: 2px;
@@ -209,8 +209,10 @@
   /* ===== SHADOWS ===== */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 /**

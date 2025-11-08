@@ -1,12 +1,12 @@
 .kb-input-hint {
   display: flex;
   align-items: flex-start;
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
   color: var(--content-tertiary);
 
   svg {
-    width: var(--spacing-xl);
-    height: var(--spacing-xl);
+    width: var(--sp-xl);
+    height: var(--sp-xl);
     flex-shrink: 0;
   }
 

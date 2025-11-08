@@ -155,10 +155,10 @@
 
 .kb-command-search-dialog-input-wrapper {
   height: 60px;
-  padding: var(--spacing-2xl) var(--spacing-xl);
+  padding: var(--sp-2xl) var(--sp-xl);
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--sp-md);
   background: var(--background-secondary);
   border-bottom: 0.75px solid rgba(0, 0, 0, 0.05);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
@@ -187,7 +187,7 @@
 }
 
 .kb-command-search-dialog-content {
-  padding: var(--spacing-md);
+  padding: var(--sp-md);
   flex: 1;
   overflow-y: auto;
 }
@@ -200,7 +200,7 @@
 
 .kb-command-search-dialog-footer {
   height: 60px;
-  padding: var(--spacing-2xl) var(--spacing-xl);
+  padding: var(--sp-2xl) var(--sp-xl);
   border-top: var(--width-px) solid var(--border-tertiary);
   display: flex;
   align-items: center;
@@ -212,7 +212,7 @@
 .kb-command-search-dialog-footer-right {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--sp-md);
 
   span {
     @apply --kb-text-body-md;
@@ -222,16 +222,16 @@
 
 .kb-command-search-dialog-group {
   &:not(:first-child) {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--sp-lg);
   }
 
   [cmdk-group-heading] {
     height: 20px;
     display: flex;
     align-items: center;
-    margin-bottom: var(--spacing-md);
-    padding-left: var(--spacing-lg);
-    padding-right: var(--spacing-lg);
+    margin-bottom: var(--sp-md);
+    padding-left: var(--sp-lg);
+    padding-right: var(--sp-lg);
     @apply --kb-text-body-md;
     color: var(--content-tertiary);
   }
@@ -240,7 +240,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: var(--spacing-md);
+    gap: var(--sp-md);
   }
 }
 
@@ -248,9 +248,9 @@
   height: 44px;
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  padding-left: var(--spacing-lg);
-  padding-right: var(--spacing-lg);
+  gap: var(--sp-md);
+  padding-left: var(--sp-lg);
+  padding-right: var(--sp-lg);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: background 0.15s ease;
@@ -281,7 +281,7 @@
 .kb-command-search-dialog-separator {
   height: var(--width-px);
   background: var(--border-tertiary);
-  margin: var(--spacing-sm) 0;
+  margin: var(--sp-sm) 0;
 }
 
 .kb-command-search-dialog-empty {
@@ -292,10 +292,10 @@
   justify-content: center;
 
   svg {
-    margin-left: calc(var(--spacing-3xl) + var(--spacing-xs));
+    margin-left: calc(var(--sp-3xl) + var(--sp-xs));
   }
 
-  gap: var(--spacing-md);
+  gap: var(--sp-md);
   color: var(--content-secondary);
 
   font-family: var(--default-font-family-body);

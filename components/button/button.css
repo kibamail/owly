@@ -3,7 +3,7 @@
   --button-icon-default-width: 14px;
   --button-icon-default-height: 14px;
 
-  --button-padding: var(--spacing-md) var(--spacing-lg);
+  --button-padding: var(--sp-md) var(--sp-lg);
 
   border-radius: var(--radius-md);
 
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: center;
 
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
   padding: var(--button-padding);
 
   cursor: pointer;
@@ -193,19 +193,19 @@
 @breakpoints {
   .kb-button {
     &:where(.kb-r-size-xs) {
-      --button-padding: var(--spacing-sm) var(--spacing-sm);
+      --button-padding: var(--sp-sm) var(--sp-sm);
     }
 
     &:where(.kb-r-size-sm) {
-      --button-padding: var(--spacing-sm) var(--spacing-sm);
+      --button-padding: var(--sp-sm) var(--sp-sm);
     }
 
     &:where(.kb-r-size-md) {
-      --button-padding: var(--spacing-md) var(--spacing-md);
+      --button-padding: var(--sp-md) var(--sp-md);
     }
 
     &:where(.kb-r-size-lg) {
-      --button-padding: var(--spacing-md) var(--spacing-lg);
+      --button-padding: var(--sp-md) var(--sp-lg);
     }
   }
 }

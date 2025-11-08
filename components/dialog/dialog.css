@@ -2,6 +2,7 @@
   position: fixed;
   inset: 0;
   background: var(--overlay-secondary);
+  z-index: 50;
   animation: kb-dialog-overlay-fade-in 0.15s ease;
 }
 
@@ -50,15 +51,15 @@
   border-top-width: var(--width-px);
   border-top-color: var(--border-tertiary);
   border-top-style: solid;
-  padding: var(--spacing-2xl);
+  padding: var(--sp-2xl);
 }
 
 .kb-dialog-header {
-  padding: var(--spacing-2xl);
+  padding: var(--sp-2xl);
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: var(--sp-xs);
 
   border-bottom-width: var(--width-px);
   border-bottom-color: var(--border-tertiary);
@@ -66,8 +67,8 @@
 
   .kb-dialog-close {
     position: absolute;
-    right: var(--spacing-xl);
-    top: var(--spacing-xl);
+    right: var(--sp-xl);
+    top: var(--sp-xl);
     color: var(--content-disabled);
     cursor: pointer;
 
@@ -78,8 +79,8 @@
     }
 
     svg {
-      width: var(--spacing-2xl);
-      height: var(--spacing-2xl);
+      width: var(--sp-2xl);
+      height: var(--sp-2xl);
     }
   }
 }
