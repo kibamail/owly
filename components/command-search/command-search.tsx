@@ -110,7 +110,7 @@ const CommandSearchTrigger = React.forwardRef<
   CommandSearchTriggerElement,
   CommandSearchTriggerProps
 >((props, forwardedRef) => {
-  const { placeholder = "Search", className, ...inputProps } = props;
+  const { placeholder = "Search", className, size, ...inputProps } = props;
   const { setOpen } = useCommandSearchContext("CommandSearch.Trigger");
 
   return (

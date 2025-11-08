@@ -31,7 +31,8 @@ const [TextFieldProvider, useTextFieldContext] = createContext<{
 
 export const sizes = ["regular", "sm"] as const
 
-export interface TextFieldProps extends ComponentPropsWithoutRef<"input"> {
+export interface TextFieldProps
+  extends Omit<ComponentPropsWithoutRef<"input">, "size"> {
   size?: (typeof sizes)[number]
 }
 
