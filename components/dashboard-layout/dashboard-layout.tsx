@@ -13,6 +13,11 @@ type DashboardLayoutContentElement = React.ElementRef<"div">;
 type DashboardLayoutStickyContentHeaderContainerElement = React.ElementRef<"div">;
 type DashboardLayoutContentHeaderElement = React.ElementRef<"div">;
 type DashboardLayoutContentActionsElement = React.ElementRef<"div">;
+type DashboardLayoutStickyDetailHeaderElement = React.ElementRef<"div">;
+type DashboardLayoutStickyDetailHeaderIconElement = React.ElementRef<"div">;
+type DashboardLayoutStickyDetailHeaderTitleElement = React.ElementRef<"h1">;
+type DashboardLayoutStickyDetailHeaderDescriptionElement = React.ElementRef<"p">;
+type DashboardLayoutStickyDetailActionsElement = React.ElementRef<"div">;
 type DashboardLayoutSidebarElement = React.ElementRef<"div">;
 type DashboardLayoutSidebarDropdownElement = React.ElementRef<"div">;
 type DashboardLayoutSidebarGroupElement = React.ElementRef<"div">;
@@ -37,6 +42,16 @@ interface DashboardLayoutContentHeaderProps
   title?: string;
 }
 interface DashboardLayoutContentActionsProps
+  extends React.ComponentPropsWithoutRef<"div"> {}
+interface DashboardLayoutStickyDetailHeaderProps
+  extends React.ComponentPropsWithoutRef<"div"> {}
+interface DashboardLayoutStickyDetailHeaderIconProps
+  extends React.ComponentPropsWithoutRef<"div"> {}
+interface DashboardLayoutStickyDetailHeaderTitleProps
+  extends React.ComponentPropsWithoutRef<"h1"> {}
+interface DashboardLayoutStickyDetailHeaderDescriptionProps
+  extends React.ComponentPropsWithoutRef<"p"> {}
+interface DashboardLayoutStickyDetailActionsProps
   extends React.ComponentPropsWithoutRef<"div"> {}
 interface DashboardLayoutSidebarProps
   extends React.ComponentPropsWithoutRef<"div"> {}
@@ -244,6 +259,103 @@ const DashboardLayoutContentActions = React.forwardRef<
 });
 
 DashboardLayoutContentActions.displayName = "DashboardLayout.ContentActions";
+
+const DashboardLayoutStickyDetailHeader = React.forwardRef<
+  DashboardLayoutStickyDetailHeaderElement,
+  DashboardLayoutStickyDetailHeaderProps
+>((props, forwardedRef) => {
+  const { className, children, ...divProps } = props;
+
+  return (
+    <div
+      {...divProps}
+      ref={forwardedRef}
+      className={cn("kb-dashboard-layout-sticky-detail-header", className)}
+    >
+      {children}
+    </div>
+  );
+});
+
+DashboardLayoutStickyDetailHeader.displayName = "DashboardLayout.StickyDetailHeader";
+
+const DashboardLayoutStickyDetailHeaderIcon = React.forwardRef<
+  DashboardLayoutStickyDetailHeaderIconElement,
+  DashboardLayoutStickyDetailHeaderIconProps
+>((props, forwardedRef) => {
+  const { className, children, ...divProps } = props;
+
+  return (
+    <div
+      {...divProps}
+      ref={forwardedRef}
+      className={cn("kb-dashboard-layout-sticky-detail-header-icon", className)}
+    >
+      <div className="kb-dashboard-layout-sticky-detail-header-icon-inner">
+        {children}
+      </div>
+    </div>
+  );
+});
+
+DashboardLayoutStickyDetailHeaderIcon.displayName = "DashboardLayout.StickyDetailHeaderIcon";
+
+const DashboardLayoutStickyDetailHeaderTitle = React.forwardRef<
+  DashboardLayoutStickyDetailHeaderTitleElement,
+  DashboardLayoutStickyDetailHeaderTitleProps
+>((props, forwardedRef) => {
+  const { className, children, ...h1Props } = props;
+
+  return (
+    <h1
+      {...h1Props}
+      ref={forwardedRef}
+      className={cn("kb-dashboard-layout-sticky-detail-header-title", className)}
+    >
+      {children}
+    </h1>
+  );
+});
+
+DashboardLayoutStickyDetailHeaderTitle.displayName = "DashboardLayout.StickyDetailHeaderTitle";
+
+const DashboardLayoutStickyDetailHeaderDescription = React.forwardRef<
+  DashboardLayoutStickyDetailHeaderDescriptionElement,
+  DashboardLayoutStickyDetailHeaderDescriptionProps
+>((props, forwardedRef) => {
+  const { className, children, ...pProps } = props;
+
+  return (
+    <p
+      {...pProps}
+      ref={forwardedRef}
+      className={cn("kb-dashboard-layout-sticky-detail-header-description", className)}
+    >
+      {children}
+    </p>
+  );
+});
+
+DashboardLayoutStickyDetailHeaderDescription.displayName = "DashboardLayout.StickyDetailHeaderDescription";
+
+const DashboardLayoutStickyDetailActions = React.forwardRef<
+  DashboardLayoutStickyDetailActionsElement,
+  DashboardLayoutStickyDetailActionsProps
+>((props, forwardedRef) => {
+  const { className, children, ...divProps } = props;
+
+  return (
+    <div
+      {...divProps}
+      ref={forwardedRef}
+      className={cn("kb-dashboard-layout-sticky-detail-actions", className)}
+    >
+      {children}
+    </div>
+  );
+});
+
+DashboardLayoutStickyDetailActions.displayName = "DashboardLayout.StickyDetailActions";
 
 const DashboardLayoutSidebar = React.forwardRef<
   DashboardLayoutSidebarElement,
@@ -474,6 +586,11 @@ export {
   DashboardLayoutStickyContentHeaderContainer,
   DashboardLayoutContentHeader,
   DashboardLayoutContentActions,
+  DashboardLayoutStickyDetailHeader,
+  DashboardLayoutStickyDetailHeaderIcon,
+  DashboardLayoutStickyDetailHeaderTitle,
+  DashboardLayoutStickyDetailHeaderDescription,
+  DashboardLayoutStickyDetailActions,
   DashboardLayoutSidebar,
   DashboardLayoutSidebarDropdown,
   DashboardLayoutSidebarGroup,
@@ -488,6 +605,11 @@ export {
   DashboardLayoutStickyContentHeaderContainer as StickyContentHeaderContainer,
   DashboardLayoutContentHeader as ContentHeader,
   DashboardLayoutContentActions as ContentActions,
+  DashboardLayoutStickyDetailHeader as StickyDetailHeader,
+  DashboardLayoutStickyDetailHeaderIcon as StickyDetailHeaderIcon,
+  DashboardLayoutStickyDetailHeaderTitle as StickyDetailHeaderTitle,
+  DashboardLayoutStickyDetailHeaderDescription as StickyDetailHeaderDescription,
+  DashboardLayoutStickyDetailActions as StickyDetailActions,
   DashboardLayoutSidebar as Sidebar,
   DashboardLayoutSidebarDropdown as SidebarDropdown,
   DashboardLayoutSidebarGroup as SidebarGroup,

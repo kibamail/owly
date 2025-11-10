@@ -529,4 +529,136 @@ export const Default: DashboardLayoutStoryFn = () => {
   );
 };
 
+export const WithDetailHeader: DashboardLayoutStoryFn = () => {
+  return (
+    <>
+      <DashboardLayout.Root>
+        <DashboardLayout.SidebarDropdown>
+          <UserDropdown.Root>
+            <UserDropdown.Trigger>
+              <LetterAvatar size="medium">Frantz Kati</LetterAvatar>
+              <div style={{ display: "flex", flexDirection: "column", gap: "2px", flex: 1, overflow: "hidden" }}>
+                <span style={{ fontWeight: 500, fontSize: "14px" }}>Frantz Kati</span>
+                <span style={{ fontSize: "12px", color: "var(--content-tertiary)" }}>frantz@acme.com</span>
+              </div>
+            </UserDropdown.Trigger>
+            <UserDropdown.Content>
+              <UserDropdown.Item>
+                <User />
+                Profile
+              </UserDropdown.Item>
+              <UserDropdown.Item>
+                <Settings />
+                Settings
+              </UserDropdown.Item>
+              <UserDropdown.Divider />
+              <UserDropdown.Item>
+                <LogOut />
+                Log out
+              </UserDropdown.Item>
+            </UserDropdown.Content>
+          </UserDropdown.Root>
+        </DashboardLayout.SidebarDropdown>
+
+        <DashboardLayout.Sidebar>
+          <UserDropdown.Root>
+            <UserDropdown.Trigger>
+              <LetterAvatar size="medium">Frantz Kati</LetterAvatar>
+              <div style={{ display: "flex", flexDirection: "column", gap: "2px", flex: 1, overflow: "hidden" }}>
+                <span style={{ fontWeight: 500, fontSize: "14px" }}>Frantz Kati</span>
+                <span style={{ fontSize: "12px", color: "var(--content-tertiary)" }}>frantz@acme.com</span>
+              </div>
+            </UserDropdown.Trigger>
+            <UserDropdown.Content>
+              <UserDropdown.Item>
+                <User />
+                Profile
+              </UserDropdown.Item>
+              <UserDropdown.Item>
+                <Settings />
+                Settings
+              </UserDropdown.Item>
+              <UserDropdown.Divider />
+              <UserDropdown.Item>
+                <LogOut />
+                Log out
+              </UserDropdown.Item>
+            </UserDropdown.Content>
+          </UserDropdown.Root>
+
+          <DashboardLayout.SidebarGroup>
+            <DashboardLayout.SidebarItem active>
+              <HomeAltSlimHoriz />
+              Dashboard
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <BookStack />
+              Contacts
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <SwipeLeftGesture />
+              Campaigns
+            </DashboardLayout.SidebarItem>
+            <DashboardLayout.SidebarItem>
+              <SecureWindow />
+              Settings
+            </DashboardLayout.SidebarItem>
+          </DashboardLayout.SidebarGroup>
+
+          <DashboardLayout.SidebarFooter>
+            <DashboardLayout.FooterNotes>
+              <DashboardLayout.FooterNotesLinkGroup>
+                <DashboardLayout.FooterNotesLink>
+                  Privacy
+                </DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>
+                  Terms
+                </DashboardLayout.FooterNotesLink>
+                <DashboardLayout.FooterNotesLink>
+                  Help Center
+                </DashboardLayout.FooterNotesLink>
+              </DashboardLayout.FooterNotesLinkGroup>
+            </DashboardLayout.FooterNotes>
+          </DashboardLayout.SidebarFooter>
+        </DashboardLayout.Sidebar>
+
+        <DashboardLayout.ContentShell>
+          <DashboardLayout.Content>
+            <DashboardLayout.StickyContentHeaderContainer>
+              <DashboardLayout.StickyDetailHeader>
+                <DashboardLayout.StickyDetailHeaderIcon>
+                  <BookStack />
+                </DashboardLayout.StickyDetailHeaderIcon>
+                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                  <DashboardLayout.StickyDetailHeaderDescription>
+                    Enterprise customer since March 2024
+                  </DashboardLayout.StickyDetailHeaderDescription>
+                  <DashboardLayout.StickyDetailHeaderTitle>
+                    Acme Corporation
+                  </DashboardLayout.StickyDetailHeaderTitle>
+                </div>
+                <DashboardLayout.StickyDetailActions>
+                  <Button variant="secondary">Edit</Button>
+                  <Button variant="primary">
+                    <Plus />
+                    Add Contact
+                  </Button>
+                </DashboardLayout.StickyDetailActions>
+              </DashboardLayout.StickyDetailHeader>
+            </DashboardLayout.StickyContentHeaderContainer>
+
+            <div style={{ paddingTop: "32px" }}>
+              <h3 style={{ fontSize: "18px", fontWeight: 600, marginBottom: "16px" }}>Company Details</h3>
+              <p style={{ color: "var(--content-secondary)", lineHeight: "1.6" }}>
+                This is where you would display detailed information about the organization,
+                including statistics, recent activity, team members, and other relevant data.
+              </p>
+            </div>
+          </DashboardLayout.Content>
+        </DashboardLayout.ContentShell>
+      </DashboardLayout.Root>
+    </>
+  );
+};
+
 export default meta;

@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.1.8",
+  "version": "1.1.11",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -116,6 +116,10 @@
     "./styles/text-field.css": "./dist/styles/text-field.css",
     "./styles/toast.css": "./dist/styles/toast.css",
     "./styles/user-dropdown.css": "./dist/styles/user-dropdown.css",
+    "./styles/settings-card.css": "./dist/styles/settings-card.css",
+    "./styles/dropdown-menu.css": "./dist/styles/dropdown-menu.css",
+    "./styles/empty-card.css": "./dist/styles/empty-card.css",
+    "./styles/hover-card.css": "./dist/styles/hover-card.css",
     "./styles/tokens.css": "./tokens.css",
     "./styles/components.css": "./components.css",
     "./styles/index.css": "./index.css",
@@ -175,6 +179,26 @@
       "types": "./dist/cjs/toast/index.d.ts",
       "import": "./dist/esm/toast/index.js",
       "require": "./dist/cjs/toast/index.js"
+    },
+    "./settings-card": {
+      "types": "./dist/cjs/settings-card/index.d.ts",
+      "import": "./dist/esm/settings-card/index.js",
+      "require": "./dist/cjs/settings-card/index.js"
+    },
+    "./dropdown-menu": {
+      "types": "./dist/cjs/dropdown-menu/index.d.ts",
+      "import": "./dist/esm/dropdown-menu/index.js",
+      "require": "./dist/cjs/dropdown-menu/index.js"
+    },
+    "./empty-card": {
+      "types": "./dist/cjs/empty-card/index.d.ts",
+      "import": "./dist/esm/empty-card/index.js",
+      "require": "./dist/cjs/empty-card/index.js"
+    },
+    "./hover-card": {
+      "types": "./dist/cjs/hover-card/index.d.ts",
+      "import": "./dist/esm/hover-card/index.js",
+      "require": "./dist/cjs/hover-card/index.js"
     }
   },
   "scripts": {
@@ -211,6 +235,8 @@
     "@radix-ui/react-context": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-direction": "^1.1.0",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-hover-card": "^1.1.15",
     "@radix-ui/react-id": "^1.1.0",
     "@radix-ui/react-popover": "^1.1.15",
     "@radix-ui/react-presence": "^1.1.1",

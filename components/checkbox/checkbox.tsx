@@ -24,8 +24,8 @@ const CheckInput = React.forwardRef<CheckboxElement, CheckboxProps>(
       size,
       ...checkboxProps
     } = props;
-    const [state, setState] = useControllableState({
-      defaultProp: defaultChecked,
+    const [state, setState] = useControllableState<CheckboxPrimitive.CheckedState>({
+      defaultProp: defaultChecked ?? false,
       prop: checked,
       onChange: onCheckedChange,
     });

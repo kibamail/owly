@@ -144,6 +144,70 @@ export const Variants: ButtonStoryFn = () => {
   )
 }
 
+export const Sizes: ButtonStoryFn = () => {
+  return (
+    <>
+      <div className="box">
+        <h5>Large (lg) - Default</h5>
+        <div>
+          <Button variant="primary" size="lg">
+            <SendDiagonal />
+            Large Button
+          </Button>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Medium (md)</h5>
+        <div>
+          <Button variant="primary" size="md">
+            <SendDiagonal />
+            Medium Button
+          </Button>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Small (sm)</h5>
+        <div>
+          <Button variant="primary" size="sm">
+            <SendDiagonal />
+            Small Button
+          </Button>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Extra Small (xs)</h5>
+        <div>
+          <Button variant="primary" size="xs">
+            <SendDiagonal />
+            Extra Small
+          </Button>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>All Sizes Comparison</h5>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+          <Button variant="secondary" size="lg">
+            Large
+          </Button>
+          <Button variant="secondary" size="md">
+            Medium
+          </Button>
+          <Button variant="secondary" size="sm">
+            Small
+          </Button>
+          <Button variant="secondary" size="xs">
+            XS
+          </Button>
+        </div>
+      </div>
+    </>
+  )
+}
+
 export const Widths: ButtonStoryFn = () => {
   return (
     <>

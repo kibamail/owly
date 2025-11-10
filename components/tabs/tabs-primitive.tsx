@@ -84,10 +84,10 @@ const Tabs = React.forwardRef<TabsElement, TabsProps>(
       ...tabsProps
     } = props;
     const direction = useDirection(dir);
-    const [value, setValue] = useControllableState({
+    const [value, setValue] = useControllableState<string>({
       prop: valueProp,
       onChange: onValueChange,
-      defaultProp: defaultValue,
+      defaultProp: defaultValue ?? "",
     });
 
     return (

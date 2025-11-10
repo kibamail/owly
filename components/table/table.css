@@ -4,6 +4,7 @@
   overflow-y: visible;
   border: var(--width-px) solid var(--border-tertiary);
   border-bottom: 1px solid transparent;
+  border-radius: var(--radius-md);
 }
 
 .kb-table {
@@ -48,4 +49,12 @@
   font-size: 14px;
   color: var(--content-secondary);
   box-sizing: border-box;
+}
+
+.kb-table-body .kb-table-row:last-child .kb-table-cell:first-child {
+  border-bottom-left-radius: var(--radius-md);
+}
+
+.kb-table-body .kb-table-row:last-child .kb-table-cell:last-child {
+  border-bottom-right-radius: var(--radius-md);
 }

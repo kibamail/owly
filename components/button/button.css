@@ -197,7 +197,7 @@
     }
 
     &:where(.kb-r-size-sm) {
-      --button-padding: var(--sp-sm) var(--sp-sm);
+      --button-padding: var(--sp-sm) var(--sp-lg);
     }
 
     &:where(.kb-r-size-md) {
