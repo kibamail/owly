@@ -3248,74 +3248,194 @@
     border: none;
     font-family: var(--default-font-family);
 }
-.kb-letter-avatar:where(.kb-r-size-small) {
+.kb-letter-avatar:where(.kb-r-size-xs) {
     width: 20px;
     height: 20px;
-    font-size: var(--font-body-xs);
+    font-size: 10px;
+    line-height: 1;
 }
-.kb-letter-avatar:where(.kb-r-size-medium) {
-    width: 24px;
-    height: 24px;
-    font-size: var(--font-body-sm);
+.kb-letter-avatar:where(.kb-r-size-sm) {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 1;
+}
+.kb-letter-avatar:where(.kb-r-size-md) {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    line-height: 1;
+}
+.kb-letter-avatar:where(.kb-r-size-lg) {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+    line-height: 1;
+}
+.kb-letter-avatar:where(.kb-r-size-xl) {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    line-height: 1;
 }
 @media (min-width: 640px) {
-    .kb-letter-avatar:where(.sm\:kb-r-size-small) {
+    .kb-letter-avatar:where(.sm\:kb-r-size-xs) {
         width: 20px;
         height: 20px;
-        font-size: var(--font-body-xs);
+        font-size: 10px;
+        line-height: 1;
     }
-    .kb-letter-avatar:where(.sm\:kb-r-size-medium) {
-        width: 24px;
-        height: 24px;
-        font-size: var(--font-body-sm);
+    .kb-letter-avatar:where(.sm\:kb-r-size-sm) {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.sm\:kb-r-size-md) {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.sm\:kb-r-size-lg) {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.sm\:kb-r-size-xl) {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+        line-height: 1;
     }
 }
 @media (min-width: 768px) {
-    .kb-letter-avatar:where(.md\:kb-r-size-small) {
+    .kb-letter-avatar:where(.md\:kb-r-size-xs) {
         width: 20px;
         height: 20px;
-        font-size: var(--font-body-xs);
+        font-size: 10px;
+        line-height: 1;
     }
-    .kb-letter-avatar:where(.md\:kb-r-size-medium) {
-        width: 24px;
-        height: 24px;
-        font-size: var(--font-body-sm);
+    .kb-letter-avatar:where(.md\:kb-r-size-sm) {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.md\:kb-r-size-md) {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.md\:kb-r-size-lg) {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.md\:kb-r-size-xl) {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+        line-height: 1;
     }
 }
 @media (min-width: 1024px) {
-    .kb-letter-avatar:where(.lg\:kb-r-size-small) {
+    .kb-letter-avatar:where(.lg\:kb-r-size-xs) {
         width: 20px;
         height: 20px;
-        font-size: var(--font-body-xs);
+        font-size: 10px;
+        line-height: 1;
     }
-    .kb-letter-avatar:where(.lg\:kb-r-size-medium) {
-        width: 24px;
-        height: 24px;
-        font-size: var(--font-body-sm);
+    .kb-letter-avatar:where(.lg\:kb-r-size-sm) {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.lg\:kb-r-size-md) {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.lg\:kb-r-size-lg) {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.lg\:kb-r-size-xl) {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+        line-height: 1;
     }
 }
 @media (min-width: 1280px) {
-    .kb-letter-avatar:where(.xl\:kb-r-size-small) {
+    .kb-letter-avatar:where(.xl\:kb-r-size-xs) {
         width: 20px;
         height: 20px;
-        font-size: var(--font-body-xs);
+        font-size: 10px;
+        line-height: 1;
     }
-    .kb-letter-avatar:where(.xl\:kb-r-size-medium) {
-        width: 24px;
-        height: 24px;
-        font-size: var(--font-body-sm);
+    .kb-letter-avatar:where(.xl\:kb-r-size-sm) {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.xl\:kb-r-size-md) {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.xl\:kb-r-size-lg) {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.xl\:kb-r-size-xl) {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+        line-height: 1;
     }
 }
 @media (min-width: 1536px) {
-    .kb-letter-avatar:where(.\32xl\:kb-r-size-small) {
+    .kb-letter-avatar:where(.\32xl\:kb-r-size-xs) {
         width: 20px;
         height: 20px;
-        font-size: var(--font-body-xs);
+        font-size: 10px;
+        line-height: 1;
     }
-    .kb-letter-avatar:where(.\32xl\:kb-r-size-medium) {
-        width: 24px;
-        height: 24px;
-        font-size: var(--font-body-sm);
+    .kb-letter-avatar:where(.\32xl\:kb-r-size-sm) {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.\32xl\:kb-r-size-md) {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.\32xl\:kb-r-size-lg) {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+        line-height: 1;
+    }
+    .kb-letter-avatar:where(.\32xl\:kb-r-size-xl) {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+        line-height: 1;
     }
 }
 .kb-letter-avatar:where(.kb-color-notice) {

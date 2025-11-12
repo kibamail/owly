@@ -135,7 +135,7 @@ export const Default: DashboardLayoutStoryFn = () => {
         <DashboardLayout.SidebarDropdown>
           <UserDropdown.Root>
             <UserDropdown.Trigger>
-              <LetterAvatar size="small" color="info">
+              <LetterAvatar size="xs" color="info">
                 Acme Corp
               </LetterAvatar>
               <span>Acme Corp</span>
@@ -145,7 +145,7 @@ export const Default: DashboardLayoutStoryFn = () => {
                 selected={selectedItem === "acme"}
                 onClick={() => setSelectedItem("acme")}
               >
-                <LetterAvatar size="small" color="info">
+                <LetterAvatar size="xs" color="info">
                   Acme Corp
                 </LetterAvatar>
                 Acme Corp
@@ -154,7 +154,7 @@ export const Default: DashboardLayoutStoryFn = () => {
                 selected={selectedItem === "techstart"}
                 onClick={() => setSelectedItem("techstart")}
               >
-                <LetterAvatar size="small" color="positive">
+                <LetterAvatar size="xs" color="positive">
                   TechStart
                 </LetterAvatar>
                 TechStart
@@ -163,7 +163,7 @@ export const Default: DashboardLayoutStoryFn = () => {
                 selected={selectedItem === "designco"}
                 onClick={() => setSelectedItem("designco")}
               >
-                <LetterAvatar size="small" color="notice">
+                <LetterAvatar size="xs" color="notice">
                   DesignCo
                 </LetterAvatar>
                 DesignCo
@@ -172,7 +172,7 @@ export const Default: DashboardLayoutStoryFn = () => {
                 selected={selectedItem === "devstudio"}
                 onClick={() => setSelectedItem("devstudio")}
               >
-                <LetterAvatar size="small" color="highlight">
+                <LetterAvatar size="xs" color="highlight">
                   DevStudio
                 </LetterAvatar>
                 DevStudio
@@ -292,7 +292,7 @@ export const Default: DashboardLayoutStoryFn = () => {
         <DashboardLayout.Sidebar>
           <UserDropdown.Root>
             <UserDropdown.Trigger>
-              <LetterAvatar size="small" color="info">
+              <LetterAvatar size="xs" color="info">
                 Acme Corp
               </LetterAvatar>
               <span>Acme Corp</span>
@@ -302,7 +302,7 @@ export const Default: DashboardLayoutStoryFn = () => {
                 selected={selectedItem === "acme"}
                 onClick={() => setSelectedItem("acme")}
               >
-                <LetterAvatar size="small" color="info">
+                <LetterAvatar size="xs" color="info">
                   Acme Corp
                 </LetterAvatar>
                 Acme Corp
@@ -311,7 +311,7 @@ export const Default: DashboardLayoutStoryFn = () => {
                 selected={selectedItem === "techstart"}
                 onClick={() => setSelectedItem("techstart")}
               >
-                <LetterAvatar size="small" color="positive">
+                <LetterAvatar size="xs" color="positive">
                   TechStart
                 </LetterAvatar>
                 TechStart
@@ -320,7 +320,7 @@ export const Default: DashboardLayoutStoryFn = () => {
                 selected={selectedItem === "designco"}
                 onClick={() => setSelectedItem("designco")}
               >
-                <LetterAvatar size="small" color="notice">
+                <LetterAvatar size="xs" color="notice">
                   DesignCo
                 </LetterAvatar>
                 DesignCo
@@ -329,7 +329,7 @@ export const Default: DashboardLayoutStoryFn = () => {
                 selected={selectedItem === "devstudio"}
                 onClick={() => setSelectedItem("devstudio")}
               >
-                <LetterAvatar size="small" color="highlight">
+                <LetterAvatar size="xs" color="highlight">
                   DevStudio
                 </LetterAvatar>
                 DevStudio
@@ -536,7 +536,7 @@ export const WithDetailHeader: DashboardLayoutStoryFn = () => {
         <DashboardLayout.SidebarDropdown>
           <UserDropdown.Root>
             <UserDropdown.Trigger>
-              <LetterAvatar size="medium">Frantz Kati</LetterAvatar>
+              <LetterAvatar size="md">Frantz Kati</LetterAvatar>
               <div style={{ display: "flex", flexDirection: "column", gap: "2px", flex: 1, overflow: "hidden" }}>
                 <span style={{ fontWeight: 500, fontSize: "14px" }}>Frantz Kati</span>
                 <span style={{ fontSize: "12px", color: "var(--content-tertiary)" }}>frantz@acme.com</span>
@@ -563,7 +563,7 @@ export const WithDetailHeader: DashboardLayoutStoryFn = () => {
         <DashboardLayout.Sidebar>
           <UserDropdown.Root>
             <UserDropdown.Trigger>
-              <LetterAvatar size="medium">Frantz Kati</LetterAvatar>
+              <LetterAvatar size="md">Frantz Kati</LetterAvatar>
               <div style={{ display: "flex", flexDirection: "column", gap: "2px", flex: 1, overflow: "hidden" }}>
                 <span style={{ fontWeight: 500, fontSize: "14px" }}>Frantz Kati</span>
                 <span style={{ fontSize: "12px", color: "var(--content-tertiary)" }}>frantz@acme.com</span>
