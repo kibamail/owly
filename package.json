@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -20,6 +20,11 @@
       "types": "./dist/esm/index.d.ts",
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
+    },
+    "./accordion": {
+      "types": "./dist/esm/accordion/index.d.ts",
+      "import": "./dist/esm/accordion/index.js",
+      "require": "./dist/cjs/accordion/index.js"
     },
     "./badge": {
       "types": "./dist/esm/badge/index.d.ts",
@@ -86,11 +91,17 @@
       "import": "./dist/esm/progress/index.js",
       "require": "./dist/cjs/progress/index.js"
     },
+    "./skeleton": {
+      "types": "./dist/esm/skeleton/index.d.ts",
+      "import": "./dist/esm/skeleton/index.js",
+      "require": "./dist/cjs/skeleton/index.js"
+    },
     "./spinner": {
       "types": "./dist/esm/spinner/index.d.ts",
       "import": "./dist/esm/spinner/index.js",
       "require": "./dist/cjs/spinner/index.js"
     },
+    "./styles/accordion.css": "./dist/styles/accordion.css",
     "./styles/alert.css": "./dist/styles/alert.css",
     "./styles/badge.css": "./dist/styles/badge.css",
     "./styles/button.css": "./dist/styles/button.css",
@@ -109,6 +120,7 @@
     "./styles/progress.css": "./dist/styles/progress.css",
     "./styles/radio-group.css": "./dist/styles/radio-group.css",
     "./styles/select-field.css": "./dist/styles/select-field.css",
+    "./styles/skeleton.css": "./dist/styles/skeleton.css",
     "./styles/spinner.css": "./dist/styles/spinner.css",
     "./styles/table.css": "./dist/styles/table.css",
     "./styles/tabs.css": "./dist/styles/tabs.css",
