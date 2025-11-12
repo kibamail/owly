@@ -1,3 +1,4 @@
+@import "./accordion/accordion.css";
 @import "./alert/alert.css";
 @import "./badge/badge.css";
 @import "./button/button.css";
@@ -18,6 +19,7 @@
 @import "./multi-select/multi-select.css";
 @import "./progress/progress.css";
 @import "./radio-group/radio-group.css";
+@import "./skeleton/skeleton.css";
 @import "./select-field/select-field.css";
 @import "./settings-card/settings-card.css";
 @import "./spinner/spinner.css";

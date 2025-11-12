@@ -50,15 +50,26 @@ const TabsList = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
 >(({ className, ...props }, ref) => {
   const { variant } = useTabsContext("TabsList")
+  const [isMounted, setIsMounted] = React.useState(false)
 
   const { className: variantClassName } = getVariableClassNamesForProp<
     TabsRootProps["variant"]
   >("variant", variant, "primary")
 
+  React.useEffect(() => {
+    // Enable animations after component mounts to prevent indicator from animating on mount
+    const timeout = setTimeout(() => {
+      setIsMounted(true)
+    }, 50)
+
+    return () => clearTimeout(timeout)
+  }, [])
+
   return (
     <TabsPrimitive.List
       ref={ref}
       className={cn("kb-tabs-list", variantClassName, className)}
+      data-mounted={isMounted || undefined}
       {...props}
     />
   )

@@ -10,10 +10,12 @@ export * from "./input-hint/index.js";
 export * from "./input-label/index.js";
 export * from "./letter-avatar/index.js";
 export * from "./progress/index.js";
+export * from "./skeleton/index.js";
 export * from "./spinner/index.js";
 export * from "./text/index.js";
 
 // Compound components - export as namespace to avoid conflicts
+export * as Accordion from "./accordion/index.js";
 export * as Alert from "./alert/index.js";
 export * as CodeInput from "./code-input/index.js";
 export * as CommandSearch from "./command-search/index.js";

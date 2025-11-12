@@ -94,7 +94,13 @@
 }
 
 .kb-tabs-indicator {
-  transition: transform 250ms ease-in-out;
+  /* Disable transition on mount to prevent indicator from animating to initial position */
+  transition: none;
+
+  /* Enable transition after mount */
+  .kb-tabs-list[data-mounted] & {
+    transition: transform 250ms ease-in-out;
+  }
 
   &:where(.kb-variant-primary) {
     width: calc(var(--tabs-indicator-active-position-size) * 1px);
