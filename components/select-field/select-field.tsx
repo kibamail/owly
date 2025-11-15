@@ -188,6 +188,7 @@ const SelectFieldContent = React.forwardRef<
   SelectFieldContentProps
 >((props, forwardedRef) => {
   const { className, container, children, ...contentProps } = props
+  const { size } = useSelectFieldContext("SelectField.Content")
 
   return (
     <SelectFieldPrimitive.Portal container={container}>
@@ -197,7 +198,9 @@ const SelectFieldContent = React.forwardRef<
         asChild={false}
         position="popper"
         ref={forwardedRef}
-        className={cn("kb-select-content", className)}
+        className={cn("kb-select-content", {
+          "kb-select-content-sm": size === "sm",
+        }, className)}
       >
         <SelectFieldPrimitive.Viewport className="kb-select-viewport">
           {children}
@@ -217,12 +220,16 @@ const SelectFieldItem = React.forwardRef<
   SelectFieldItemProps
 >((props, forwardedRef) => {
   const { className, children, ...itemProps } = props
+  const { size } = useSelectFieldContext("SelectField.Item")
+
   return (
     <SelectFieldPrimitive.Item
       {...itemProps}
       asChild={false}
       ref={forwardedRef}
-      className={cn("kb-select-item", className)}
+      className={cn("kb-select-item", {
+        "kb-select-item-sm": size === "sm",
+      }, className)}
     >
       <SelectFieldPrimitive.ItemText asChild>
         <Text as="span" className="kb-select-item-text">

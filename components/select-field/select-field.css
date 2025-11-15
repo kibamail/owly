@@ -266,3 +266,27 @@
     }
   }
 }
+
+/* Small size content */
+.kb-select-content-sm {
+  .kb-select-viewport {
+    padding: calc(var(--sp-xs) * 0.75);
+  }
+}
+
+/* Small size items */
+.kb-select-item-sm {
+  padding: calc(var(--sp-md) * 0.75);
+  min-height: 28px;
+  height: 28px;
+
+  .kb-text {
+    font-size: var(--font-body-sm);
+    gap: calc(var(--sp-md) * 0.75);
+  }
+
+  svg {
+    width: calc(var(--sp-2xl) * 0.75);
+    height: calc(var(--sp-2xl) * 0.75);
+  }
+}

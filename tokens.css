@@ -115,6 +115,7 @@
     --black-10: rgba(0, 0, 0, 0.1);
     --black-5: rgba(0, 0, 0, 0.05);
     --width-px: 1px;
+    --width-xs: 0.75px;
     --width-2xs: 2px;
     --scaling-xlarge: 1.1;
     --scaling-large: 1.05;

@@ -31,9 +31,12 @@ type HiddenInputProps = Pick<
   "style" | "name" | "aria-label" | "aria-labelledby"
 >
 
+export const sizes = ["regular", "sm"] as const
+
 const MULTI_SELECT_NAME = "MultiSelect"
 const [MultiSelectProvider, useMultiSelectContext] = createContext<{
   baseId: string
+  size: (typeof sizes)[number]
   selectedValues: string[]
   onValueToggle: (value: string) => void
   disabled?: boolean
@@ -43,6 +46,7 @@ const [MultiSelectProvider, useMultiSelectContext] = createContext<{
 interface MultiSelectRootProps extends HiddenInputProps {
   className?: string
   children?: React.ReactNode
+  size?: (typeof sizes)[number]
   value?: string[]
   defaultValue?: string[]
   onValueChange?: (value: string[]) => void
@@ -60,6 +64,7 @@ const MultiSelectRoot = React.forwardRef<
     children,
     name,
     className,
+    size = "regular",
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     value,
@@ -108,6 +113,7 @@ const MultiSelectRoot = React.forwardRef<
   return (
     <MultiSelectProvider
       baseId={baseId}
+      size={size}
       selectedValues={selectedValues}
       onValueToggle={onValueToggle}
       disabled={disabled}
@@ -129,7 +135,9 @@ const MultiSelectRoot = React.forwardRef<
         <div
           data-invalid={isInvalid}
           data-disabled={disabled}
-          className={cn("kb-multi-select-root", className)}
+          className={cn("kb-multi-select-root", {
+            "kb-size-sm": size === "sm",
+          }, className)}
         >
           {children}
         </div>
@@ -211,7 +219,7 @@ const MultiSelectContent = React.forwardRef<
   MultiSelectContentProps
 >((props, forwardedRef) => {
   const { className, container, children, ...contentProps } = props
-  const { triggerRef } = useMultiSelectContext("MultiSelect.Content")
+  const { triggerRef, size } = useMultiSelectContext("MultiSelect.Content")
   const [triggerWidth, setTriggerWidth] = React.useState(0)
 
   React.useEffect(() => {
@@ -228,7 +236,9 @@ const MultiSelectContent = React.forwardRef<
         align="start"
         ref={forwardedRef}
         style={{ width: triggerWidth || undefined, ...contentProps.style }}
-        className={cn("kb-multi-select-content", className)}
+        className={cn("kb-multi-select-content", {
+          "kb-multi-select-content-sm": size === "sm",
+        }, className)}
       >
         <div className="kb-multi-select-viewport">{children}</div>
       </PopoverPrimitive.Content>
@@ -249,7 +259,7 @@ const MultiSelectItem = React.forwardRef<
   MultiSelectItemProps
 >((props, forwardedRef) => {
   const { className, children, value, disabled, onClick, ...itemProps } = props
-  const { selectedValues, onValueToggle, disabled: contextDisabled } =
+  const { selectedValues, onValueToggle, disabled: contextDisabled, size } =
     useMultiSelectContext("MultiSelect.Item")
 
   const isSelected = selectedValues.includes(value)
@@ -268,7 +278,9 @@ const MultiSelectItem = React.forwardRef<
       data-disabled={isDisabled || undefined}
       data-selected={isSelected || undefined}
       onClick={handleClick}
-      className={cn("kb-multi-select-item", className)}
+      className={cn("kb-multi-select-item", {
+        "kb-multi-select-item-sm": size === "sm",
+      }, className)}
     >
       <Text as="span" className="kb-multi-select-item-text">
         {children}

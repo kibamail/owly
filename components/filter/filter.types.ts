@@ -25,7 +25,7 @@ export type FilterValueData =
   | { type: "number"; value: number }
   | { type: "date-single"; value: Date }
   | { type: "date-range"; start: Date; end: Date }
-  | { type: "select"; value: string }
+  | { type: "select"; value: string; label?: string }
   | { type: "multi-select"; values: string[] }
   | { type: "boolean"; value: boolean }
   | { type: "none" };

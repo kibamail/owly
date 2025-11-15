@@ -193,7 +193,8 @@
 @breakpoints {
   .kb-button {
     &:where(.kb-r-size-xs) {
-      --button-padding: var(--sp-sm) var(--sp-sm);
+      --button-padding: 4px 8px;
+      font-size: 13px;
     }
 
     &:where(.kb-r-size-sm) {

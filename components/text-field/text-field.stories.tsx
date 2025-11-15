@@ -172,3 +172,68 @@ export const Sizes: TextFieldStoryFn = () => {
 }
 
 export default meta
+
+export const WithHelp: TextFieldStoryFn = () => {
+  return (
+    <div className="grid grid-cols-2 gap-12">
+      <div className="box">
+        <h5>Label with help text</h5>
+
+        <div className="">
+          <TextField.Root placeholder="Enter your email" type="email">
+            <TextField.Label help="We'll use this to send you important updates about your account">
+              Email address
+            </TextField.Label>
+          </TextField.Root>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Label with help JSX</h5>
+
+        <div className="">
+          <TextField.Root placeholder="Create a password" type="password">
+            <TextField.Label help={
+              <div>
+                <strong>Password requirements:</strong>
+                <ul style={{ margin: "4px 0 0 0", paddingLeft: "16px" }}>
+                  <li>At least 8 characters</li>
+                  <li>Include uppercase and lowercase</li>
+                  <li>Include at least one number</li>
+                </ul>
+              </div>
+            }>
+              Password
+            </TextField.Label>
+          </TextField.Root>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>With help and error</h5>
+
+        <div className="">
+          <TextField.Root placeholder="Enter your username" type="text">
+            <TextField.Label help="Choose a unique username that others can easily remember">
+              Username
+            </TextField.Label>
+            <TextField.Error>This username is already taken</TextField.Error>
+          </TextField.Root>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>With help and hint</h5>
+
+        <div className="">
+          <TextField.Root placeholder="Enter your phone number" type="tel">
+            <TextField.Label help="We'll only use this for account security purposes">
+              Phone number
+            </TextField.Label>
+            <TextField.Hint>Include country code (e.g., +1)</TextField.Hint>
+          </TextField.Root>
+        </div>
+      </div>
+    </div>
+  )
+}

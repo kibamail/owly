@@ -236,3 +236,32 @@
   font-weight: 600;
   color: var(--content-tertiary);
 }
+
+/* Small size variants */
+.kb-multi-select-root.kb-size-sm {
+  .kb-multi-select-trigger {
+    padding: var(--sp-xs) var(--sp-md);
+    font-size: var(--font-body-sm);
+    min-height: 32px;
+
+    .kb-multi-select-trigger-text {
+      font-size: var(--font-body-sm);
+    }
+  }
+}
+
+.kb-multi-select-content-sm {
+  .kb-multi-select-viewport {
+    padding: calc(var(--sp-xs) * 0.75);
+  }
+}
+
+.kb-multi-select-item-sm {
+  padding: calc(var(--sp-md) * 0.75);
+  height: 28px;
+
+  .kb-text {
+    font-size: var(--font-body-sm);
+    gap: calc(var(--sp-md) * 0.75);
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.1.14",
+  "version": "1.1.20",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -126,11 +126,15 @@
     "./styles/tabs.css": "./dist/styles/tabs.css",
     "./styles/text.css": "./dist/styles/text.css",
     "./styles/text-field.css": "./dist/styles/text-field.css",
+    "./styles/textarea-field.css": "./dist/styles/textarea-field.css",
+    "./styles/switch.css": "./dist/styles/switch.css",
+    "./styles/tooltip.css": "./dist/styles/tooltip.css",
     "./styles/toast.css": "./dist/styles/toast.css",
     "./styles/user-dropdown.css": "./dist/styles/user-dropdown.css",
     "./styles/settings-card.css": "./dist/styles/settings-card.css",
     "./styles/dropdown-menu.css": "./dist/styles/dropdown-menu.css",
     "./styles/empty-card.css": "./dist/styles/empty-card.css",
+    "./styles/filter-builder.css": "./dist/styles/filter-builder.css",
     "./styles/hover-card.css": "./dist/styles/hover-card.css",
     "./styles/tokens.css": "./tokens.css",
     "./styles/components.css": "./components.css",
@@ -146,6 +150,21 @@
       "types": "./dist/cjs/text-field/index.d.ts",
       "import": "./dist/esm/text-field/index.js",
       "require": "./dist/cjs/text-field/index.js"
+    },
+    "./textarea-field": {
+      "types": "./dist/cjs/textarea-field/index.d.ts",
+      "import": "./dist/esm/textarea-field/index.js",
+      "require": "./dist/cjs/textarea-field/index.js"
+    },
+    "./switch": {
+      "types": "./dist/cjs/switch/index.d.ts",
+      "import": "./dist/esm/switch/index.js",
+      "require": "./dist/cjs/switch/index.js"
+    },
+    "./tooltip": {
+      "types": "./dist/cjs/tooltip/index.d.ts",
+      "import": "./dist/esm/tooltip/index.js",
+      "require": "./dist/cjs/tooltip/index.js"
     },
     "./select-field": {
       "types": "./dist/cjs/select-field/index.d.ts",
@@ -171,6 +190,11 @@
       "types": "./dist/cjs/filter/index.d.ts",
       "import": "./dist/esm/filter/index.js",
       "require": "./dist/cjs/filter/index.js"
+    },
+    "./filter-builder": {
+      "types": "./dist/cjs/filter-builder/index.d.ts",
+      "import": "./dist/esm/filter-builder/index.js",
+      "require": "./dist/cjs/filter-builder/index.js"
     },
     "./letter-avatar": {
       "types": "./dist/cjs/letter-avatar/index.d.ts",
@@ -251,6 +275,7 @@
     "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-hover-card": "^1.1.15",
     "@radix-ui/react-id": "^1.1.0",
+    "@radix-ui/react-navigation-menu": "^1.2.14",
     "@radix-ui/react-popover": "^1.1.15",
     "@radix-ui/react-presence": "^1.1.1",
     "@radix-ui/react-primitive": "^2.0.0",
@@ -260,8 +285,10 @@
     "@radix-ui/react-scroll-area": "^1.2.2",
     "@radix-ui/react-select": "^2.1.4",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.2.6",
     "@radix-ui/react-tabs": "^1.1.1",
     "@radix-ui/react-toast": "^1.2.15",
+    "@radix-ui/react-tooltip": "^1.2.8",
     "@radix-ui/react-use-controllable-state": "^1.1.0",
     "@rehookify/datepicker": "^6.6.8",
     "@tanstack/react-query": "^5.90.7",

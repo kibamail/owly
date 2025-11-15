@@ -18,6 +18,7 @@ export interface CalendarRangeProps {
   onDatesChange?: (dates: Date[]) => void;
   minDate?: Date;
   maxDate?: Date;
+  size?: "sm" | "md";
   onApply?: (dates: Date[]) => void;
   onClose?: () => void;
 }
@@ -25,11 +26,12 @@ export interface CalendarRangeProps {
 interface CalendarRangeRootProps {
   selectedDates: Date[];
   onDatesChange: (dates: Date[]) => void;
+  size?: "sm" | "md";
   onApply?: (dates: Date[]) => void;
   onClose?: () => void;
 }
 
-const CalendarRangeRoot = ({ selectedDates, onDatesChange, onApply, onClose }: CalendarRangeRootProps) => {
+const CalendarRangeRoot = ({ selectedDates, onDatesChange, size = "md", onApply, onClose }: CalendarRangeRootProps) => {
   const { calendars, weekDays } = useContextCalendars();
   const { dayButton } = useContextDaysPropGetters();
   const { addOffset, subtractOffset } = useContextDatePickerOffsetPropGetters();
@@ -97,7 +99,10 @@ const CalendarRangeRoot = ({ selectedDates, onDatesChange, onApply, onClose }: C
   };
 
   return (
-    <div className="kb-calendar-range-wrapper">
+    <div className={cn("kb-calendar-range-wrapper", {
+      "kb-calendar-range-wrapper-sm": size === "sm",
+      "kb-calendar-range-wrapper-md": size === "md",
+    })}>
       {/* Presets Column */}
       <div className="kb-calendar-range-presets">
         {presets.map((preset) => (
@@ -213,12 +218,12 @@ const CalendarRangeRoot = ({ selectedDates, onDatesChange, onApply, onClose }: C
                 : 'Select dates'}
             </Text>
             <div className="kb-calendar-range-footer-actions">
-              <Button variant="tertiary" size="sm" onClick={onClose}>
+              <Button variant="tertiary" size={size === "sm" ? "xs" : "sm"} onClick={onClose}>
                 Close
               </Button>
               <Button
                 variant="primary"
-                size="sm"
+                size={size === "sm" ? "xs" : "sm"}
                 onClick={() => onApply?.(selectedDates)}
                 disabled={selectedDates.length !== 2}
               >
@@ -237,6 +242,7 @@ const CalendarRange = ({
   onDatesChange: onDatesChangeProp,
   minDate,
   maxDate,
+  size = "md",
   onApply,
   onClose,
 }: CalendarRangeProps) => {
@@ -278,6 +284,7 @@ const CalendarRange = ({
       <CalendarRangeRoot
         selectedDates={selectedDates}
         onDatesChange={onDatesChange}
+        size={size}
         onApply={onApply}
         onClose={onClose}
       />

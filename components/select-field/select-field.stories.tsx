@@ -239,4 +239,92 @@ export const Sizes: SelectStoryFn = () => {
   )
 }
 
+export const WithHelp: SelectStoryFn = () => {
+  return (
+    <div className="grid grid-cols-2 gap-12">
+      <div className="box">
+        <h5>Label with help text</h5>
+
+        <div className="">
+          <Select.Root defaultValue="admin">
+            <Select.Label help="This determines what actions the user can perform in your workspace">
+              User role
+            </Select.Label>
+            <Select.Trigger />
+            <Select.Content>
+              <Select.Item value="admin">Administrator</Select.Item>
+              <Select.Item value="editor">Editor</Select.Item>
+              <Select.Item value="viewer">Viewer</Select.Item>
+            </Select.Content>
+          </Select.Root>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>Label with help JSX</h5>
+
+        <div className="">
+          <Select.Root defaultValue="us">
+            <Select.Label help={
+              <div>
+                <strong>Region selection affects:</strong>
+                <ul style={{ margin: "4px 0 0 0", paddingLeft: "16px" }}>
+                  <li>Data storage location</li>
+                  <li>Compliance requirements</li>
+                  <li>Performance optimization</li>
+                </ul>
+              </div>
+            }>
+              Region
+            </Select.Label>
+            <Select.Trigger />
+            <Select.Content>
+              <Select.Item value="us">United States</Select.Item>
+              <Select.Item value="eu">Europe</Select.Item>
+              <Select.Item value="asia">Asia Pacific</Select.Item>
+            </Select.Content>
+          </Select.Root>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>With help and error</h5>
+
+        <div className="">
+          <Select.Root>
+            <Select.Label help="Choose the subscription plan that best fits your needs">
+              Subscription plan
+            </Select.Label>
+            <Select.Trigger placeholder="Select a plan" />
+            <Select.Content>
+              <Select.Item value="basic">Basic - $9/month</Select.Item>
+              <Select.Item value="pro">Pro - $29/month</Select.Item>
+              <Select.Item value="enterprise">Enterprise - $99/month</Select.Item>
+            </Select.Content>
+            <Select.Error>Please select a subscription plan to continue</Select.Error>
+          </Select.Root>
+        </div>
+      </div>
+
+      <div className="box">
+        <h5>With help and hint</h5>
+
+        <div className="">
+          <Select.Root defaultValue="monthly">
+            <Select.Label help="Annual billing offers significant savings compared to monthly billing">
+              Billing cycle
+            </Select.Label>
+            <Select.Trigger />
+            <Select.Content>
+              <Select.Item value="monthly">Monthly</Select.Item>
+              <Select.Item value="annual">Annual (20% off)</Select.Item>
+            </Select.Content>
+            <Select.Hint>You can change this anytime in your account settings</Select.Hint>
+          </Select.Root>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default meta

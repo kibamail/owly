@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react";
+import cn from "classnames";
 import {
   useDatePicker,
   type DPDay,
@@ -14,7 +15,7 @@ import { useControllableState } from "@radix-ui/react-use-controllable-state";
 export interface CalendarProps {
   dates?: Date[];
   onDatesChange?: (dates: Date[]) => void;
-
+  size?: "sm" | "md";
   datePickerProps?: Partial<DPUserConfig>;
 }
 
@@ -22,6 +23,7 @@ const Calendar = ({
   dates: prop,
   datePickerProps,
   onDatesChange: onDatesChangeProp,
+  size = "md",
 }: CalendarProps) => {
   const [selectedDates, onDatesChange] = useControllableState<Date[]>({
     prop,
@@ -63,7 +65,10 @@ const Calendar = ({
   }
 
   return (
-    <div className="kb-calendar-root">
+    <div className={cn("kb-calendar-root", {
+      "kb-calendar-root-sm": size === "sm",
+      "kb-calendar-root-md": size === "md",
+    })}>
       <div className="kb-calendar-header">
         <Button
           variant="secondary"

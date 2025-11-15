@@ -111,7 +111,7 @@ const formatValueDisplay = (value: FilterValueData | undefined): string => {
         year: "numeric",
       })}`;
     case "select":
-      return value.value || "Select option";
+      return value.label || value.value || "Select option";
     case "multi-select":
       return value.values.length > 0 ? value.values.join(", ") : "Select options";
     case "boolean":
@@ -184,6 +184,89 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
     const [tempTextValue, setTempTextValue] = React.useState<string>("");
     const [tempNumberValue, setTempNumberValue] = React.useState<number>(0);
 
+    // Group fields by category
+    const groupedFields = React.useMemo(() => {
+      const groups: Record<string, FilterFieldDefinition[]> = {};
+
+      fields.forEach((field) => {
+        const category = field.category || "";
+        if (!groups[category]) {
+          groups[category] = [];
+        }
+        groups[category].push(field);
+      });
+
+      return groups;
+    }, [fields]);
+
+    const renderGroupedFields = () => {
+      const uncategorizedFields = groupedFields[""] || [];
+      const categorizedGroups = Object.entries(groupedFields).filter(([cat]) => cat !== "");
+      const hasCategories = categorizedGroups.length > 0;
+
+      // If no fields have categories, render flat list
+      if (!hasCategories) {
+        return fields.map((field) => (
+          <button
+            key={field.id}
+            className={cn("kb-filter-dropdown-item", {
+              "kb-filter-dropdown-item-selected": field.id === selectedField?.id,
+            })}
+            onClick={() => handleFieldSelect(field)}
+          >
+            <span className="kb-filter-dropdown-item-label">{field.label}</span>
+            {field.id === selectedField?.id && (
+              <CheckmarkIcon />
+            )}
+          </button>
+        ));
+      }
+
+      return (
+        <>
+          {/* Render uncategorized fields first without any label */}
+          {uncategorizedFields.map((field) => (
+            <button
+              key={field.id}
+              className={cn("kb-filter-dropdown-item", {
+                "kb-filter-dropdown-item-selected": field.id === selectedField?.id,
+              })}
+              onClick={() => handleFieldSelect(field)}
+            >
+              <span className="kb-filter-dropdown-item-label">{field.label}</span>
+              {field.id === selectedField?.id && (
+                <CheckmarkIcon />
+              )}
+            </button>
+          ))}
+
+          {/* Render categorized fields with labels and separators */}
+          {categorizedGroups.map(([category, categoryFields], index) => (
+            <React.Fragment key={category}>
+              {(index > 0 || uncategorizedFields.length > 0) && (
+                <div className="kb-filter-dropdown-separator" />
+              )}
+              <div className="kb-filter-dropdown-group-label">{category}</div>
+              {categoryFields.map((field) => (
+                <button
+                  key={field.id}
+                  className={cn("kb-filter-dropdown-item", {
+                    "kb-filter-dropdown-item-selected": field.id === selectedField?.id,
+                  })}
+                  onClick={() => handleFieldSelect(field)}
+                >
+                  <span className="kb-filter-dropdown-item-label">{field.label}</span>
+                  {field.id === selectedField?.id && (
+                    <CheckmarkIcon />
+                  )}
+                </button>
+              ))}
+            </React.Fragment>
+          ))}
+        </>
+      );
+    };
+
     // Initialize temp values when value dropdown opens
     React.useEffect(() => {
       if (valueDropdownOpen && selectedOperator) {
@@ -230,6 +313,7 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
             <div className="kb-filter-text-input-wrapper">
               <TextField.Root
                 type="text"
+                size="sm"
                 value={tempTextValue}
                 onChange={(e) => setTempTextValue(e.target.value)}
                 placeholder={valueInput.placeholder || "Enter value"}
@@ -237,7 +321,7 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
               />
               <Button
                 variant="primary"
-                size="sm"
+                size="xs"
                 disabled={!tempTextValue.trim()}
                 onClick={() => {
                   handleValueChange({ type: "text", value: tempTextValue });
@@ -254,6 +338,7 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
             <div className="kb-filter-text-input-wrapper">
               <TextField.Root
                 type="number"
+                size="sm"
                 value={tempNumberValue}
                 onChange={(e) => setTempNumberValue(parseFloat(e.target.value) || 0)}
                 placeholder="Enter number"
@@ -264,7 +349,7 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
               />
               <Button
                 variant="primary"
-                size="sm"
+                size="xs"
                 disabled={tempNumberValue === 0}
                 onClick={() => {
                   handleValueChange({ type: "number", value: tempNumberValue });
@@ -280,6 +365,7 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
           if (valueInput.mode === "single") {
             return (
               <Calendar
+                size="sm"
                 dates={
                   value?.value && value.value.type === "date-single"
                     ? [value.value.value]
@@ -296,6 +382,7 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
           } else {
             return (
               <CalendarRange
+                size="sm"
                 dates={
                   value?.value && value.value.type === "date-range"
                     ? [value.value.start, value.value.end]
@@ -320,6 +407,36 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
               />
             );
           }
+
+        case "select":
+          const currentValue = value?.value && value.value.type === "select"
+            ? value.value.value
+            : "";
+
+          const handleSelectOption = (optionValue: string, optionLabel: string) => {
+            handleValueChange({ type: "select", value: optionValue, label: optionLabel });
+            closePopover();
+          };
+
+          return (
+            <div>
+              {valueInput.options.map((option) => (
+                <button
+                  key={option.value}
+                  className={cn("kb-filter-dropdown-item", {
+                    "kb-filter-dropdown-item-selected": currentValue === option.value,
+                  })}
+                  onClick={() => handleSelectOption(option.value, option.label)}
+                  type="button"
+                >
+                  <span className="kb-filter-dropdown-item-label">{option.label}</span>
+                  {currentValue === option.value && (
+                    <CheckmarkIcon />
+                  )}
+                </button>
+              ))}
+            </div>
+          );
 
         case "multi-select":
           const currentValues = value?.value && value.value.type === "multi-select"
@@ -359,6 +476,7 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
           return (
             <TextField.Root
               type="text"
+              size="sm"
               value={value?.value && value.value.type === "text" ? value.value.value : ""}
               onChange={(e) =>
                 handleValueChange({ type: "text", value: e.target.value })
@@ -391,20 +509,7 @@ const Filter = React.forwardRef<FilterElement, FilterProps>(
               align="start"
               sideOffset={4}
             >
-              {fields.map((field) => (
-                <button
-                  key={field.id}
-                  className={cn("kb-filter-dropdown-item", {
-                    "kb-filter-dropdown-item-selected": field.id === selectedField?.id,
-                  })}
-                  onClick={() => handleFieldSelect(field)}
-                >
-                  <span className="kb-filter-dropdown-item-label">{field.label}</span>
-                  {field.id === selectedField?.id && (
-                    <CheckmarkIcon />
-                  )}
-                </button>
-              ))}
+              {renderGroupedFields()}
             </Popover.Content>
           </Popover.Portal>
         </Popover.Root>

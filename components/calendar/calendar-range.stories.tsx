@@ -47,3 +47,30 @@ export const Variants: CalendarRangeStoryFn = () => {
   </>
  );
 };
+
+export const Sizes: CalendarRangeStoryFn = () => {
+ const [mediumDates, setMediumDates] = useState<Date[]>([]);
+ const [smallDates, setSmallDates] = useState<Date[]>([]);
+
+ return (
+  <div style={{ display: "flex", flexDirection: "column", gap: "40px", padding: "40px" }}>
+   <div>
+    <h5 style={{ marginBottom: "16px" }}>Medium (Default)</h5>
+    <CalendarRange
+     size="md"
+     dates={mediumDates}
+     onDatesChange={setMediumDates}
+    />
+   </div>
+
+   <div>
+    <h5 style={{ marginBottom: "16px" }}>Small</h5>
+    <CalendarRange
+     size="sm"
+     dates={smallDates}
+     onDatesChange={setSmallDates}
+    />
+   </div>
+  </div>
+ );
+};
