@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.1.20",
+  "version": "1.1.25",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -35,6 +35,11 @@
       "types": "./dist/esm/calendar/index.d.ts",
       "import": "./dist/esm/calendar/index.js",
       "require": "./dist/cjs/calendar/index.js"
+    },
+    "./date-field": {
+      "types": "./dist/esm/date-field/index.d.ts",
+      "import": "./dist/esm/date-field/index.js",
+      "require": "./dist/cjs/date-field/index.js"
     },
     "./dialog": {
       "types": "./dist/esm/dialog/index.d.ts",
@@ -106,6 +111,7 @@
     "./styles/badge.css": "./dist/styles/badge.css",
     "./styles/button.css": "./dist/styles/button.css",
     "./styles/calendar.css": "./dist/styles/calendar.css",
+    "./styles/date-field.css": "./dist/styles/date-field.css",
     "./styles/checkbox.css": "./dist/styles/checkbox.css",
     "./styles/code-input.css": "./dist/styles/code-input.css",
     "./styles/command-search.css": "./dist/styles/command-search.css",
@@ -136,6 +142,7 @@
     "./styles/empty-card.css": "./dist/styles/empty-card.css",
     "./styles/filter-builder.css": "./dist/styles/filter-builder.css",
     "./styles/hover-card.css": "./dist/styles/hover-card.css",
+    "./styles/popover.css": "./dist/styles/popover.css",
     "./styles/tokens.css": "./tokens.css",
     "./styles/components.css": "./components.css",
     "./styles/index.css": "./index.css",
@@ -235,6 +242,11 @@
       "types": "./dist/cjs/hover-card/index.d.ts",
       "import": "./dist/esm/hover-card/index.js",
       "require": "./dist/cjs/hover-card/index.js"
+    },
+    "./popover": {
+      "types": "./dist/cjs/popover/index.d.ts",
+      "import": "./dist/esm/popover/index.js",
+      "require": "./dist/cjs/popover/index.js"
     }
   },
   "scripts": {

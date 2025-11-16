@@ -1013,6 +1013,54 @@
 .kb-calendar-range-wrapper-sm .kb-calendar-range-footer-actions {
     gap: calc(var(--sp-sm) * 0.75);
 }
+.kb-date-field-root {
+    width: 100%;
+    cursor: pointer;
+}
+.kb-date-field-input {
+    cursor: pointer;
+}
+.kb-date-field-input input {
+    cursor: pointer;
+}
+.kb-date-field-content {
+    z-index: 50;
+    animation: kb-date-field-fade-in 0.15s ease;
+}
+@keyframes kb-date-field-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.kb-date-range-field-root {
+    width: 100%;
+    cursor: pointer;
+}
+.kb-date-range-field-input {
+    cursor: pointer;
+}
+.kb-date-range-field-input input {
+    cursor: pointer;
+}
+.kb-date-range-field-content {
+    z-index: 50;
+    animation: kb-date-range-field-fade-in 0.15s ease;
+}
+@keyframes kb-date-range-field-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .kb-checkbox-root {
     --checkbox-icon-default-width: 14px;
     --checkbox-icon-default-height: 14px;
