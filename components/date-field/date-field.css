@@ -3,6 +3,12 @@
   cursor: pointer;
 }
 
+.kb-date-field-root .kb-text-field-slot svg {
+  width: 18px;
+  height: 18px;
+  color: var(--content-tertiary);
+}
+
 .kb-date-field-input {
   cursor: pointer;
 }
@@ -30,6 +36,12 @@
 .kb-date-range-field-root {
   width: 100%;
   cursor: pointer;
+}
+
+.kb-date-range-field-root .kb-text-field-slot svg {
+  width: 18px;
+  height: 18px;
+  color: var(--content-tertiary);
 }
 
 .kb-date-range-field-input {

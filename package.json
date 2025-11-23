@@ -1,6 +1,6 @@
 {
   "name": "@kibamail/owly",
-  "version": "1.1.25",
+  "version": "1.1.26",
   "description": "The Open-source messaging platform for transactional and marketing email.",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -71,6 +71,11 @@
       "import": "./dist/esm/checkbox/index.js",
       "require": "./dist/cjs/checkbox/index.js"
     },
+    "./color-field": {
+      "types": "./dist/esm/color-field/index.d.ts",
+      "import": "./dist/esm/color-field/index.js",
+      "require": "./dist/cjs/color-field/index.js"
+    },
     "./code-input": {
       "types": "./dist/esm/code-input/index.d.ts",
       "import": "./dist/esm/code-input/index.js",
@@ -113,6 +118,7 @@
     "./styles/calendar.css": "./dist/styles/calendar.css",
     "./styles/date-field.css": "./dist/styles/date-field.css",
     "./styles/checkbox.css": "./dist/styles/checkbox.css",
+    "./styles/color-field.css": "./dist/styles/color-field.css",
     "./styles/code-input.css": "./dist/styles/code-input.css",
     "./styles/command-search.css": "./dist/styles/command-search.css",
     "./styles/dashboard-layout.css": "./dist/styles/dashboard-layout.css",
@@ -308,6 +314,7 @@
     "cmdk": "^1.1.1",
     "input-otp": "^1.4.1",
     "react-cmdk": "^1.3.9",
+    "react-colorful": "^5.6.1",
     "react-day-picker": "^9.5.1",
     "storybook-addon-responsive-views": "^2.3.0"
   },

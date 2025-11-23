@@ -70,10 +70,19 @@ export const WithCloseButton: PopoverStoryFn = () => {
         </Popover.Trigger>
         <Popover.Content>
           <div style={{ padding: "var(--sp-md)" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "var(--sp-sm)" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: "var(--sp-sm)",
+              }}
+            >
               <Heading size="xs">Settings</Heading>
               <Popover.Close asChild>
-                <Button variant="ghost" size="sm">×</Button>
+                <Button variant="secondary" size="sm">
+                  ×
+                </Button>
               </Popover.Close>
             </div>
             <Text size="sm" style={{ color: "var(--content-secondary)" }}>
@@ -88,7 +97,14 @@ export const WithCloseButton: PopoverStoryFn = () => {
 
 export const Sides: PopoverStoryFn = () => {
   return (
-    <div style={{ padding: "200px", display: "flex", gap: "40px", justifyContent: "center" }}>
+    <div
+      style={{
+        padding: "200px",
+        display: "flex",
+        gap: "40px",
+        justifyContent: "center",
+      }}
+    >
       <Popover.Root>
         <Popover.Trigger>
           <Button variant="secondary">side="top"</Button>
@@ -152,7 +168,13 @@ export const FormExample: PopoverStoryFn = () => {
               Add New Contact
             </Heading>
             <div style={{ marginBottom: "var(--sp-md)" }}>
-              <label style={{ display: "block", marginBottom: "var(--sp-xs)", fontSize: "var(--font-body-sm)" }}>
+              <label
+                style={{
+                  display: "block",
+                  marginBottom: "var(--sp-xs)",
+                  fontSize: "var(--font-body-sm)",
+                }}
+              >
                 Name
               </label>
               <input
@@ -164,12 +186,18 @@ export const FormExample: PopoverStoryFn = () => {
                   padding: "var(--sp-sm)",
                   border: "var(--width-px) solid var(--border-tertiary)",
                   borderRadius: "var(--radius-md)",
-                  fontSize: "var(--font-body-md)"
+                  fontSize: "var(--font-body-md)",
                 }}
               />
             </div>
             <div style={{ marginBottom: "var(--sp-lg)" }}>
-              <label style={{ display: "block", marginBottom: "var(--sp-xs)", fontSize: "var(--font-body-sm)" }}>
+              <label
+                style={{
+                  display: "block",
+                  marginBottom: "var(--sp-xs)",
+                  fontSize: "var(--font-body-sm)",
+                }}
+              >
                 Email
               </label>
               <input
@@ -181,16 +209,26 @@ export const FormExample: PopoverStoryFn = () => {
                   padding: "var(--sp-sm)",
                   border: "var(--width-px) solid var(--border-tertiary)",
                   borderRadius: "var(--radius-md)",
-                  fontSize: "var(--font-body-md)"
+                  fontSize: "var(--font-body-md)",
                 }}
               />
             </div>
-            <div style={{ display: "flex", gap: "var(--sp-sm)", justifyContent: "flex-end" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: "var(--sp-sm)",
+                justifyContent: "flex-end",
+              }}
+            >
               <Popover.Close asChild>
-                <Button variant="secondary" size="sm">Cancel</Button>
+                <Button variant="secondary" size="sm">
+                  Cancel
+                </Button>
               </Popover.Close>
               <Popover.Close asChild>
-                <Button variant="primary" size="sm">Save</Button>
+                <Button variant="primary" size="sm">
+                  Save
+                </Button>
               </Popover.Close>
             </div>
           </div>

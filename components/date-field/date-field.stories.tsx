@@ -164,3 +164,28 @@ export const Disabled: DateFieldStoryFn = () => {
     </div>
   )
 }
+
+export const WithCalendarIcon: DateFieldStoryFn = () => {
+  const [date, setDate] = useState<Date | undefined>(new Date())
+
+  return (
+    <div style={{ padding: "40px", maxWidth: "400px" }}>
+      <h3 style={{ marginBottom: "16px" }}>DateField with Calendar Icon</h3>
+      <p style={{ marginBottom: "16px", fontSize: "14px", color: "#666" }}>
+        Notice the calendar icon in the left slot of the input field.
+      </p>
+      <DateField.Root
+        value={date}
+        onValueChange={setDate}
+        placeholder="Select a date"
+        label="Event Date"
+        hint="Click to open the calendar picker"
+      />
+      {date && (
+        <div style={{ marginTop: "16px", fontSize: "14px", color: "#666" }}>
+          Selected: {date.toLocaleDateString()}
+        </div>
+      )}
+    </div>
+  )
+}

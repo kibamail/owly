@@ -18,6 +18,7 @@ export * from "./text/index.js";
 export * as Accordion from "./accordion/index.js";
 export * as Alert from "./alert/index.js";
 export * as CodeInput from "./code-input/index.js";
+export * as ColorField from "./color-field/index.js";
 export * as CommandSearch from "./command-search/index.js";
 export * as DashboardLayout from "./dashboard-layout/index.js";
 export * as DateField from "./date-field/date-field.js";

@@ -1017,6 +1017,11 @@
     width: 100%;
     cursor: pointer;
 }
+.kb-date-field-root .kb-text-field-slot svg {
+    width: 18px;
+    height: 18px;
+    color: var(--content-tertiary);
+}
 .kb-date-field-input {
     cursor: pointer;
 }
@@ -1040,6 +1045,11 @@
 .kb-date-range-field-root {
     width: 100%;
     cursor: pointer;
+}
+.kb-date-range-field-root .kb-text-field-slot svg {
+    width: 18px;
+    height: 18px;
+    color: var(--content-tertiary);
 }
 .kb-date-range-field-input {
     cursor: pointer;
@@ -1325,6 +1335,104 @@
 }
 .kb-code-input-hint:where(.kb-code-input-error) .kb-code-input-hint-text {
     color: var(--content-negative);
+}
+.kb-color-field-preview {
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-sm);
+    border: var(--width-px) solid var(--border-tertiary);
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    flex-shrink: 0;
+}
+.kb-color-field-trigger {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-sm);
+    color: var(--content-tertiary);
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+.kb-color-field-trigger:hover {
+    color: var(--content-secondary);
+}
+.kb-color-field-trigger:focus {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+}
+.kb-color-field-popover {
+    background-color: var(--background-primary);
+    border: var(--width-px) solid var(--border-tertiary);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-lg);
+    box-shadow: 0 16px 24px -8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    animation: kb-color-field-zoom-in 0.15s ease;
+    transform-origin: var(--radix-popover-content-transform-origin);
+    z-index: 50;
+    width: 280px;
+}
+@keyframes kb-color-field-zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.kb-color-field-picker-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-lg);
+}
+.kb-color-field-picker {
+    width: 100% !important;
+    height: 180px !important;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+.kb-color-field-picker .react-colorful__saturation {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+.kb-color-field-picker .react-colorful__hue {
+    height: 20px;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+.kb-color-field-picker .react-colorful__pointer {
+    width: 16px;
+    height: 16px;
+}
+.kb-color-field-picker .react-colorful__saturation-pointer {
+    width: 16px;
+    height: 16px;
+}
+.kb-color-field-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+}
+.kb-color-field-hex-input {
+    width: 100%;
+}
+.kb-color-field-rgb-inputs {
+    display: flex;
+    gap: var(--sp-sm);
+}
+.kb-color-field-rgb-input {
+    flex: 1;
+}
+.kb-color-field-input-label {
+    font-size: var(--font-body-xs);
+    color: var(--content-tertiary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 .command-palette {
     position: relative;
@@ -4176,6 +4284,33 @@
   .kb-navigation-menu-viewport {
         animation: none;
     }
+}
+.kb-popover-content {
+    background-color: var(--background-primary);
+    border: var(--width-px) solid var(--border-tertiary);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-xs);
+    min-width: 220px;
+    box-shadow: 0 16px 24px -8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    animation: kb-popover-zoom-in 0.15s ease;
+    transform-origin: var(--radix-popover-content-transform-origin);
+    z-index: 50;
+}
+@keyframes kb-popover-zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.kb-popover-arrow {
+    fill: var(--background-primary);
+    stroke: var(--border-tertiary);
+    stroke-width: var(--width-px);
 }
 .kb-progress {
     width: 100%;
