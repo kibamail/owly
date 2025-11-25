@@ -36,12 +36,14 @@
     grid-column: 2;
     grid-row: 1;
     width: 100%;
+    color: var(--content-primary);
   }
 
   .kb-toast-description {
     grid-column: 2;
     grid-row: 2;
     width: 100%;
+    color: var(--content-secondary);
   }
 
   .kb-toast-action {
@@ -57,6 +59,7 @@
     margin-top: var(--sp-xs);
     font-family: var(--default-font-family-body);
     font-size: var(--font-body-sm);
+    color: var(--content-primary);
   }
 
   .kb-toast-close {
@@ -68,6 +71,7 @@
     cursor: pointer;
     background: transparent;
     border: none;
+    color: var(--content-primary);
     padding: 0;
   }
 

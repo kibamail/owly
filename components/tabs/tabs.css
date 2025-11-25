@@ -74,9 +74,7 @@
     border-radius: var(--radius-lg);
     border: var(--width-px) solid var(--border-tertiary);
     background: var(--background-hover);
-    /* TODO: Make this box shadow a semantic variable */
-    box-shadow: 0px 2px 0px 0px var(--black-5) inset,
-      0px -2px 0px 0px var(--white-100) inset;
+    box-shadow: var(--shadow-inner-sm);
 
     padding: var(--sp-xs);
 
@@ -94,6 +92,11 @@
 }
 
 .kb-tabs-indicator {
+  /* Component-specific variables (light mode defaults) */
+  --tabs-indicator-background: var(--background-primary);
+  --tabs-indicator-secondary-background: var(--background-brand);
+  --tabs-indicator-shadow: var(--shadow-sm);
+
   /* Disable transition on mount to prevent indicator from animating to initial position */
   transition: none;
 
@@ -109,20 +112,33 @@
 
     border-radius: var(--radius-md);
 
-    background: var(--background-primary);
-    /* TODO: Make this box shadow a semantic variable */
-    box-shadow: 0px 2px 4px 0px var(--black-5);
+    background: var(--tabs-indicator-background);
+    box-shadow: var(--tabs-indicator-shadow);
   }
 
   &:where(.kb-variant-secondary) {
     height: 4px;
     bottom: -4px;
-    background: var(--content-brand);
+    background: var(--tabs-indicator-secondary-background);
     width: calc(var(--tabs-indicator-active-position-size) * 1px);
     border-radius: var(--radius-full);
 
-    box-shadow: 0px 2px 0px 0px var(--white-5) inset,
-      0px 1px 0px 0px var(--black-10);
+    box-shadow: var(--shadow-indicator);
+  }
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] .kb-tabs-indicator {
+  --tabs-indicator-background: var(--gray-600);
+  --tabs-indicator-secondary-background: var(--brown-500);
+  --tabs-indicator-shadow: 0px 2px 4px 0px var(--black-20);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .kb-tabs-indicator {
+    --tabs-indicator-background: var(--gray-600);
+    --tabs-indicator-secondary-background: var(--brown-400);
+    --tabs-indicator-shadow: 0px 2px 4px 0px var(--black-20);
   }
 }
 

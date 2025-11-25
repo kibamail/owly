@@ -119,7 +119,7 @@ const DialogTitle = React.forwardRef<DialogTitleElement, DialogTitleProps>(
   (props, forwardedRef) => {
     const { children, ...headingProps } = props;
     return (
-      <DialogPrimitive.Title asChild>
+      <DialogPrimitive.Title className="kb-dialog-title" asChild>
         <Heading
           variant="heading"
           size="xs"

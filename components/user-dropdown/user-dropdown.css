@@ -129,7 +129,7 @@
 .kb-user-dropdown-divider {
   width: 100%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--border-tertiary);
   margin: var(--sp-xs) 0;
   box-sizing: border-box;
 }

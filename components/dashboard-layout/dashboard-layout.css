@@ -1,7 +1,7 @@
 .kb-dashboard-layout-root {
   width: 100vw;
   height: 100vh;
-  background-color: var(--background-secondary);
+  background-color: var(--background-layout);
   padding-bottom: var(--sp-md);
   padding-right: var(--sp-md);
   padding-left: var(--sp-md);
@@ -31,7 +31,7 @@
 .kb-dashboard-layout-sticky-content-header-container {
   position: sticky;
   top: 0;
-  background-color: var(--background-secondary);
+  background-color: var(--background-layout);
   padding-bottom: var(--sp-xl);
   z-index: 10;
 }
@@ -69,7 +69,10 @@
   grid-column: 1;
 }
 
-.kb-dashboard-layout-sticky-detail-header > :not(.kb-dashboard-layout-sticky-detail-header-icon):not(.kb-dashboard-layout-sticky-detail-actions) {
+.kb-dashboard-layout-sticky-detail-header
+  > :not(.kb-dashboard-layout-sticky-detail-header-icon):not(
+    .kb-dashboard-layout-sticky-detail-actions
+  ) {
   grid-row: 1;
   grid-column: 2;
 }

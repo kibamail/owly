@@ -82,3 +82,24 @@
 .sb-show-main.sb-main-padded {
   padding: 0 !important;
 }
+
+#storybook-root {
+  padding: 40px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+[data-theme="dark"] #storybook-root {
+  background: var(--gray-900);
+}
+
+#storybook-root .box h5 {
+  font-family: var(--default-font-family);
+  font-weight: 400;
+}
+
+[data-theme="dark"] #storybook-root .box h5 {
+  color: #fff;
+  font-family: var(--default-font-family);
+}

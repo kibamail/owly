@@ -126,6 +126,9 @@ importers:
       '@storybook/addon-onboarding':
         specifier: ^8.4.2
         version: 8.4.2(react@18.3.1)(storybook@8.4.2)
+      '@storybook/addon-themes':
+        specifier: ^8.6.14
+        version: 8.6.14(storybook@8.4.2)
       '@storybook/blocks':
         specifier: ^8.4.2
         version: 8.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.2)
@@ -2713,6 +2716,11 @@ packages:
     resolution: {integrity: sha512-oTMlPEyT4CBqzcQbfemoJzJ6yzeRAmvrAx9ssaBcnQQRsKxo0D2Ri/Jmm6SNcR0yBHxYRkvIH+2phLw8aiflCQ==}
     peerDependencies:
       storybook: ^8.4.2
+
+  '@storybook/addon-themes@8.6.14':
+    resolution: {integrity: sha512-/HJCgskA3OFGectuoLEBQ3JX1nQhE7lnpSv5gH13CWyyaMEk/mP8JYF1uO25YQqwGuSgL2gaEox+aK7UmglAmQ==}
+    peerDependencies:
+      storybook: ^8.6.14
 
   '@storybook/addon-toolbars@8.4.2':
     resolution: {integrity: sha512-DidzW/NQS224niMJIjcJI2ls83emqygUcS9GYNGgdc5Xwro/TPgGYOXP2qnXgYUxXQTHbrxmIbHdEehxC7CcYQ==}
@@ -8953,18 +8961,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@emotion/core@10.3.1(react@18.3.1)':
-    dependencies:
-      '@babel/runtime': 7.26.0
-      '@emotion/cache': 10.0.29
-      '@emotion/css': 10.0.27
-      '@emotion/serialize': 0.11.16
-      '@emotion/sheet': 0.9.4
-      '@emotion/utils': 0.11.3
-      react: 18.3.1
-    transitivePeerDependencies:
-      - supports-color
-
   '@emotion/css@10.0.27':
     dependencies:
       '@emotion/serialize': 0.11.16
@@ -8994,7 +8990,7 @@ snapshots:
   '@emotion/styled-base@10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0)':
     dependencies:
       '@babel/runtime': 7.26.0
-      '@emotion/core': 10.3.1(react@18.3.1)
+      '@emotion/core': 10.3.1(react@16.14.0)
       '@emotion/is-prop-valid': 0.8.8
       '@emotion/serialize': 0.11.16
       '@emotion/utils': 0.11.3
@@ -9002,7 +8998,7 @@ snapshots:
 
   '@emotion/styled@10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0)':
     dependencies:
-      '@emotion/core': 10.3.1(react@18.3.1)
+      '@emotion/core': 10.3.1(react@16.14.0)
       '@emotion/styled-base': 10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0)
       babel-plugin-emotion: 10.2.2
       react: 16.14.0
@@ -10598,6 +10594,11 @@ snapshots:
   '@storybook/addon-outline@8.4.2(storybook@8.4.2)':
     dependencies:
       '@storybook/global': 5.0.0
+      storybook: 8.4.2
+      ts-dedent: 2.2.0
+
+  '@storybook/addon-themes@8.6.14(storybook@8.4.2)':
+    dependencies:
       storybook: 8.4.2
       ts-dedent: 2.2.0
 
@@ -13106,7 +13107,7 @@ snapshots:
   emotion-theming@10.3.0(@emotion/core@10.3.1(react@18.3.1))(react@16.14.0):
     dependencies:
       '@babel/runtime': 7.26.0
-      '@emotion/core': 10.3.1(react@18.3.1)
+      '@emotion/core': 10.3.1(react@16.14.0)
       '@emotion/weak-memoize': 0.2.5
       hoist-non-react-statics: 3.3.2
       react: 16.14.0

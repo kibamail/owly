@@ -24,9 +24,7 @@
   border: var(--width-px) solid var(--border-tertiary);
   background: var(--background-hover);
 
-  /* Inner small */
-  box-shadow: 0px 2px 0px 0px var(--black-5) inset,
-    0px -2px 0px 0px var(--white-100) inset;
+  box-shadow: var(--shadow-inner-sm);
 
   transition: border-color 150ms ease-in-out;
 

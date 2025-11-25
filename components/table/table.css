@@ -1,10 +1,24 @@
 .kb-table-container {
+  --table-container-background: transparent;
+
   width: 100%;
   overflow-x: auto;
   overflow-y: visible;
   border: var(--width-px) solid var(--border-tertiary);
   border-bottom: 1px solid transparent;
   border-radius: var(--radius-md);
+  background: var(--table-container-background);
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] .kb-table-container {
+  --table-container-background: var(--background-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .kb-table-container {
+    --table-container-background: var(--background-primary);
+  }
 }
 
 .kb-table {
@@ -15,14 +29,14 @@
 }
 
 .kb-table-header {
-  background-color: var(--background-secondary);
+  background-color: transparent;
 }
 
 .kb-table-body {
 }
 
 .kb-table-footer {
-  background-color: var(--background-secondary);
+  background-color: var(--background-primary);
 }
 
 .kb-table-row {

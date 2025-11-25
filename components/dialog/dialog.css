@@ -66,15 +66,18 @@
   border-bottom-style: solid;
 
   .kb-dialog-close {
+    --dialog-close-color: var(--content-disabled);
+    --dialog-close-color-hover: var(--content-tertiary);
+
     position: absolute;
     right: var(--sp-xl);
     top: var(--sp-xl);
-    color: var(--content-disabled);
+    color: var(--dialog-close-color);
     cursor: pointer;
 
     @media (hover: hover) {
       &:where(:hover) {
-        color: var(--content-tertiary);
+        color: var(--dialog-close-color-hover);
       }
     }
 
@@ -116,6 +119,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.kb-dialog-header {
+  color: var(--content-primary);
 }
 
 /* Variant styles for confirm dialog */
@@ -175,8 +182,7 @@
 
 .kb-confirm-dialog-copy-icon,
 .kb-confirm-dialog-check-icon {
-  transition:
-    opacity 300ms cubic-bezier(0.16, 1, 0.3, 1),
+  transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1),
     transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -206,4 +212,17 @@
   display: flex;
   gap: var(--sp-md);
   justify-content: flex-end;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] .kb-dialog-close {
+  --dialog-close-color: var(--content-primary);
+  --dialog-close-color-hover: var(--content-secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .kb-dialog-close {
+    --dialog-close-color: var(--content-primary);
+    --dialog-close-color-hover: var(--content-secondary);
+  }
 }

@@ -6,6 +6,7 @@
   background-color: var(--alert-background-color);
 
   border: var(--width-px) solid var(--alert-border-color);
+  color: var(--content-primary);
 
   /* TODO: Make shadow standard. */
   box-shadow: 0px 8px 16px -4px var(--black-5);
